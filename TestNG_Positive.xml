@@ -10,7 +10,7 @@
 <parameter name="browser" value="chrome" />
 <classes>
 <!--<class name="com.EIDSA.testCases.TC_001_loginTest_Positive"/> -->
-<class name="com.EIDSA.testCases.TC_003_forgotPassword_Positive"/> 
+<!--<class name="com.EIDSA.testCases.TC_003_forgotPassword_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_005_roleCreation_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_006_roleEdit_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_007_roleDelete_Positive"/>-->
@@ -36,6 +36,14 @@
 <!--<class name="com.EIDSA.testCases.TC_039_ArchiveForms_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_040_SubjectSchedule_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_042_Users_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_043_MainDashboard_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_044_NurseDashboard_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_045_StudySummary_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_046_SiteSummary_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_047_VisitSummary_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_048_NurseDiary_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_049_GoogleFit_Positive"/>-->
+<class name="com.EIDSA.testCases.TC_050_IOTDevices_Positive"/>
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->

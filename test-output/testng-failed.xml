@@ -7,13 +7,12 @@
   <test thread-count="5" name="EIDSA App Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.EIDSA.testCases.TC_042_Users_Positive">
+      <class name="com.EIDSA.testCases.TC_043_MainDashboard_Positive">
         <methods>
-          <include name="RoleSearch"/>
           <include name="setup"/>
-          <include name="EmailSearch"/>
+          <include name="MainDashboard"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_042_Users_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_043_MainDashboard_Positive -->
     </classes>
   </test> <!-- EIDSA App Test(failed) -->
 </suite> <!-- Failed suite [Medical Application] -->
