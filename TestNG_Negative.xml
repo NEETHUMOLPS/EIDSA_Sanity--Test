@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Medical Application" parallel="false">
+<listeners>
+		<listener class-name="com.EIDSA.utilities.Reporting"/>
+	</listeners>
+
+<test name="EIDSA App Test">
+<parameter name="browser" value="chrome" />
+<classes>
+<!--<class name="com.EIDSA.testCases.TC_002_LoginTest_Negative"/> -->
+<!--<class name="com.EIDSA.testCases.TC_004_forgotPassword_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_008_Roles_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_010_rolePrivilege_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_012_userPage_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_017_study_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_019_site_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_021_Subject_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_023_Sub_VisitSchedule_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_025_PatientLogin_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_027_Visit_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_029_VisitTemplate_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_032_FieldPrivilege_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_035_SubmitForm_Negative"/>-->
+<class name="com.EIDSA.testCases.TC_041_SubjectSchedule_Negative"/>
+
+<!--  <methods>
+               <include name="negativeTest6" />
+            </methods>-->
+             
+</classes>
+
+</test>
+
+
+</suite>
