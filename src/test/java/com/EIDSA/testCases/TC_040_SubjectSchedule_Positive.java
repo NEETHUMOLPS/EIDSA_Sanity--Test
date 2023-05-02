@@ -61,6 +61,22 @@ public class TC_040_SubjectSchedule_Positive extends BaseClassTest {
 	}
 	
 	@Test(priority=4)
+	public void dateSearch() throws IOException, InterruptedException
+	{
+		SubjectSchedule fs = new SubjectSchedule(driver);
+		fs.clickSubjectSchedule();
+		fs.searchSiteCode("Demo01");
+		Thread.sleep(3000);
+		fs.searchSubId("demo05");
+		Thread.sleep(3000);
+		fs.SearchVisitDate("27-04-2023", "28-04-2023");
+		fs.ClickSearch();
+		fs.dateSearchValidation("27/04/2023");
+		Thread.sleep(3000);
+		logger.info("Date search validated ");	
+	}
+	
+	@Test(priority=5)
 	public void clickView() throws IOException, InterruptedException
 	{
 		SubjectSchedule fs = new SubjectSchedule(driver);

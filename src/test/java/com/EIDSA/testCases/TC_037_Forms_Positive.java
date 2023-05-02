@@ -74,6 +74,17 @@ public class TC_037_Forms_Positive extends BaseClassTest {
 		fs.ClickSearch();
 		fs.view("01");
 		logger.info("Form opened");
+		driver.navigate().refresh();
+	}
+	
+	@Test(priority=6)
+	public void Archive() throws IOException, InterruptedException
+	{
+		Forms fs = new Forms(driver);
+		fs.clickForms();
+		fs.clickArchive();
+		fs.Alert1();
+		logger.info("Form archived");
 	}
 
 

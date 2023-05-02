@@ -23,8 +23,9 @@
 <!--<class name="com.EIDSA.testCases.TC_029_VisitTemplate_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_032_FieldPrivilege_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_035_SubmitForm_Negative"/>-->
-<class name="com.EIDSA.testCases.TC_041_SubjectSchedule_Negative"/>
-
+<!--<class name="com.EIDSA.testCases.TC_041_SubjectSchedule_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_053_DataEntry_Negative"/>-->
+<class name="com.EIDSA.testCases.TC_058_FormSummary_Negative"/>
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->

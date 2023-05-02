@@ -43,7 +43,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 		fs.clickFormSummary();
 		fs.searchSiteCode("Demo01");
 		fs.searchSubId("demo05");
-		fs.searchVisitName("01");
+		fs.searchVisitName("visit07");
 		fs.ClickSearch();
 		Assert.assertTrue(fs.visitNameSearchValidation("01"));
 		logger.info("Visit name search functionality verified");	
@@ -72,8 +72,209 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 		fs.searchSiteCode("Demo01");
 		fs.searchSubId("demo05");
 		fs.ClickSearch();
-		fs.view("01");
+		fs.view("visit07");
 		logger.info("Form opened");
+		driver.navigate().refresh();
 	}
+	
+	@Test(priority=6)
+	public void ViewDocument() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.viewDocuments();
+		logger.info("Document opened");
+		driver.navigate().refresh();
+		
+	}
+	
+	@Test(priority=7)
+	public void DownloadDocument() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.downloadDocuments();
+		logger.info("Document downloaded");
+		driver.navigate().refresh();
+		
+	}
+	
+	@Test(priority=8)
+	public void DeleteDocument() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.deleteDocuments();
+		fs.Alert1();
+		logger.info("Document deleted");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=9)
+	public void downloadPdf() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.downloadpdf();
+		logger.info("PDF downloaded");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=10)
+	public void formQuery() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.formQuery("Low");
+		fs.Alert2();
+		logger.info("Query raised");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=11)
+	public void viewFormOpenQuery() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.OpenQueryViewform();
+		logger.info("Form opened");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=12)
+	public void exportPdfOpenQuery() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.OpenQueryExportPdf();
+		logger.info("PDF exported");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=13)
+	public void OpenQueryReply1() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.OpenQueryReply();
+		fs.Alert3();
+		logger.info("Message has sent");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=14)
+	public void OpenQueryClose1() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.OpenQueryClose();
+		fs.Alert4();
+		logger.info("Query closed");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=15)
+	public void OpenQueryReplyAndClose1() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.OpenQueryReplyAndClose();
+		fs.Alert5();
+		logger.info("Replied and closed");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=16)
+	public void ClosedQuery() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.closedquery();
+		logger.info("Opened closed query");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=17)
+	public void Verify1() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit08");
+		fs.verify();
+		fs.Alert9();
+		logger.info("Verified");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=18)
+	public void Verify2() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.verify();
+		fs.Alert7();
+		logger.info("Verified");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=19)
+	public void Sign1() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.sign();
+		fs.Alert6();
+		logger.info("Form Signed");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=20)
+	public void PageSave2() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit09");
+		fs.PageSave();
+		logger.info("Page saved");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=21)
+	public void PageQuery() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit07");
+		fs.pageQuery("Low");
+		fs.Alert2();
+		logger.info("Query raised");
+		driver.navigate().refresh();		
+	}
+	
+	@Test(priority=22)
+	public void Archive() throws IOException, InterruptedException
+	{
+		FormSummary fs = new FormSummary(driver);
+		fs.clickFormSummary();
+		fs.view("visit08");
+		fs.archive();
+		fs.Alert8();
+		logger.info("Archived");
+		driver.navigate().refresh();		
+	}
+
 
 }

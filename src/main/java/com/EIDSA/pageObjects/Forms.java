@@ -1,13 +1,19 @@
 package com.EIDSA.pageObjects;
 
+import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.AbstractComponents.AbstractComponent;
 
@@ -44,6 +50,10 @@ public class Forms extends AbstractComponent{
 	@CacheLookup
 	WebElement Search;
 	
+	@FindBy(xpath = "//tbody/tr[1]/td[9]/i[1]")
+	@CacheLookup
+	WebElement Archive;
+	
 	@FindBy(xpath = "//td[1]")
 	@CacheLookup
 	List<WebElement> tableSiteCode;
@@ -60,9 +70,13 @@ public class Forms extends AbstractComponent{
 	@CacheLookup
 	List<WebElement> tableStatus;
 	
-	@FindBy(xpath = "//td[7]")
+	@FindBy(xpath = "//td[8]")
 	@CacheLookup
 	List<WebElement> tableView;
+	
+	@FindBy(xpath = "//td[9]")
+	@CacheLookup
+	List<WebElement> tableArchive;
 	
 	public void clickForms() throws InterruptedException
 	{
@@ -210,7 +224,33 @@ public class Forms extends AbstractComponent{
 		}
 	}
 	
+	public void clickArchive() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		Archive.click();
+		Thread.sleep(3000);
+	}	
 	
+	public static boolean Alert1() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Are you sure you want to archive this form?"));
+			alert1.accept();
+			
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			Assert.assertTrue(alert.getText().contains("Form archived successfully"));
+			alert.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}	
+	}
 	
 	
 	

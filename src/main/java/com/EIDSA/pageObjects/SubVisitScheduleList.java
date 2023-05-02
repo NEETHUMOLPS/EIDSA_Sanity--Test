@@ -2,8 +2,15 @@ package com.EIDSA.pageObjects;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Locale;
+import java.io.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat; 
+import java.text.ParseException;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -169,7 +176,7 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	@FindBy(xpath="//td[7]")
 	@CacheLookup
-	List<WebElement> TableVisitDate;
+	List<WebElement> tableVisitDate;
 	
 	@FindBy(xpath="//td[10]")
 	@CacheLookup
@@ -328,10 +335,12 @@ public class SubVisitScheduleList extends AbstractComponent{
 		sel.selectByVisibleText("Planned");
 	}
 	
-	public void SearchVisitDate(String date1,String date2)
+	public void SearchVisitDate(String date1,String date2) throws InterruptedException
 	{
 		searchVisitDate1.sendKeys(date1);
-		searchVisitDate1.sendKeys(date2);
+		Thread.sleep(3000);
+		searchVisitDate2.sendKeys(date2);
+		Thread.sleep(3000);
 	}
 	
 	public void Search()
@@ -387,21 +396,54 @@ public class SubVisitScheduleList extends AbstractComponent{
 		return st;
 	}
 	
-	/*public Boolean visitDateSearchValidation(String date1,String date2) throws InterruptedException
+	public Boolean dateSearchValidation(String date) throws InterruptedException
 	{
 		Thread.sleep(3000);
 		boolean st = true;
-		int count =TableVisitDate.size();
+		int count =tableVisitDate.size();
 		if (count<1) 
 		{
 			st=false;
 		}
 		else 
 		{
-			for (int i=0; i<TableVisitDate.size();i++)
+			for (int i=0; i<tableVisitDate.size();i++)
 			{
-				String scode=TableVisitDate.get(i).getText();
-				if(!(date1 <= scode) && (date2 <= scode))
+				String scode=tableVisitDate.get(i).getText();
+				if (!(scode.contains(date))) 
+				{
+					st=false;
+					break;
+				}
+			}
+		}
+		return st;
+	}
+	
+		/*public Boolean dateSearchValidation() throws InterruptedException, ParseException
+		{
+		Thread.sleep(3000);
+		boolean st = true;
+		WebElement d1 = driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[3]/div/div/input[1]"));
+		String s1 = d1.getText();
+		WebElement d2 = driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[3]/div/div/input[2]"));
+		String s2 = d2.getText();
+		int count =tableVisitDate.size();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
+		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy",Locale.ENGLISH);
+		Date t1 = sdf.parse(s1);
+		Date t2 = sdf.parse(s2);
+		if (count<1) 
+		{
+			st=false;
+		}
+		else 
+		{
+			for (int i=0; i<tableVisitDate.size();i++)
+			{
+				String stat=tableVisitDate.get(i).getText();
+				Date t3 = sdf1.parse(stat);
+				 if((t3.after(t1) && (t3.before(t2))) || (t3.equals(t1) ||(t3.equals(t2))))
 				{
 					st=false;
 					break;

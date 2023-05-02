@@ -102,6 +102,8 @@ public class SubmitForm extends AbstractComponent{
 	@CacheLookup
 	WebElement Initials;
 	
+	
+	
 	public String errorMsg1()
 	{
 		elementWait(err1);
@@ -249,6 +251,31 @@ public class SubmitForm extends AbstractComponent{
 		Initials.clear();
 		Initials.sendKeys("Nee");
 		ReviewAndSubmit.click();
+	}
+	
+	
+	public void clickSiteCode(String code) throws InterruptedException
+	{
+		SiteIdCode.sendKeys(code);
+		Thread.sleep(3000);
+	}
+	
+	public void clickPatientScreeningNum(String num) throws InterruptedException
+	{
+		PatientScreeningNumber.sendKeys(num);
+		Thread.sleep(3000);
+	}
+
+	public void clickdate(String date) throws InterruptedException
+	{
+		VisitDate.sendKeys(date);
+		Thread.sleep(3000);
+	}
+	
+	public void clickintials(String in) throws InterruptedException
+	{
+		Initials.sendKeys(in);
+		Thread.sleep(3000);
 	}
 	
 	

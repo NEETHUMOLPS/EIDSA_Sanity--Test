@@ -1,7 +1,13 @@
 package com.EIDSA.testCases;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -62,6 +68,22 @@ public class TC_022_Sub_VisitScheduleList_Positive extends BaseClassTest{
 	}
 	
 	@Test(priority=4)
+	public void dateSearchValidation() throws IOException, InterruptedException, ParseException
+	{
+		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
+		sp.clickSubject();
+		sp.searchSiteCode("Demo05");
+		sp.findSubId("demo05");
+		sp.Search();
+		sp.SearchVisitDate("27-04-2023", "28-04-2023");
+		sp.Search();
+		Thread.sleep(8000);
+		sp.dateSearchValidation("27/04/2023");
+		Thread.sleep(3000);
+		logger.info("Date search validated ");	
+	}
+	
+	@Test(priority=5)
 	public void withdraw() throws IOException, InterruptedException
 	{
 		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
@@ -95,4 +117,5 @@ int rownum=XLUtility.getRowCount(path, "Sheet1");
 	
 	}
 	
+
 }

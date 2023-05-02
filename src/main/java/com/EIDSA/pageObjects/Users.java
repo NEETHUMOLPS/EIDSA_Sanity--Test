@@ -2,6 +2,7 @@ package com.EIDSA.pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -55,19 +56,28 @@ public class Users extends AbstractComponent{
 	
 	public void clickUsers() throws InterruptedException
 	{
+		
+		Thread.sleep(3000);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(3000);
+		elementWait(Users);
 		Users.click();
 		Thread.sleep(3000);
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("window.scrollBy(0,-200)");
+		Thread.sleep(5000);
 	}
 	
 	public void clickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
 		Thread.sleep(3000);
 	}
 	
 	public void SearchEmailOrName(String nm) throws InterruptedException
 	{
-		Thread.sleep(4000);
 		EmailOrName.sendKeys(nm);
 	}
 	

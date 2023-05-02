@@ -43,7 +43,16 @@
 <!--<class name="com.EIDSA.testCases.TC_047_VisitSummary_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_048_NurseDiary_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_049_GoogleFit_Positive"/>-->
-<class name="com.EIDSA.testCases.TC_050_IOTDevices_Positive"/>
+<!--<class name="com.EIDSA.testCases.TC_050_IOTDevices_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_051_IOTPatients_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_052_DataEntry_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_054_Template_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_055_DigitalForms_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_056_UnscheduledVisit_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_057_DocumentSummary_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_059_SentQuery_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_060_ReceivedQuery_Positive"/>-->
+<class name="com.EIDSA.testCases.TC_061_AllQuery_Positive"/>
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->

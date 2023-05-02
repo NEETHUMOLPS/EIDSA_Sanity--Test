@@ -127,7 +127,7 @@ public class IOT extends AbstractComponent{
 	public void clickSearch() throws InterruptedException
 	{
 		Thread.sleep(2000);
-		Search.sendKeys();
+		Search.click();
 	}
 	
 	public Boolean studyStatusValidation(String study) throws InterruptedException

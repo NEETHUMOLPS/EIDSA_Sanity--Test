@@ -82,6 +82,10 @@ public class SubjectSchedule extends AbstractComponent{
 	@CacheLookup
 	List<WebElement> tableView;
 	
+	@FindBy(xpath = "//td[7]")
+	@CacheLookup
+	List<WebElement> tableVisitDate;
+	
 	public void clickSubjectSchedule() throws InterruptedException
 	{
 		SubjectSchedule.click();
@@ -92,6 +96,14 @@ public class SubjectSchedule extends AbstractComponent{
 	{
 		Select sel=new Select(SiteCode);
 		sel.selectByVisibleText(sitecode);
+	}
+	
+	public void SearchVisitDate(String date1,String date2) throws InterruptedException
+	{
+		Date1.sendKeys(date1);
+		Thread.sleep(3000);
+		Date2.sendKeys(date2);
+		Thread.sleep(3000);
 	}
 	
 	public void searchSubId(String subId)
@@ -290,6 +302,30 @@ public class SubjectSchedule extends AbstractComponent{
 		} catch (NoAlertPresentException e) {
 			return false;
 		}	
+	}
+	
+	public Boolean dateSearchValidation(String date) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		boolean st = true;
+		int count =tableVisitDate.size();
+		if (count<1) 
+		{
+			st=false;
+		}
+		else 
+		{
+			for (int i=0; i<tableVisitDate.size();i++)
+			{
+				String scode=tableVisitDate.get(i).getText();
+				if (!(scode.contains(date))) 
+				{
+					st=false;
+					break;
+				}
+			}
+		}
+		return st;
 	}
 	
 	
