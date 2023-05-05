@@ -9,10 +9,9 @@
 <test name="EIDSA App Test">
 <parameter name="browser" value="chrome" />
 <classes>
-<!--<class name="com.EIDSA.testCases.TC_002_LoginTest_Negative"/> -->
+<!--<class name="com.EIDSA.testCases.TC_002_loginTest_Negative"/>--> 
 <!--<class name="com.EIDSA.testCases.TC_004_forgotPassword_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_008_Roles_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_010_rolePrivilege_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_008_roles_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_012_userPage_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_017_study_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_019_site_Negative"/>-->
@@ -25,7 +24,10 @@
 <!--<class name="com.EIDSA.testCases.TC_035_SubmitForm_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_041_SubjectSchedule_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_053_DataEntry_Negative"/>-->
-<class name="com.EIDSA.testCases.TC_058_FormSummary_Negative"/>
+<!--<class name="com.EIDSA.testCases.TC_058_FormSummary_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_063_GeneralQuery_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_65_SubjectTransfer_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_071_StudyVisit_Negative"/>-->
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->

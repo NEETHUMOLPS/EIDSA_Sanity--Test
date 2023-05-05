@@ -43,9 +43,9 @@ public class TC_037_Forms_Positive extends BaseClassTest {
 		fs.clickForms();
 		fs.searchSiteCode("Demo01");
 		fs.searchSubId("demo05");
-		fs.searchVisitName("01");
+		fs.searchVisitName("11");
 		fs.ClickSearch();
-		Assert.assertTrue(fs.visitNameSearchValidation("01"));
+		Assert.assertTrue(fs.visitNameSearchValidation("11"));
 		logger.info("Visit name search functionality verified");	
 		driver.navigate().refresh();
 	}
@@ -57,9 +57,9 @@ public class TC_037_Forms_Positive extends BaseClassTest {
 		fs.clickForms();
 		fs.searchSiteCode("Demo01");
 		fs.searchSubId("demo05");
-		fs.searchStat("New");
+		fs.searchStat("Verified");
 		fs.ClickSearch();
-		Assert.assertTrue(fs.statusSearchValidation("New"));
+		Assert.assertTrue(fs.statusSearchValidation("Verified"));
 		logger.info("Status search functionality verified");	
 		driver.navigate().refresh();
 	}
@@ -72,7 +72,7 @@ public class TC_037_Forms_Positive extends BaseClassTest {
 		fs.searchSiteCode("Demo01");
 		fs.searchSubId("demo05");
 		fs.ClickSearch();
-		fs.view("01");
+		fs.view("11");
 		logger.info("Form opened");
 		driver.navigate().refresh();
 	}

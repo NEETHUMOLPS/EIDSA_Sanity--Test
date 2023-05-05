@@ -18,7 +18,7 @@ public class TC_035_SubmitForm_Negative extends BaseClassTest {
 	{
 		SubmitForm fp = new SubmitForm(driver);
 		fp.clickSubmitForm();
-		fp.selectSubmitForm("01");
+		fp.selectSubmitForm("visit006");
 		fp.save();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(fp.errorMsg1(), "Please enter a value");
@@ -34,7 +34,7 @@ public class TC_035_SubmitForm_Negative extends BaseClassTest {
 	{
 		SubmitForm fp = new SubmitForm(driver);
 		fp.clickSubmitForm();
-		fp.selectSubmitForm("01");
+		fp.selectSubmitForm("visit006");
 		Thread.sleep(8000);
 		fp.clickSiteCode("j");
 		fp.clickPatientScreeningNum("j");

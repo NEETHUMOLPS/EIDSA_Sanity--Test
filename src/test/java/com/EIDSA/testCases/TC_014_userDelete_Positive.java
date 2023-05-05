@@ -22,26 +22,23 @@ public class TC_014_userDelete_Positive extends BaseClassTest {
 	@Test
 	public void userDelete() throws IOException, InterruptedException
 	{
-
-		Thread.sleep(5000);
-		JavascriptExecutor je = (JavascriptExecutor) driver;
-		je.executeScript("scroll(0, 900);");
-		Thread.sleep(6000);
 		UserPage up=new UserPage(driver);
-		WebElement element = driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/nav[1]/div[1]/ul[1]/li[7]/ul[1]/li[2]/a[1]"));
-		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		element.click();
-		Thread.sleep(5000);	
-		up.searchEmail("automationtesterabc@yopmail.com");
+		up.clickUser();
+		Thread.sleep(3000);	
+		up.searchEmail("automationterabcef@yopmail.com");
+		Thread.sleep(3000);	
 		up.searchClick();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/i[1]")).click();
+		//up.delete("automationtesterabc@yopmail.com");
+		Thread.sleep(3000);	
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 		wait.until(ExpectedConditions.alertIsPresent());
 		Alert alert = driver.switchTo().alert();
 		Assert.assertTrue(alert.getText().contains("Are you sure you want to delete this user?"));
 		alert.accept();
 		logger.info("User deleted successfully");
+		driver.navigate().refresh();
 	
 		
 	}

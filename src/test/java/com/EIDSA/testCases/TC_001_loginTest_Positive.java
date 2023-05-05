@@ -17,7 +17,8 @@ public class TC_001_loginTest_Positive extends BaseClass {
 		lp.setPassword(password);
 		logger.info("Enterd password");
 		lp.clickLogin();
-		String strUrl = driver.getCurrentUrl();
+		String title = driver.getTitle();
+		System.out.println(title);
 	    if(driver.getTitle().equals("eidsa"))
 		{
 			Assert.assertTrue(true);
@@ -30,6 +31,7 @@ public class TC_001_loginTest_Positive extends BaseClass {
 			logger.info("Login test failed");
 		}
 	}
+	
 
 }
 

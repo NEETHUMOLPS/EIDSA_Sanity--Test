@@ -34,13 +34,13 @@ public class RolePrivilege extends AbstractComponent{
 	@CacheLookup
 	WebElement ClickRole;
 	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/select")
+	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/select[1]")
 	@CacheLookup
 	WebElement SelectRole;
 	
 	@FindBy(xpath="//input[@id='selectall']")
 	@CacheLookup
-	WebElement Screens;
+	WebElement Screens1;
 	
 	@FindBy(xpath="//input[@id='ba37885a-e7ad-4e97-b717-c8146c9e637a']")
 	@CacheLookup
@@ -266,7 +266,7 @@ public class RolePrivilege extends AbstractComponent{
 	@CacheLookup
 	WebElement DMS;
 	
-	@FindBy(xpath="//button[contains(text(),'Save')]")
+	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[2]/div[2]/button")
 	@CacheLookup
 	WebElement Save;
 	
@@ -307,7 +307,7 @@ public class RolePrivilege extends AbstractComponent{
 	
 	public void clickScreen()
 	{
-		Screens.click();
+		Screens1.click();
 	}
 	
 	public void clickSave()
@@ -336,26 +336,46 @@ public class RolePrivilege extends AbstractComponent{
 		
 		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,700)");
+		jse.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(3000);
 		elementWait(rolePrivilege);
 		rolePrivilege.click();
+		Thread.sleep(3000);
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("window.scrollBy(0,-1000)");
 		Thread.sleep(3000);
 	}
 	
 	public void setRolePrivilege(String role) throws InterruptedException
 	{
 		Thread.sleep(3000);
-		Select sel=new Select(ClickRole);
+		Select sel=new Select(SelectRole);
 		sel.selectByVisibleText(role);
 		Thread.sleep(5000);
-		Screen.click();
+		Screens1.click();
 		Thread.sleep(4000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,1000)");
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("window.scrollBy(0,1000)");
 		elementWait(Save);
+		Thread.sleep(8000);
 		Save.click();
 		Thread.sleep(8000);
+	}
+	
+	public void clickSave_negative() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,1000)");
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("window.scrollBy(0,1000)");
+		elementWait(Save);
+		Thread.sleep(8000);
+		Save.click();
+		Thread.sleep(8000);
+		
 	}
 	
 	public static boolean Alert1() throws InterruptedException
@@ -377,7 +397,7 @@ public class RolePrivilege extends AbstractComponent{
 	{		
 		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1000)");
+		jse.executeScript("window.scrollBy(0,2000)");
 		elementWait(Save);
 		Save.click();
 		Thread.sleep(8000);

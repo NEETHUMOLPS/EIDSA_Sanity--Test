@@ -31,7 +31,9 @@ public class TC_020_Subject_Positive extends BaseClassTest {
 		SubjectPage sp = new SubjectPage(driver);
 		Thread.sleep(4000);
 		sp.clickSubject();
-		sp.verifySubject("demo01");
+		sp.searchSiteCode("Demo01");
+		sp.Search();
+		sp.verifySubject("demo02");
 		logger.info("Subject verified successfully");	
 		driver.navigate().refresh();
 	}
@@ -46,14 +48,16 @@ public class TC_020_Subject_Positive extends BaseClassTest {
 		sp.Search();
 		Assert.assertTrue(sp.siteCodeSearchValidation("Demo01"));
 		logger.info("Site code search functionality verified");
+		Thread.sleep(3000);
 		sp.searchSubjectId("demo222");
 		sp.Search();
 		Assert.assertTrue(sp.subIdeSearchValidation("demo222"));
 		logger.info("Subject Id search functionality verified");
+		Thread.sleep(3000);
 		sp.searchStatus("New");
 		sp.Search();
 		Assert.assertTrue(sp.statusSearchValidation("New"));
-		logger.info("Subject Id search functionality verified");	
+		logger.info("Status search functionality verified");	
 		Thread.sleep(5000);
 		driver.navigate().refresh();
 	}

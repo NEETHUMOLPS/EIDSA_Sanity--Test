@@ -206,11 +206,7 @@ public class SubjectPage extends AbstractComponent{
 		enrolmentDate.sendKeys(date);
 		country.click();
 		Thread.sleep(5000);
-		Select Country=new Select(country);
-		Country.selectByVisibleText("India");
 		investigator.click();
-		Select Investigator=new Select(investigator);
-		Investigator.selectByVisibleText("Neethu P S");
 		preVisit.clear();
 		preVisit.sendKeys(previsit);
 		postVisit.clear();
@@ -219,8 +215,6 @@ public class SubjectPage extends AbstractComponent{
 		postCode.sendKeys(pc);
 		language.click();
 		Thread.sleep(5000);
-		Select Language=new Select(language);
-		Language.selectByVisibleText("English");
 		subjectNotes.sendKeys(notes);
 		save.click();	
 	}
@@ -437,7 +431,7 @@ public class SubjectPage extends AbstractComponent{
 			{
 				Thread.sleep(4000);
 				tableAuditTrail.get(i).click();
-				WebElement e = driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[3]/div[2]/div[3]/div/div[2]/div/table/tbody/tr[1]/td[1]/span/strong"));
+				WebElement e = driver.findElement(By.xpath("//strong[contains(text(),'Neethu P S')]"));
 				String actualText=e.getText();
 				String expText="Neethu P S";
 				

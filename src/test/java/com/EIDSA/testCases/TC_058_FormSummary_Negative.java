@@ -11,7 +11,7 @@ import Base.BaseClassTest;
 
 public class TC_058_FormSummary_Negative extends BaseClassTest {
 	
-	/*@Test(priority=1)
+	@Test(priority=1)
 	public void negative1_documentUpload() throws IOException, InterruptedException
 	{
 		FormSummary fs = new FormSummary(driver);
@@ -62,20 +62,20 @@ public class TC_058_FormSummary_Negative extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit09");
+		fs.view("visit 06");
 		fs.sign_Negative1();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(fs.pageerr1(), "Please enter a valid email id");
 		softAssert.assertAll();
         logger.info("Negative test passed");
-	}*/
+	}
 	
 	@Test(priority=5)
 	public void negative_Sign2() throws IOException, InterruptedException
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit09");
+		fs.view("visit 06");
 		fs.sign_Negative2();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(fs.pageerr2(), "Please enter your password");
@@ -89,7 +89,7 @@ public class TC_058_FormSummary_Negative extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("visit 06");
 		fs.OpenQueryReply_Negative();
 		fs.Alert10();
         logger.info("Negative test passed");

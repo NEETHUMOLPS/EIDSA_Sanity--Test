@@ -9,18 +9,17 @@
 <test name="EIDSA App Test">
 <parameter name="browser" value="chrome" />
 <classes>
-<!--<class name="com.EIDSA.testCases.TC_001_loginTest_Positive"/> -->
+<!--<class name="com.EIDSA.testCases.TC_001_loginTest_Positive"/>--> 
 <!--<class name="com.EIDSA.testCases.TC_003_forgotPassword_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_005_roleCreation_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_005_roleCreation_SearchFunctionality_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_006_roleEdit_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_007_roleDelete_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_009_rolePrivilege_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_011_userCreation_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_013_userEdit_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_014_userDelete_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_015_auditTrail_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_016_study_create_verify_search_auditTrail_edit_delete_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_018_site_create_verify_search_auditTrail_edit_action_delete_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_016_study_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_018_site_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_020_Subject_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_022_Sub_VisitScheduleList_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_24_PatientLogin_Positive"/>-->
@@ -52,7 +51,14 @@
 <!--<class name="com.EIDSA.testCases.TC_057_DocumentSummary_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_059_SentQuery_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_060_ReceivedQuery_Positive"/>-->
-<class name="com.EIDSA.testCases.TC_061_AllQuery_Positive"/>
+<!--<class name="com.EIDSA.testCases.TC_061_AllQuery_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_062_GeneralQuery_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_064_SubjectTransfer_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_066_FormTransfer_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_070_StudyVisit_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_068_DesignForm_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_072_DocumentApproval_Positive"/>-->
+<class name="com.EIDSA.testCases.TC_073_Folder_Document_Positive"/>
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->

@@ -19,10 +19,10 @@ public class TC_028_VisitTemplate_Positive extends BaseClassTest {
 		vp.SiteCode("Demo01");
 		vp.SubId("demo05");
 		Thread.sleep(3000);
-		vp.SearchVisitName("05");		
+		vp.SearchVisitName("visit001");		
 		vp.clickSearch();
 		Thread.sleep(4000);
-		Assert.assertTrue(vp.visitNameSearchValidation("05"));
+		Assert.assertTrue(vp.visitNameSearchValidation("visit001"));
 		logger.info("Visit name search validation successfully completed");	
 		driver.navigate().refresh();		
 	}
@@ -35,10 +35,10 @@ public class TC_028_VisitTemplate_Positive extends BaseClassTest {
 		vp.SiteCode("Demo01");
 		vp.SubId("demo05");
 		Thread.sleep(3000);
-		vp.SearchVisitNo("visit05");
+		vp.SearchVisitNo("new01");
 		vp.clickSearch();
 		Thread.sleep(4000);
-		Assert.assertTrue(vp.visitNumSearchValidation("visit05"));
+		Assert.assertTrue(vp.visitNumSearchValidation("new01"));
 		logger.info("Visit number search validation successfully completed");	
 		driver.navigate().refresh();		
 	}
@@ -51,10 +51,10 @@ public class TC_028_VisitTemplate_Positive extends BaseClassTest {
 		vp.SiteCode("Demo01");
 		vp.SubId("demo05");
 		Thread.sleep(3000);
-		vp.SearchVisitName("05");
-		vp.SearchVisitNo("visit05");
+		vp.SearchVisitName("visit08");
+		vp.SearchVisitNo("008");
 		vp.clickSearch();
-		vp.edit("05");
+		vp.edit("visit08");
 		vp.Template("Screening Visit-hy-1.0");
 		vp.AssignAlert1();
 		logger.info("Template assigned successfully");

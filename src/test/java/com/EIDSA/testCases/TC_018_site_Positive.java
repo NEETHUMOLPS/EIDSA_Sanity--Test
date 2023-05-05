@@ -2,6 +2,7 @@ package com.EIDSA.testCases;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,7 +11,7 @@ import com.EIDSA.utilities.XLUtility;
 
 import Base.BaseClassTest;
 
-public class TC_018_site_create_verify_search_auditTrail_edit_action_delete_Positive extends BaseClassTest {
+public class TC_018_site_Positive extends BaseClassTest {
 
 	@Test(priority=1, dataProvider = "SiteData")
 	public void siteCreation(String sitecode,String sitename,String sitecontactename,String sitecontactemail,String noofsubject,String studynotes) throws IOException, InterruptedException
@@ -21,6 +22,7 @@ public class TC_018_site_create_verify_search_auditTrail_edit_action_delete_Posi
 		sp.createSite(sitecode,sitename,sitecontactename,sitecontactemail,noofsubject,studynotes);
 		sp.siteAlert();
 		logger.info("Site created successfully");
+		driver.navigate().refresh();
 	}
 		
 	@Test(priority=2)
@@ -29,8 +31,12 @@ public class TC_018_site_create_verify_search_auditTrail_edit_action_delete_Posi
 		SitePage sp = new SitePage(driver);
 		Thread.sleep(4000);
 		sp.clickSite();
-		sp.verifyStudy("AT011");
+		sp.searchSiteCode("CT011");
+		sp.siteSearch();
+		Thread.sleep(4000);
+		sp.verifySite("CT011");
 		logger.info("Site verified successfully");	
+		driver.navigate().refresh();
 	}
 	@Test(priority=3)
 	public void searchValidation() throws IOException, InterruptedException
@@ -38,21 +44,22 @@ public class TC_018_site_create_verify_search_auditTrail_edit_action_delete_Posi
 		SitePage sp = new SitePage(driver);
 		Thread.sleep(4000);
 		sp.clickSite();
-		sp.searchSiteCode("AT011");
+		sp.searchSiteCode("CT011");
 		sp.siteSearch();
 		Thread.sleep(4000);
-		Assert.assertTrue(sp.siteCodeSearchValidation("AT011"));
+		Assert.assertTrue(sp.siteCodeSearchValidation("CT011"));
 		logger.info("Site code search functionality verified");
-		sp.searchSiteName("Automation demo01");
+		sp.searchSiteName("CT012");
 		sp.siteSearch();
 		Thread.sleep(4000);
-		Assert.assertTrue(sp.siteNameSearchValidation("Automation demo01"));
+		Assert.assertTrue(sp.siteNameSearchValidation("CT012"));
 		logger.info("Site name search functionality verified");
 		sp.searchSiteStatus("New");
 		sp.siteSearch();
 		Thread.sleep(4000);
 		Assert.assertTrue(sp.siteStatusSearchValidation("New"));
-		logger.info("Site status search functionality verified");		
+		logger.info("Site status search functionality verified");	
+		driver.navigate().refresh();
 	}
 	@Test(priority=4)
 	public void siteEdit() throws IOException, InterruptedException
@@ -60,12 +67,16 @@ public class TC_018_site_create_verify_search_auditTrail_edit_action_delete_Posi
 		SitePage sp = new SitePage(driver);
 		Thread.sleep(4000);
 		sp.clickSite();
-		sp.editSiteIcon("AT011");
+		sp.searchSiteCode("CT011");
+		sp.siteSearch();
 		Thread.sleep(4000);
-		sp.editSite("Automation demo0111");
+		sp.editSiteIcon("CT011");
+		Thread.sleep(4000);
+		sp.editSite("CT0122");
 		sp.editAlert();
 		logger.info("Study updated successfully");
 		Thread.sleep(5000);
+		driver.navigate().refresh();
 	}
 	@Test(priority=5)
 	public void siteAuditTrail() throws IOException, InterruptedException
@@ -73,8 +84,12 @@ public class TC_018_site_create_verify_search_auditTrail_edit_action_delete_Posi
 		SitePage sp = new SitePage(driver);
 		Thread.sleep(4000);
 		sp.clickSite();
-		sp.auditTrail("AT011");
+		sp.searchSiteCode("CT011");
+		sp.siteSearch();
+		Thread.sleep(4000);
+		sp.auditTrail("CT011");
 		logger.info("Audit trail verified");
+		driver.navigate().refresh();
 	}
 	
 	@Test(priority=6)
@@ -84,46 +99,82 @@ public class TC_018_site_create_verify_search_auditTrail_edit_action_delete_Posi
 		Thread.sleep(4000);
 		sp.clickSite();
 		sp.clickCreateSite();
-		sp.duplicateSite("AT011");
+		sp.duplicateSite("CT011");
 		sp.clickSave();
 		sp.duplicateAlert();
 		logger.info("Site code already exists");
+		driver.navigate().refresh();
 	}
 	
 	@Test(priority=7)
-	public void siteAction() throws IOException, InterruptedException
+	public void siteActionOpen() throws IOException, InterruptedException
 	{	
 		SitePage sp = new SitePage(driver);
 		Thread.sleep(4000);
 		sp.clickSite();
-		sp.siteActionOpen("AT011");
+		sp.searchSiteCode("CT011");
+		sp.siteSearch();
+		Thread.sleep(4000);
+		sp.siteActionOpen("CT011");
 		logger.info("Site opened");
-		Thread.sleep(8000);
-		sp.siteActionComplete("AT011");
+		driver.navigate().refresh();
+	}
+		
+	@Test(priority=8)
+	public void siteActionComplete() throws IOException, InterruptedException
+	{	
+		SitePage sp = new SitePage(driver);
+		Thread.sleep(4000);
+		sp.clickSite();
+		sp.searchSiteCode("BT003");
+		sp.siteSearch();
+		Thread.sleep(4000);
+		sp.siteActionComplete("BT003");
 		logger.info("Site completed");
 		Thread.sleep(8000);
-		sp.siteActionTerminate("AT011");
-		logger.info("Site terminated");
+		driver.navigate().refresh();
 	}
-	@Test(priority=7)
+	
+	@Test(priority=8)
+	public void siteActionTerminate() throws IOException, InterruptedException
+	{
+		SitePage sp = new SitePage(driver);
+		Thread.sleep(4000);
+		sp.clickSite();
+		sp.searchSiteCode("BT004");
+		sp.siteSearch();
+		Thread.sleep(4000);
+		sp.siteActionTerminate("BT004");
+		logger.info("Site terminated");
+		driver.navigate().refresh();
+	}
+	@Test(priority=9)
 	public void siteDelete() throws IOException, InterruptedException
 	{	
 		SitePage sp = new SitePage(driver);
 		Thread.sleep(4000);
 		sp.clickSite();
-		sp.delSiteIcon("AT011");
+		sp.searchSiteCode("BT002");
+		sp.siteSearch();
+		Thread.sleep(4000);
+		sp.delSiteIcon("BT002");
 		sp.deleteAlert();
 		logger.info("Site deleted");
+		driver.navigate().refresh();
 	}	
-	@Test(priority=8)
+	@Test(priority=10)
 	public void siteDeleteWithPatient() throws IOException, InterruptedException
 	{	
 		SitePage sp = new SitePage(driver);
 		Thread.sleep(4000);
 		sp.clickSite();
+		sp.searchSiteCode("UiVision site01");
+		sp.siteSearch();
+		Thread.sleep(4000);
 		sp.delSiteIcon("UiVision site01");
 		sp.deleteSiteWithPatientsAlert();
 		logger.info("Site having patients cannot be deleted");
+		driver.navigate().refresh();
 	}
 	
 	

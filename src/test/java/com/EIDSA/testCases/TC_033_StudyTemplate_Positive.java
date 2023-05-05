@@ -16,7 +16,7 @@ public class TC_033_StudyTemplate_Positive extends BaseClassTest {
 		StudyTemplate st = new StudyTemplate(driver);
 		st.clickStudyTemplate();
 		st.selectStudy("Trial study");
-		st.clickSelect("New form");
+		st.clickSelect("Fitness Activity");
 		st.save();
 		st.Alert1();
 		logger.info("Study template updated successfully");

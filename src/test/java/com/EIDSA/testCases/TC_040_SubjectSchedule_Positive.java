@@ -16,14 +16,14 @@ public class TC_040_SubjectSchedule_Positive extends BaseClassTest {
 	{
 		SubjectSchedule fs = new SubjectSchedule(driver);
 		fs.clickSubjectSchedule();
-		fs.searchSiteCode("Demo01");
+		fs.searchSiteCode("08");
 		Thread.sleep(3000);
-		fs.searchSubId("demo05");
+		fs.searchSubId("02");
 		Thread.sleep(3000);
 		fs.ClickSearch();
 		Thread.sleep(3000);
-		Assert.assertTrue(fs.siteCodeSearchValidation("Demo01"));
-		Assert.assertTrue(fs.subjectIdSearchValidation("demo05"));
+		Assert.assertTrue(fs.siteCodeSearchValidation("08"));
+		Assert.assertTrue(fs.subjectIdSearchValidation("02"));
 		logger.info("Site code and Subject Id search functionality verified");		
 		driver.navigate().refresh();
 	}
@@ -33,11 +33,11 @@ public class TC_040_SubjectSchedule_Positive extends BaseClassTest {
 	{
 		SubjectSchedule fs = new SubjectSchedule(driver);
 		fs.clickSubjectSchedule();
-		fs.searchSiteCode("Demo01");
+		fs.searchSiteCode("08");
 		Thread.sleep(3000);
-		fs.searchSubId("demo05");
+		fs.searchSubId("02");
 		Thread.sleep(3000);
-		fs.searchVisitName("03");
+		fs.searchVisitName("visit 03");
 		fs.ClickSearch();
 		Assert.assertTrue(fs.visitNameSearchValidation("03"));
 		logger.info("Visit name search functionality verified");		
@@ -49,9 +49,9 @@ public class TC_040_SubjectSchedule_Positive extends BaseClassTest {
 	{
 		SubjectSchedule fs = new SubjectSchedule(driver);
 		fs.clickSubjectSchedule();
-		fs.searchSiteCode("Demo01");
+		fs.searchSiteCode("08");
 		Thread.sleep(3000);
-		fs.searchSubId("demo05");
+		fs.searchSubId("02");
 		Thread.sleep(3000);
 		fs.searchStatus("Completed");
 		fs.ClickSearch();
@@ -65,13 +65,13 @@ public class TC_040_SubjectSchedule_Positive extends BaseClassTest {
 	{
 		SubjectSchedule fs = new SubjectSchedule(driver);
 		fs.clickSubjectSchedule();
-		fs.searchSiteCode("Demo01");
+		fs.searchSiteCode("08");
 		Thread.sleep(3000);
-		fs.searchSubId("demo05");
+		fs.searchSubId("02");
 		Thread.sleep(3000);
-		fs.SearchVisitDate("27-04-2023", "28-04-2023");
+		fs.SearchVisitDate("04-05-2023", "04-05-2023");
 		fs.ClickSearch();
-		fs.dateSearchValidation("27/04/2023");
+		fs.dateSearchValidation("04/05/2023");
 		Thread.sleep(3000);
 		logger.info("Date search validated ");	
 	}
@@ -81,12 +81,12 @@ public class TC_040_SubjectSchedule_Positive extends BaseClassTest {
 	{
 		SubjectSchedule fs = new SubjectSchedule(driver);
 		fs.clickSubjectSchedule();
-		fs.searchSiteCode("Demo01");
+		fs.searchSiteCode("08");
 		Thread.sleep(3000);
-		fs.searchSubId("demo05");
+		fs.searchSubId("02");
 		Thread.sleep(3000);
 		fs.ClickSearch();
-		fs.view("03");
+		fs.view("visit 06");
 		logger.info("Form opened");
 	}
 

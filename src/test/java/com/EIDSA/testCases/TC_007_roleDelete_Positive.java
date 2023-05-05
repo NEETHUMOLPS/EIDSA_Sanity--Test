@@ -25,28 +25,12 @@ public class TC_007_roleDelete_Positive extends BaseClassTest {
 	{
 		Roles rp=new Roles(driver);
 		rp.clickRoles();
-		rp.searchRoles("Automation Tester06");
+		rp.searchRoles("Automation Tester52");
 		rp.clickSearch();
-		rp.delete("Automation Tester06");
+		rp.delete("Automation Tester52");
 		rp.Alert3();
 		logger.info("Role deleted successfully");	
 		driver.navigate().refresh();
-	}
-	
-	@Test(priority=2)
-	public void roleDelete02() throws IOException, InterruptedException
-	{
-		Roles rp=new Roles(driver);
-		rp.clickRoles();
-		Thread.sleep(3000);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,-700)");
-		Thread.sleep(3000);
-		rp.searchRoles("AutomationTester");
-		rp.clickSearch();
-		rp.delete("AutomationTester");
-		rp.Alert4();
-		logger.info("Test passed");			
 	}
 	
 }

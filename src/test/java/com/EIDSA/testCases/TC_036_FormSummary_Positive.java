@@ -69,10 +69,10 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.searchSiteCode("Demo01");
-		fs.searchSubId("demo05");
+		fs.searchSiteCode("08");
+		fs.searchSubId("01");
 		fs.ClickSearch();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		logger.info("Form opened");
 		driver.navigate().refresh();
 	}
@@ -82,7 +82,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.viewDocuments();
 		logger.info("Document opened");
 		driver.navigate().refresh();
@@ -94,7 +94,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.downloadDocuments();
 		logger.info("Document downloaded");
 		driver.navigate().refresh();
@@ -106,7 +106,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.deleteDocuments();
 		fs.Alert1();
 		logger.info("Document deleted");
@@ -118,7 +118,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.downloadpdf();
 		logger.info("PDF downloaded");
 		driver.navigate().refresh();		
@@ -129,7 +129,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.formQuery("Low");
 		fs.Alert2();
 		logger.info("Query raised");
@@ -141,7 +141,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.OpenQueryViewform();
 		logger.info("Form opened");
 		driver.navigate().refresh();		
@@ -152,7 +152,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.OpenQueryExportPdf();
 		logger.info("PDF exported");
 		driver.navigate().refresh();		
@@ -163,7 +163,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.OpenQueryReply();
 		fs.Alert3();
 		logger.info("Message has sent");
@@ -175,7 +175,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.OpenQueryClose();
 		fs.Alert4();
 		logger.info("Query closed");
@@ -187,7 +187,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.OpenQueryReplyAndClose();
 		fs.Alert5();
 		logger.info("Replied and closed");
@@ -199,7 +199,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.closedquery();
 		logger.info("Opened closed query");
 		driver.navigate().refresh();		
@@ -210,7 +210,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit08");
+		fs.view("visit 05");
 		fs.verify();
 		fs.Alert9();
 		logger.info("Verified");
@@ -222,7 +222,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("visit 06");
 		fs.verify();
 		fs.Alert7();
 		logger.info("Verified");
@@ -234,7 +234,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.sign();
 		fs.Alert6();
 		logger.info("Form Signed");
@@ -246,7 +246,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit09");
+		fs.view("visit 03");
 		fs.PageSave();
 		logger.info("Page saved");
 		driver.navigate().refresh();		
@@ -257,7 +257,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit07");
+		fs.view("Visit 2");
 		fs.pageQuery("Low");
 		fs.Alert2();
 		logger.info("Query raised");
@@ -269,7 +269,7 @@ public class TC_036_FormSummary_Positive extends BaseClassTest {
 	{
 		FormSummary fs = new FormSummary(driver);
 		fs.clickFormSummary();
-		fs.view("visit08");
+		fs.view("visit 04");
 		fs.archive();
 		fs.Alert8();
 		logger.info("Archived");

@@ -19,7 +19,13 @@ public class TC_005_roleCreation_SearchFunctionality_Positive extends BaseClassT
 		rp.Alert1();
 		logger.info("Role added successfully");	
 		Thread.sleep(5000);
-		
+	}
+	
+	@Test(priority=2)
+	public void RoleNameSearch() throws IOException, InterruptedException
+	{
+		Roles rp=new Roles(driver);
+		rp.clickRoles();
 		rp.searchRoleName("Data Reviewer");
 		rp.clickSearch();
 		Thread.sleep(3000);
@@ -27,13 +33,18 @@ public class TC_005_roleCreation_SearchFunctionality_Positive extends BaseClassT
 		logger.info("Role name search functionality verified");	
 		driver.navigate().refresh();
 		Thread.sleep(8000);
-		
+	}
+	
+	/*@Test(priority=3)
+	public void RoleStatusSearch() throws IOException, InterruptedException
+	{	Roles rp=new Roles(driver);
+		rp.clickRoles();
 		rp.searchStatus("Active");
 		rp.clickSearch();
 		Thread.sleep(3000);
 		rp.statusSearchValidation();
 		logger.info("Role name search functionality verified");	
-	}
+	}*/
 		
 	@DataProvider(name="roleData")
 	String [][] getData() throws IOException

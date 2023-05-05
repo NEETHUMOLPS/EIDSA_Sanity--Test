@@ -19,7 +19,7 @@ public class TC_009_rolePrivilege_Positive extends BaseClassTest {
 		RolePrivilege rp=new RolePrivilege(driver);
 		Thread.sleep(3000);
 		rp.clickRolePrivilege();
-		rp.setRolePrivilege("AutomationTester");
+		rp.setRolePrivilege("Internal");
 		rp.Alert1();
 		logger.info("Role privilege added successfully");   
 	}

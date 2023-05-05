@@ -116,13 +116,13 @@ public class DocumentSummary extends AbstractComponent{
 		
 		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,200)");
+		jse.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(3000);
 		elementWait(DocumentSummary);
 		DocumentSummary.click();
 		Thread.sleep(3000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("window.scrollBy(0,-200)");
+		jse1.executeScript("window.scrollBy(0,-500)");
 		Thread.sleep(5000);
 	}
 	

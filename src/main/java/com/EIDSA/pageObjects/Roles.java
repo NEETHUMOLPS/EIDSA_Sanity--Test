@@ -108,11 +108,14 @@ public class Roles extends AbstractComponent{
 		
 		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,700)");
+		jse.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(3000);
 		elementWait(Roles);
 		Roles.click();
 		Thread.sleep(3000);
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("window.scrollBy(0,-1000)");
+		Thread.sleep(4000);
 	}
 	
 	public void createRoles(String rolename,String des) throws InterruptedException
@@ -136,14 +139,17 @@ public class Roles extends AbstractComponent{
 	
 	public void searchRoleName(String name) throws InterruptedException
 	{
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		RoleNameSearch.sendKeys(name);
+		Thread.sleep(4000);
 	}
 	
 	public void searchStatus(String stat) throws InterruptedException
 	{
+		Thread.sleep(4000);
 		Select sel=new Select(Status);
 		sel.selectByVisibleText(stat);
+		Thread.sleep(4000);
 	}
 	
 	public static boolean Alert1() throws InterruptedException
@@ -188,7 +194,7 @@ public class Roles extends AbstractComponent{
 			if(text.contains(rolename))
 			{
 				tableEdit.get(i).click();
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				break;
 			}
 		}
@@ -200,12 +206,16 @@ public class Roles extends AbstractComponent{
 		Search.click();
 		Thread.sleep(3000);
 		RoleDescription.click();
+		Thread.sleep(4000);
 		RoleDescription.clear();
+		Thread.sleep(4000);
 		RoleDescription.sendKeys(des);	
+		Thread.sleep(4000);
 	}
 	
 	public void clickSubmit() throws InterruptedException
 	{
+		Thread.sleep(4000);
 		Thread.sleep(3000);
 		Submit.click();
 	}

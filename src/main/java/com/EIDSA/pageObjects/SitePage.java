@@ -190,7 +190,7 @@ public class SitePage extends AbstractComponent{
 		save.click();
 	}
 	
-	public boolean verifyStudy(String sitecode) throws InterruptedException 
+	public boolean verifySite(String sitecode) throws InterruptedException 
 	{
 		Thread.sleep(2000);
 		boolean site=false;
@@ -232,6 +232,7 @@ public class SitePage extends AbstractComponent{
 			if(text.equals(sitecode))
 			{
 				tablesiteEdit.get(i).click();
+				Thread.sleep(3000);
 				break;	
 			}
 		}
@@ -355,6 +356,11 @@ public class SitePage extends AbstractComponent{
 			Alert alert2 = driver.switchTo().alert();
 			Assert.assertTrue(alert2.getText().contains("This site contains 1 or more patients, sites with patients cannot be deleted"));
 			alert2.accept();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			Assert.assertTrue(alert.getText().contains("Deleted successfully."));
+			alert.accept();
 			return true;
 		} catch (NoAlertPresentException e) {
 			return false;
@@ -461,6 +467,7 @@ public class SitePage extends AbstractComponent{
 			if(sitelist.contains(sid))
 			{
 				tableAction.get(i).click();
+				Thread.sleep(3000);
 				Open.click();
 				WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
 				wait1.until(ExpectedConditions.alertIsPresent());
@@ -481,6 +488,7 @@ public class SitePage extends AbstractComponent{
 			if(sitelist.contains(sid))
 			{
 				tableAction.get(i).click();
+				Thread.sleep(3000);
 				Terminate.click();
 				WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
 				wait1.until(ExpectedConditions.alertIsPresent());
@@ -502,6 +510,7 @@ public class SitePage extends AbstractComponent{
 			if(sitelist.contains(sid))
 			{
 				tableAction.get(i).click();
+				Thread.sleep(3000);
 				Complete.click();
 				WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
 				wait1.until(ExpectedConditions.alertIsPresent());
@@ -513,6 +522,8 @@ public class SitePage extends AbstractComponent{
 				Alert alert = driver.switchTo().alert();
 				Assert.assertTrue(alert.getText().contains("Site completed successfully."));
 				alert.accept();
+				
+				
 				break;
 			}
 		}

@@ -18,10 +18,10 @@ public class TC_029_VisitTemplate_Negative extends BaseClassTest {
 		vp.SiteCode("Demo01");
 		vp.SubId("demo05");
 		Thread.sleep(3000);
-		vp.SearchVisitName("05");
-		vp.SearchVisitNo("visit05");
+		vp.SearchVisitName("visit08");
+		vp.SearchVisitNo("008");
 		vp.clickSearch();
-		vp.edit("05");
+		vp.edit("visit08");
 		vp.clickAssign();
 		vp.AssignAlert2();
 		logger.info("Negative test passed");

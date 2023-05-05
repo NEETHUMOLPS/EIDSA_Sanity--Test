@@ -17,7 +17,7 @@ public class TC_034_SubmitForm_Positive extends BaseClassTest {
 	{
 		SubmitForm fp = new SubmitForm(driver);
 		fp.clickSubmitForm();
-		fp.selectSubmitForm("01");
+		fp.selectSubmitForm("visit006");
 		fp.fillFormSave();
 		fp.Alert1();
 		logger.info("Form saved successfully");		
@@ -30,7 +30,7 @@ public class TC_034_SubmitForm_Positive extends BaseClassTest {
 	{
 		SubmitForm fp = new SubmitForm(driver);
 		fp.clickSubmitForm();
-		fp.selectSubmitForm("01");
+		fp.selectSubmitForm("visit006");
 		fp.fillFormReviewAndSubmit();
 		fp.Alert2();
 		logger.info("Form submitted successfully");	
