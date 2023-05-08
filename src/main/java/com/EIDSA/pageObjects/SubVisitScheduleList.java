@@ -271,7 +271,7 @@ public class SubVisitScheduleList extends AbstractComponent{
 		visitDate.sendKeys(date);
 		visitTemplate.click();
 		Select temp=new Select(visitTemplate);
-		temp.selectByVisibleText("Patient visit--1");
+		temp.selectByVisibleText("Case Report-en-1.0");
 		save.click();	
 		Thread.sleep(3000);
 	}

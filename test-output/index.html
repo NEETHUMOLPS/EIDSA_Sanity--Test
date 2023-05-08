@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Medical_Application" class="navigator-link">
-              <span class="suite-name border-passed">Medical Application</span>
+              <span class="suite-name border-failed">Medical Application</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Medical_Application" class="hide-methods failed suite-Medical_Application"> (hide)</a> <!-- hide-methods failed suite-Medical_Application -->
+                      <a href="#" panel-name="suite-Medical_Application" class="show-methods failed suite-Medical_Application"> (show)</a> <!-- show-methods failed suite-Medical_Application -->
+                    </span>
+                    <div class="method-list-content failed suite-Medical_Application">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Medical_Application" title="com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive" class="method navigator-link" hash-for-method="UserPrivilege">UserPrivilege</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Medical_Application -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +118,7 @@
                     <div class="method-list-content passed suite-Medical_Application">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Medical_Application" title="com.EIDSA.testCases.TC_073_Folder_Document_Positive" class="method navigator-link" hash-for-method="Document">Document</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Medical_Application" title="com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive" class="method navigator-link" hash-for-method="RolePrivilege">RolePrivilege</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Medical_Application -->
@@ -119,17 +133,54 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Medical_Application" class="panel Medical_Application">
-          <div class="suite-Medical_Application-class-passed">
+          <div class="suite-Medical_Application-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.EIDSA.testCases.TC_073_Folder_Document_Positive</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Document">
-                  </a> <!-- Document -->
-                  <span class="method-name">Document</span>
+                  <a name="UserPrivilege">
+                  </a> <!-- UserPrivilege -->
+                  <span class="method-name">UserPrivilege</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;multiselect-caret&quot;&gt;&lt;/span&gt; is not clickable at point (1105, 167). Other element would receive the click: &lt;div tabindex=&quot;0&quot; class=&quot;multiselect multiselect-theme&quot; data-v-261d7ab2=&quot;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=112.0.5615.139)
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e19e990adc3dc1a30b91988936db2062, clickElement {id=a8986106-472c-4ffa-83fd-65bce91bea5f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.139, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49403/devtoo..., se:cdpVersion: 112.0.5615.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (e19e990adc3dc1a30b91988936db2062)] -&gt; xpath: //*[@id=&quot;page-wrapper&quot;]/div[3]/div/div/div[1]/div/span]
+Session ID: e19e990adc3dc1a30b91988936db2062
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive.UserPrivilege(TC_0001_IntegrationTesting_Positive.java:105)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Medical_Application-class-failed -->
+          <div class="suite-Medical_Application-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="RolePrivilege">
+                  </a> <!-- RolePrivilege -->
+                  <span class="method-name">RolePrivilege</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -150,7 +201,7 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;EIDSA App Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.EIDSA.testCases.TC_073_Folder_Document_Positive&quot;/&gt;
+      &lt;class name=&quot;com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- EIDSA App Test --&gt;
 &lt;/suite&gt; &lt;!-- Medical Application --&gt;
@@ -190,16 +241,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Document')
-data.setCell(0, 2, 'com.EIDSA.testCases.TC_073_Folder_Document_Positive')
-data.setCell(0, 3, 52454);
+data.setCell(0, 1, 'RolePrivilege')
+data.setCell(0, 2, 'com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive')
+data.setCell(0, 3, 52206);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'UserPrivilege')
+data.setCell(1, 2, 'com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive')
+data.setCell(1, 3, 20574);
 window.suiteTableData['Medical_Application']= { tableData: data, tableDiv: 'times-div-Medical_Application'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 52 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Medical_Application">
               </div> <!-- times-div-Medical_Application -->
             </div> <!-- times-div -->
@@ -225,14 +280,20 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.EIDSA.testCases.TC_073_Folder_Document_Positive</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">Document</span>
-                <span class="method-start">24202 ms</span>
+                <span class="method-name">RolePrivilege</span>
+                <span class="method-start">18428 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">UserPrivilege</span>
+                <span class="method-start">70737 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

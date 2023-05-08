@@ -58,15 +58,15 @@ public class SubmitForm extends AbstractComponent{
 	@CacheLookup
 	WebElement ReviewAndSubmit;
 	
-	@FindBy(xpath = "//*[@id=\"formElements mt-3 \"]/form/div/div/div/div/div[2]/div/div[1]/div/div/input")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")
 	@CacheLookup
 	WebElement SiteIdCode;
 	
-	@FindBy(xpath = "//*[@id=\"formElements mt-3 \"]/form/div/div/div/div/div[2]/div/div[2]/div/div/input")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]")
 	@CacheLookup
 	WebElement PatientScreeningNumber;
 	
-	@FindBy(xpath = "//*[@id=\"formElements mt-3 \"]/form/div/div/div/div/div[11]/div/div[1]/div/div/input")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/div[1]/div[1]/div[1]/input[1]")
 	@CacheLookup
 	WebElement VisitDate;
 	
@@ -98,7 +98,7 @@ public class SubmitForm extends AbstractComponent{
 	@CacheLookup
 	WebElement err7;
 	
-	@FindBy(xpath = "//*[@id=\"formElements mt-3 \"]/form/div/div/div/div/div[11]/div/div[2]/div/div/input")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/div[2]/div[1]/div[1]/input[1]")
 	@CacheLookup
 	WebElement Initials;
 	
@@ -182,6 +182,7 @@ public class SubmitForm extends AbstractComponent{
 	
 	public void reviewAndSubmit() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(3000);
@@ -219,38 +220,52 @@ public class SubmitForm extends AbstractComponent{
 	
 	public void fillFormSave() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SiteIdCode.clear();
+		Thread.sleep(2000);
 		SiteIdCode.sendKeys("100");
 		Thread.sleep(2000);
 		PatientScreeningNumber.clear();
+		Thread.sleep(2000);
 		PatientScreeningNumber.sendKeys("101");
 		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,800)");
 		VisitDate.clear();
+		Thread.sleep(2000);
 		VisitDate.sendKeys("27-04-2023");
 		Thread.sleep(2000);
 		Initials.clear();
+		Thread.sleep(2000);
 		Initials.sendKeys("Nee");
+		Thread.sleep(2000);
 		Save.click();
+		Thread.sleep(2000);
 	}
 	
 	public void fillFormReviewAndSubmit() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SiteIdCode.clear();
+		Thread.sleep(2000);
 		SiteIdCode.sendKeys("100");
 		Thread.sleep(2000);
 		PatientScreeningNumber.clear();
+		Thread.sleep(2000);
 		PatientScreeningNumber.sendKeys("101");
 		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,800)");
 		VisitDate.clear();
+		Thread.sleep(2000);
 		VisitDate.sendKeys("27-04-2023");
 		Thread.sleep(2000);
 		Initials.clear();
+		Thread.sleep(2000);
 		Initials.sendKeys("Nee");
+		Thread.sleep(2000);
 		ReviewAndSubmit.click();
+		Thread.sleep(2000);
 	}
 	
 	

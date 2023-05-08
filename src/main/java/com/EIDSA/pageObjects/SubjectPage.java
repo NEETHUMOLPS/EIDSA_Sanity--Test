@@ -190,7 +190,7 @@ public class SubjectPage extends AbstractComponent{
 		save.click();
 	}
 	
-	public void createSubject(String subid,String date,String previsit,String postvisit,String ct,String pc,String notes) throws InterruptedException
+	public void createSubject(String code,String subid,String date,String previsit,String postvisit,String ct,String pc,String notes) throws InterruptedException
 	{
 		subject.click();
 		Thread.sleep(5000);
@@ -199,24 +199,30 @@ public class SubjectPage extends AbstractComponent{
 		siteCode.click();
 		Thread.sleep(8000);
 		Select sitecode=new Select(siteCode);
-		sitecode.selectByVisibleText("Demo01");
+		sitecode.selectByVisibleText(code);
+		Thread.sleep(3000);
 		subjectId.clear();
+		Thread.sleep(3000);
 		subjectId.sendKeys(subid);
+		Thread.sleep(3000);
 		enrolmentDate.clear();
+		Thread.sleep(3000);
 		enrolmentDate.sendKeys(date);
-		country.click();
-		Thread.sleep(5000);
-		investigator.click();
+		Thread.sleep(3000);
 		preVisit.clear();
+		Thread.sleep(3000);
 		preVisit.sendKeys(previsit);
+		Thread.sleep(3000);
 		postVisit.clear();
+		Thread.sleep(3000);
 		postVisit.sendKeys(previsit);
+		Thread.sleep(3000);
 		city.sendKeys(ct);
+		Thread.sleep(3000);
 		postCode.sendKeys(pc);
-		language.click();
-		Thread.sleep(5000);
-		subjectNotes.sendKeys(notes);
+		Thread.sleep(3000);
 		save.click();	
+		Thread.sleep(3000);
 	}
 	
 	public void duplicateSiteCode(String site) throws InterruptedException

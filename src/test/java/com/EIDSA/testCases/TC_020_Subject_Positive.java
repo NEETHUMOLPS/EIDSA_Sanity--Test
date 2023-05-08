@@ -19,7 +19,7 @@ public class TC_020_Subject_Positive extends BaseClassTest {
 	public void siteCreation(String subid,String date,String previsit,String postvisit,String ct,String pc,String notes) throws IOException, InterruptedException
 	{
 		SubjectPage sp = new SubjectPage(driver);
-		sp.createSubject(subid,date,previsit, postvisit,ct,pc,notes);
+		sp.createSubject("Demo01",subid,date,previsit, postvisit,ct,pc,notes);
 		sp.subjectAlert();
 		logger.info("Subject created successfully");
 		driver.navigate().refresh();

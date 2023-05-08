@@ -266,7 +266,7 @@ public class RolePrivilege extends AbstractComponent{
 	@CacheLookup
 	WebElement DMS;
 	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[2]/div[2]/button")
+	@FindBy(xpath="//button[contains(text(),'Save')]")
 	@CacheLookup
 	WebElement Save;
 	
@@ -355,9 +355,7 @@ public class RolePrivilege extends AbstractComponent{
 		Screens1.click();
 		Thread.sleep(4000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1000)");
-		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("window.scrollBy(0,1000)");
+		jse.executeScript("window.scrollBy(0,2000)");
 		elementWait(Save);
 		Thread.sleep(8000);
 		Save.click();

@@ -1,13 +1,20 @@
 package com.EIDSA.pageObjects;
 
+import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.AbstractComponents.AbstractComponent;
 
@@ -40,6 +47,11 @@ public class FormsInReview extends AbstractComponent{
 	@CacheLookup
 	WebElement Search;
 	
+	@FindBy(xpath = "//button[contains(text(),'Review And Submit')]")
+	@CacheLookup
+	WebElement ReviewAndSubmit;
+	
+	
 	@FindBy(xpath = "//td[1]")
 	@CacheLookup
 	List<WebElement> tableSiteCode;
@@ -58,32 +70,40 @@ public class FormsInReview extends AbstractComponent{
 	
 	public void clickFormsInReview() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		FormsInReview.click();
 		Thread.sleep(3000);
 	}
 	
-	public void searchSiteCode(String sitecode)
+	public void searchSiteCode(String sitecode) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SiteCode);
 		sel.selectByVisibleText(sitecode);
+		Thread.sleep(3000);
 	}
 	
-	public void searchSubId(String subId)
+	public void searchSubId(String subId) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SubjectId);
 		sel.selectByVisibleText(subId);
+		Thread.sleep(3000);
 	}
 	
 	public void searchVisitName(String visitname) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		VisitName.sendKeys(visitname);
+		Thread.sleep(3000);
 	}
 	
 	
-	public void ClickSearch()
+	public void ClickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
+		Thread.sleep(3000);
 	}
 	
 	public Boolean siteCodeSearchValidation(String sitecode) throws InterruptedException
@@ -174,9 +194,31 @@ public class FormsInReview extends AbstractComponent{
 		}
 	}
 	
+	public void reviewAndSubmit() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,800)");
+		Thread.sleep(3000);
+		elementWait(ReviewAndSubmit);
+		ReviewAndSubmit.click();
+		Thread.sleep(3000);
+	}
 	
-	
-	
+	public static boolean Alert1() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Form submitted successfully."));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}	
+	}
 	
 
 	

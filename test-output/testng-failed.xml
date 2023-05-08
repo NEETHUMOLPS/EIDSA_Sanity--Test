@@ -7,12 +7,12 @@
   <test thread-count="5" name="EIDSA App Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.EIDSA.testCases.TC_073_Folder_Document_Positive">
+      <class name="com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive">
         <methods>
-          <include name="Document"/>
           <include name="setup"/>
+          <include name="UserPrivilege"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_073_Folder_Document_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive -->
     </classes>
   </test> <!-- EIDSA App Test(failed) -->
 </suite> <!-- Failed suite [Medical Application] -->

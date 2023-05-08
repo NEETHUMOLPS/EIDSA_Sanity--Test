@@ -169,15 +169,15 @@ public class FormSummary  extends AbstractComponent{
 	@CacheLookup
 	WebElement RoleNameClose;
 	
-	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[8]/div[1]/input[1]")
 	@CacheLookup
 	WebElement Recipients;
 	
-	@FindBy(xpath = "//*[@id=\"printcontent\"]/div/div[2]/div[3]/div[2]/div/div/div[3]/ul/li[1]")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[8]/div[1]/div[2]/ul[1]/li[1]")
 	@CacheLookup
 	WebElement RecipientName;
 	
-	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/span[2]")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[8]/div[1]/span[2]")
 	@CacheLookup
 	WebElement RecipientClose;
 	
@@ -413,37 +413,47 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void clickFormSummary() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		FormSummary.click();
 		Thread.sleep(3000);
 	}
 	
-	public void searchSiteCode(String sitecode)
+	public void searchSiteCode(String sitecode) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SiteCode);
 		sel.selectByVisibleText(sitecode);
+		Thread.sleep(3000);
 	}
 	
-	public void searchSubId(String subId)
+	public void searchSubId(String subId) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SubjectId);
 		sel.selectByVisibleText(subId);
+		Thread.sleep(3000);
 	}
 	
 	public void searchVisitName(String visitname) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		VisitName.sendKeys(visitname);
+		Thread.sleep(3000);
 	}
 	
-	public void searchStat(String stat)
+	public void searchStat(String stat) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(Status);
 		sel.selectByVisibleText(stat);
+		Thread.sleep(3000);
 	}
 	
-	public void ClickSearch()
+	public void ClickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
+		Thread.sleep(3000);
 	}
 	
 	public Boolean siteCodeSearchValidation(String sitecode) throws InterruptedException
@@ -614,12 +624,13 @@ public class FormSummary  extends AbstractComponent{
 		RoleNameClose.click();
 		Thread.sleep(3000);
 		Recipients.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		RecipientName.click();
 		Thread.sleep(3000);
 		RecipientClose.click();
 		Thread.sleep(3000);
-		Submit1.click();	
+		Submit1.click();
+		Thread.sleep(3000);
 	}
 	
 	public void pageQuery(String pr) throws InterruptedException

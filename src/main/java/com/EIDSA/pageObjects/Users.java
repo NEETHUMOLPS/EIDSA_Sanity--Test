@@ -50,6 +50,10 @@ public class Users extends AbstractComponent{
 	@CacheLookup
 	List<WebElement> tableRole;
 	
+	@FindBy(xpath = "//td[8]")
+	@CacheLookup
+	List<WebElement> tableUserPrivilege;
+	
 	@FindBy(xpath="(//li[@class='PaginationControl'])[3]")
 	@CacheLookup
 	WebElement next;

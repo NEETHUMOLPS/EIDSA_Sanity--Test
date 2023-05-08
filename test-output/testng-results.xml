@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-05T14:59:23 IST" name="Medical Application" finished-at="2023-05-05T15:00:42 IST" duration-ms="78713">
+  <suite started-at="2023-05-08T13:24:06 IST" name="Medical Application" finished-at="2023-05-08T13:25:38 IST" duration-ms="92600">
     <groups>
     </groups>
-    <test started-at="2023-05-05T14:59:23 IST" name="EIDSA App Test" finished-at="2023-05-05T15:00:42 IST" duration-ms="78713">
-      <class name="com.EIDSA.testCases.TC_073_Folder_Document_Positive">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.TC_073_Folder_Document_Positive@1b11171f]" started-at="2023-05-05T14:59:25 IST" name="setup" finished-at="2023-05-05T14:59:48 IST" duration-ms="22492" status="PASS">
+    <test started-at="2023-05-08T13:24:06 IST" name="EIDSA App Test" finished-at="2023-05-08T13:25:38 IST" duration-ms="92600">
+      <class name="com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive@1151e434]" started-at="2023-05-08T13:24:07 IST" name="setup" finished-at="2023-05-08T13:24:25 IST" duration-ms="18352" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,83 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Document()[pri:2, instance:com.EIDSA.testCases.TC_073_Folder_Document_Positive@1b11171f]" started-at="2023-05-05T14:59:49 IST" name="Document" finished-at="2023-05-05T15:00:42 IST" duration-ms="52454" status="PASS">
+        <test-method signature="RolePrivilege()[pri:2, instance:com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive@1151e434]" started-at="2023-05-08T13:24:25 IST" name="RolePrivilege" finished-at="2023-05-08T13:25:18 IST" duration-ms="52206" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Document -->
-      </class> <!-- com.EIDSA.testCases.TC_073_Folder_Document_Positive -->
+        </test-method> <!-- RolePrivilege -->
+        <test-method signature="UserPrivilege()[pri:4, instance:com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive@1151e434]" started-at="2023-05-08T13:25:18 IST" name="UserPrivilege" finished-at="2023-05-08T13:25:38 IST" duration-ms="20574" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <span class="multiselect-caret"></span> is not clickable at point (1105, 167). Other element would receive the click: <div tabindex="0" class="multiselect multiselect-theme" data-v-261d7ab2="">...</div>
+  (Session info: chrome=112.0.5615.139)
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e19e990adc3dc1a30b91988936db2062, clickElement {id=a8986106-472c-4ffa-83fd-65bce91bea5f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.139, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49403/devtoo..., se:cdpVersion: 112.0.5615.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (e19e990adc3dc1a30b91988936db2062)] -> xpath: //*[@id="page-wrapper"]/div[3]/div/div/div[1]/div/span]
+Session ID: e19e990adc3dc1a30b91988936db2062]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="multiselect-caret"></span> is not clickable at point (1105, 167). Other element would receive the click: <div tabindex="0" class="multiselect multiselect-theme" data-v-261d7ab2="">...</div>
+  (Session info: chrome=112.0.5615.139)
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e19e990adc3dc1a30b91988936db2062, clickElement {id=a8986106-472c-4ffa-83fd-65bce91bea5f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.139, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49403/devtoo..., se:cdpVersion: 112.0.5615.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (e19e990adc3dc1a30b91988936db2062)] -> xpath: //*[@id="page-wrapper"]/div[3]/div/div/div[1]/div/span]
+Session ID: e19e990adc3dc1a30b91988936db2062
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+at com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive.UserPrivilege(TC_0001_IntegrationTesting_Positive.java:105)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserPrivilege -->
+      </class> <!-- com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive -->
     </test> <!-- EIDSA App Test -->
   </suite> <!-- Medical Application -->
 </testng-results>

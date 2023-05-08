@@ -58,7 +58,8 @@
 <!--<class name="com.EIDSA.testCases.TC_070_StudyVisit_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_068_DesignForm_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_072_DocumentApproval_Positive"/>-->
-<class name="com.EIDSA.testCases.TC_073_Folder_Document_Positive"/>
+<!--<class name="com.EIDSA.testCases.TC_073_Folder_Document_Positive"/>-->
+<class name="com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive"/>
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->
