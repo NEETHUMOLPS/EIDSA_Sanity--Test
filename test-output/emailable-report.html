@@ -9,31 +9,23 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Medical Application</th></tr>
-<tr><td><a href="#t0">EIDSA App Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">92,600</td><td></td><td></td></tr>
+<tr><td><a href="#t0">EIDSA App Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">134,007</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Medical Application</th></tr></tbody><tbody id="t0"><tr><th colspan="4">EIDSA App Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive</td><td><a href="#m0">UserPrivilege</a></td><td rowspan="1">1683532518127</td><td rowspan="1">20574</td></tr><tr><th colspan="4">EIDSA App Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive</td><td><a href="#m1">RolePrivilege</a></td><td rowspan="1">1683532465818</td><td rowspan="1">52206</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Medical Application</th></tr></tbody><tbody id="t0"><tr><th colspan="4">EIDSA App Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive</td><td><a href="#m0">withdraw</a></td><td rowspan="1">1684153103662</td><td rowspan="1">35115</td></tr><tr><th colspan="4">EIDSA App Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive</td><td><a href="#m1">visitNameSearchValidation</a></td><td rowspan="1">1684153024515</td><td rowspan="1">38922</td></tr><tr class="passedeven"><td><a href="#m2">visitStatusSearchValidation</a></td><td rowspan="1">1684153063556</td><td rowspan="1">40100</td></tr></tbody>
 </table>
-<h2>EIDSA App Test</h2><h3 id="m0">com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive#UserPrivilege</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;multiselect-caret&quot;&gt;&lt;/span&gt; is not clickable at point (1105, 167). Other element would receive the click: &lt;div tabindex=&quot;0&quot; class=&quot;multiselect multiselect-theme&quot; data-v-261d7ab2=&quot;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=112.0.5615.139)
+<h2>EIDSA App Test</h2><h3 id="m0">com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive#withdraw</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 8 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e19e990adc3dc1a30b91988936db2062, clickElement {id=a8986106-472c-4ffa-83fd-65bce91bea5f}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.139, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49403/devtoo..., se:cdpVersion: 112.0.5615.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (e19e990adc3dc1a30b91988936db2062)] -&gt; xpath: //*[@id=&quot;page-wrapper&quot;]/div[3]/div/div/div[1]/div/span]
-Session ID: e19e990adc3dc1a30b91988936db2062
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive.UserPrivilege(TC_0001_IntegrationTesting_Positive.java:105)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51152}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51152/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ca22d134bf2edbc9412378a95052cd84
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.EIDSA.pageObjects.SubVisitScheduleList.withdrawAlert(SubVisitScheduleList.java:525)
+	at com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive.withdraw(TC_019_Sub_VisitScheduleList_Positive.java:105)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive#RolePrivilege</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive#visitNameSearchValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive#visitStatusSearchValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

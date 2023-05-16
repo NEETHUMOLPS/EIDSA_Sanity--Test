@@ -89,12 +89,14 @@ public class DigitalForms extends AbstractComponent{
 	
 	public void searchFormName(String fName) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		FormName.sendKeys(fName);
 		Thread.sleep(3000);
 	}
 	
 	public void clickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
 		Thread.sleep(3000);
 	}
@@ -102,6 +104,7 @@ public class DigitalForms extends AbstractComponent{
 	
 	public void searchStatus(String status) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(Status);
 		sel.selectByVisibleText(status);
 		Thread.sleep(3000);
@@ -124,24 +127,28 @@ public class DigitalForms extends AbstractComponent{
 	
 	public void clickApprove() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formApprove.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickReject() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formReject.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickComments2() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formComments.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickComments1(String cmnt) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formComments.sendKeys(cmnt);
 		Thread.sleep(3000);
 	}

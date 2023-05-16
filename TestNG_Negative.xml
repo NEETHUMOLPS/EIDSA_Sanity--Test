@@ -11,23 +11,27 @@
 <classes>
 <!--<class name="com.EIDSA.testCases.TC_002_loginTest_Negative"/>--> 
 <!--<class name="com.EIDSA.testCases.TC_004_forgotPassword_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_008_roles_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_012_userPage_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_017_study_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_019_site_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_021_Subject_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_023_Sub_VisitSchedule_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_025_PatientLogin_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_027_Visit_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_029_VisitTemplate_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_032_FieldPrivilege_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_035_SubmitForm_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_041_SubjectSchedule_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_053_DataEntry_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_058_FormSummary_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_063_GeneralQuery_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_65_SubjectTransfer_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_071_StudyVisit_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_006_roles_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_008_rolePrivilege_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_010_Users_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_012_study_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_014_StudyVisit_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_016_site_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_018_Subject_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_020_Sub_VisitSchedule_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_022_PatientLogin_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_024_Visit_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_026_VisitTemplate_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_029_FieldPrivilege_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_032_SubmitForm_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_038_SubjectSchedule_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_050_DataEntry_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_055_FormSummary_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_060_GeneralQuery_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_062_SubjectTransfer_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_064_FormTransfer_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_066_DesignForm_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_069_Folder_Document_Negative"/>-->
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->

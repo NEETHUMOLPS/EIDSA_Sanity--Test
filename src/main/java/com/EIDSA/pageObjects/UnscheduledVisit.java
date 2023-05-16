@@ -90,18 +90,21 @@ public class UnscheduledVisit extends AbstractComponent{
 	
 	public void searchSubjectId(String id) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SubjectId.sendKeys(id);
 		Thread.sleep(3000);
 	}
 	
 	public void searchStatus(String stat) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Status.sendKeys(stat);
 		Thread.sleep(3000);
 	}
 	
 	public void search() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Search.click();
 		Thread.sleep(5000);
 	}
@@ -122,6 +125,7 @@ public class UnscheduledVisit extends AbstractComponent{
 	
 	public void SearchVisitDate(String date1,String date2) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Date1.sendKeys(date1);
 		Thread.sleep(3000);
 		Date2.sendKeys(date2);

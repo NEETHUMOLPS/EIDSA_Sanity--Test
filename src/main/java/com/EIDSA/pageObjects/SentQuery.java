@@ -80,12 +80,14 @@ public class SentQuery extends AbstractComponent{
 	
 	public void clickQueryId(String id) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		QueryId.sendKeys(id);
 		Thread.sleep(3000);
 	}
 	
 	public void clickSiteCode(String code) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SiteCode);
 		sel.selectByVisibleText(code);
 		Thread.sleep(3000);
@@ -93,6 +95,7 @@ public class SentQuery extends AbstractComponent{
 	
 	public void clickSubjectId(String id) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SubjectId);
 		sel.selectByVisibleText(id);
 		Thread.sleep(3000);
@@ -100,6 +103,7 @@ public class SentQuery extends AbstractComponent{
 	
 	public void clickQueryStatus(String st) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(QueryStatus);
 		sel.selectByVisibleText(st);
 		Thread.sleep(3000);
@@ -107,6 +111,7 @@ public class SentQuery extends AbstractComponent{
 	
 	public void clickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
 		Thread.sleep(3000);
 	}

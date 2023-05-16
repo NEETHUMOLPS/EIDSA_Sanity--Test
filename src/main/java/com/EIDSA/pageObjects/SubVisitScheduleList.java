@@ -126,7 +126,7 @@ public class SubVisitScheduleList extends AbstractComponent{
 	@CacheLookup
 	WebElement searchSubId;
 	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[3]/select")
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/select[1]")
 	@CacheLookup
 	WebElement searchStatus;
 	
@@ -209,30 +209,40 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	public void clickSubject() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		subject.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickUnscheduleVisit() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		unscheduledVisit.click();
 		Thread.sleep(3000);
 	}
 	
 	public void searchSiteCode(String SiteCode) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		searchSiteCode.sendKeys(SiteCode);
+		Thread.sleep(2000);
 		search.click();	
 		Thread.sleep(3000);
 	}
 	
 	public void unScheduleVisit_negative() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		preVisit.clear();
+		Thread.sleep(2000);
 		preVisit.sendKeys("+!");
+		Thread.sleep(2000);
 		postVisit.clear();
+		Thread.sleep(2000);
 		postVisit.sendKeys("+!");
+		Thread.sleep(2000);
 		save.click();
+		Thread.sleep(2000);
 	}
 	
 	public boolean findSubId(String subid) throws InterruptedException
@@ -257,21 +267,34 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	public void createUnScheduleVisit(String visitno,String visitname,String previsit,String postvisit,String date) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		unScheduledVisit.click();
+		Thread.sleep(2000);
 		visitNumber.sendKeys(visitno);
+		Thread.sleep(2000);
 		visitName.sendKeys(visitname);
+		Thread.sleep(2000);
 		visitType.click();
+		Thread.sleep(2000);
 		Select type=new Select(visitType);
 		type.selectByVisibleText("Home Visit");
+		Thread.sleep(2000);
 		preVisit.sendKeys(previsit);
+		Thread.sleep(2000);
 		postVisit.sendKeys(postvisit);
+		Thread.sleep(2000);
 		investigator.click();
+		Thread.sleep(2000);
 		Select invs=new Select(investigator);
 		invs.selectByVisibleText("Neethu P S");
+		Thread.sleep(2000);
 		visitDate.sendKeys(date);
+		Thread.sleep(2000);
 		visitTemplate.click();
+		Thread.sleep(2000);
 		Select temp=new Select(visitTemplate);
 		temp.selectByVisibleText("Case Report-en-1.0");
+		Thread.sleep(2000);
 		save.click();	
 		Thread.sleep(3000);
 	}
@@ -324,28 +347,36 @@ public class SubVisitScheduleList extends AbstractComponent{
 		return sub;
 	}
 	
-	public void SearchVisitName(String visitname)
+	public void SearchVisitName(String visitname) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		searchVisitName.sendKeys(visitname);
+		Thread.sleep(2000);
 	}
 	
-	public void SearchVisitSchedule()
+	public void SearchVisitSchedule(String sch) throws InterruptedException
 	{
+		Thread.sleep(2000);
+		searchStatus.click();
 		Select sel=new Select(searchStatus);
-		sel.selectByVisibleText("Planned");
+		sel.selectByVisibleText(sch);
+		Thread.sleep(2000);
 	}
 	
 	public void SearchVisitDate(String date1,String date2) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		searchVisitDate1.sendKeys(date1);
 		Thread.sleep(3000);
 		searchVisitDate2.sendKeys(date2);
 		Thread.sleep(3000);
 	}
 	
-	public void Search()
+	public void Search() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		visitSearch.click();
+		Thread.sleep(2000);
 	}
 	
 	public Boolean visitNameSearchValidation(String visitname) throws InterruptedException
@@ -376,7 +407,7 @@ public class SubVisitScheduleList extends AbstractComponent{
 	{
 		Thread.sleep(3000);
 		boolean st = true;
-		int count =tableVisitName.size();
+		int count =tableVisitStatus.size();
 		if (count<1) 
 		{
 			st=false;
@@ -461,6 +492,20 @@ public class SubVisitScheduleList extends AbstractComponent{
 			if(text.equals(subcode))
 			{
 				tableWithdraw.get(i).click();
+				Thread.sleep(3000);
+				break;	
+			}
+		}
+	}
+	
+	public void view(String subcode) throws InterruptedException
+	{
+		for(int i=0;i<tableVisitName.size();i++)
+		{
+			String text=tableVisitName.get(i).getText();
+			if(text.equals(subcode))
+			{
+				tableView.get(i).click();
 				Thread.sleep(3000);
 				break;	
 			}

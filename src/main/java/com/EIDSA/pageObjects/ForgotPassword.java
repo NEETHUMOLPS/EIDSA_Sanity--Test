@@ -36,24 +36,30 @@ public class ForgotPassword extends AbstractComponent{
 	
 	public void clickforgotPassword() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		forgotPassword.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickEmail() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		email.click();
 		Thread.sleep(3000);
 	}
 	
 	public void setEmail(String nm) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		email.sendKeys(nm);
+		Thread.sleep(3000);
 	}
 	
 	public void clickSubmit() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		submit.click();
+		Thread.sleep(3000);
 	}
 	
 	public String ErrorMsg()

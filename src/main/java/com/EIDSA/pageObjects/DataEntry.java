@@ -117,6 +117,7 @@ public class DataEntry extends AbstractComponent{
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,800)");
 		formSave.click();
+		Thread.sleep(3000);
 	}
 	
 	public void clickDataEntry() throws InterruptedException
@@ -136,6 +137,7 @@ public class DataEntry extends AbstractComponent{
 	
 	public void searchVisitNumber(String visitno) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		VisitNumber.sendKeys(visitno);
 		Thread.sleep(3000);
 		
@@ -143,12 +145,14 @@ public class DataEntry extends AbstractComponent{
 	
 	public void clickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
 		Thread.sleep(3000);
 	}
 	
 	public void searchVisitName(String visitname) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		VisitName.sendKeys(visitname);
 		Thread.sleep(3000);
 	}
@@ -229,7 +233,8 @@ public class DataEntry extends AbstractComponent{
 		Thread.sleep(2000);
 		formInvestigatorInitials.sendKeys(in);
 		Thread.sleep(2000);
-		formSave.click();		
+		formSave.click();	
+		Thread.sleep(3000);
 	}
 	
 	public void FillFormReviewAndSubmit(String sitecode, String num,String date,String in) throws InterruptedException
@@ -246,7 +251,8 @@ public class DataEntry extends AbstractComponent{
 		Thread.sleep(2000);
 		formInvestigatorInitials.sendKeys(in);
 		Thread.sleep(2000);
-		formReviewAndSubmit.click();		
+		formReviewAndSubmit.click();	
+		Thread.sleep(3000);
 	}
 	
 	public static boolean Alert1() throws InterruptedException
@@ -322,48 +328,56 @@ public class DataEntry extends AbstractComponent{
 	
 	public void clickSiteCode(String code) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formSiteIdCode.sendKeys(code);
 		Thread.sleep(3000);
 	}
 	
 	public void clickPatientScreeningNum(String num) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formPatientScreeningNumber.sendKeys(num);
 		Thread.sleep(3000);
 	}
 
 	public void clickdate(String date) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formVisitDate.sendKeys(date);
 		Thread.sleep(3000);
 	}
 	
 	public void clickintials(String in) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formInvestigatorInitials.sendKeys(in);
 		Thread.sleep(3000);
 	}
 	
 	public void clickSiteCode1() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formSiteIdCode.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickPatientScreeningNum1() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formPatientScreeningNumber.click();
 		Thread.sleep(3000);
 	}
 
 	public void clickdate1() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formVisitDate.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickintials1() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		formInvestigatorInitials.click();
 		Thread.sleep(3000);
 	}

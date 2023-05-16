@@ -110,24 +110,28 @@ public class IOT extends AbstractComponent{
 	{
 		Thread.sleep(2000);
 		SubjectId.sendKeys(study);
+		Thread.sleep(3000);
 	}
 	
 	public void searchDeviceName(String deviceName) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		Devicename.sendKeys(deviceName);
+		Thread.sleep(3000);
 	}
 	
 	public void searchFormName(String formName) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		Formname.sendKeys(formName);
+		Thread.sleep(3000);
 	}
 	
 	public void clickSearch() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		Search.click();
+		Thread.sleep(3000);
 	}
 	
 	public Boolean studyStatusValidation(String study) throws InterruptedException

@@ -7,12 +7,12 @@
   <test thread-count="5" name="EIDSA App Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive">
+      <class name="com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive">
         <methods>
           <include name="setup"/>
-          <include name="UserPrivilege"/>
+          <include name="withdraw"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive -->
     </classes>
   </test> <!-- EIDSA App Test(failed) -->
 </suite> <!-- Failed suite [Medical Application] -->

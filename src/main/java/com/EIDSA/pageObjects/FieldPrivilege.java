@@ -213,6 +213,7 @@ public class FieldPrivilege extends AbstractComponent{
 	
 	public void selectStudy(String study) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(Study);
 		sel.selectByVisibleText(study);
 		Thread.sleep(3000);
@@ -239,13 +240,16 @@ public class FieldPrivilege extends AbstractComponent{
 	
 	public void setPrivilege(String role) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(roles);
 		sel.selectByVisibleText(role);
 		Thread.sleep(6000);
 		siteIdCode.click();
 		Thread.sleep(3000);
 		masking.click();
-		save.click();		
+		Thread.sleep(3000);
+		save.click();
+		Thread.sleep(3000);
 	}
 	
 	public void negative1() throws InterruptedException
@@ -254,7 +258,9 @@ public class FieldPrivilege extends AbstractComponent{
 		siteIdCode.click();
 		Thread.sleep(3000);
 		masking.click();
-		save.click();		
+		Thread.sleep(3000);
+		save.click();
+		Thread.sleep(3000);
 	}
 	
 	

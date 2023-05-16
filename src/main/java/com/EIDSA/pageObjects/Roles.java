@@ -33,11 +33,11 @@ public class Roles extends AbstractComponent{
 	@CacheLookup
 	WebElement AddRole;
 	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/input[1]")
+	@FindBy(xpath="//label[contains(text(),'Name')]/following-sibling::input[1]")
 	@CacheLookup
 	WebElement RoleName;
 	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]")
+	@FindBy(xpath="//label[contains(text(),'Description')]/following-sibling::input[1]")
 	@CacheLookup
 	WebElement RoleDescription;
 	
@@ -53,7 +53,7 @@ public class Roles extends AbstractComponent{
 	@CacheLookup
 	WebElement Submit;
 	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath="//label[contains(text(),'Role Name')]/following-sibling::input[1]")
 	@CacheLookup
 	WebElement RoleNameSearch;
 	
@@ -120,6 +120,7 @@ public class Roles extends AbstractComponent{
 	
 	public void createRoles(String rolename,String des) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		AddRole.click();
 		Thread.sleep(3000);
 		RoleName.sendKeys(rolename);
@@ -128,6 +129,15 @@ public class Roles extends AbstractComponent{
 		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(3000);
+	}
+	
+	public void duplicateRole(String rolename,String des) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		RoleName.sendKeys(rolename);
+		Thread.sleep(3000);
+		RoleDescription.sendKeys(des);
+		Thread.sleep(2000);
 	}
 	
 	public void clickCreateRole() throws InterruptedException
@@ -194,7 +204,7 @@ public class Roles extends AbstractComponent{
 			if(text.contains(rolename))
 			{
 				tableEdit.get(i).click();
-				Thread.sleep(5000);
+				Thread.sleep(3000);
 				break;
 			}
 		}
@@ -203,21 +213,19 @@ public class Roles extends AbstractComponent{
 	public void editData(String des) throws InterruptedException
 	{
 		Thread.sleep(3000);
-		Search.click();
-		Thread.sleep(3000);
 		RoleDescription.click();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		RoleDescription.clear();
 		Thread.sleep(4000);
 		RoleDescription.sendKeys(des);	
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 	}
 	
 	public void clickSubmit() throws InterruptedException
 	{
-		Thread.sleep(4000);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Submit.click();
+		Thread.sleep(2000);
 	}
 	
 	public static boolean Alert2() throws InterruptedException
@@ -228,6 +236,21 @@ public class Roles extends AbstractComponent{
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Role updated successfully."));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}	
+	}
+	
+	public static boolean Alert5() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("RoleName already exist"));
 			alert1.accept();
 			return true;
 		} catch (NoAlertPresentException e) {
@@ -276,11 +299,11 @@ public class Roles extends AbstractComponent{
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Are you sure you want to delete this role?"));
 			alert1.accept();	
-			
+			Thread.sleep(3000);
 			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(8));
 			wait2.until(ExpectedConditions.alertIsPresent());
 			Alert alert2 = driver.switchTo().alert();
-			Assert.assertTrue(alert2.getText().contains("Are you sure you want to delete this role?"));
+			Assert.assertTrue(alert2.getText().contains("Role Deleted successfully"));
 			alert2.accept();
 			
 			return true;

@@ -570,6 +570,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void viewDocuments() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		ViewDocuments.click();
 		Thread.sleep(5000);
 		DocumentView.click();
@@ -578,6 +579,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void downloadDocuments() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		ViewDocuments.click();
 		Thread.sleep(5000);
 		DocumentDownload.click();
@@ -586,6 +588,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void deleteDocuments() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		ViewDocuments.click();
 		Thread.sleep(5000);
 		DocumentDelete.click();
@@ -594,6 +597,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void uploadDocuments() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		UploadDocument.click();
 		Thread.sleep(5000);
 		upload.click();
@@ -602,12 +606,14 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void downloadpdf() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		DownloadPdf.click();
 		Thread.sleep(3000);	
 	}
 	
 	public void formQuery(String pr) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		FormQuery.click();
 		Thread.sleep(5000);	
 		QuerySubject.sendKeys("Query subject");
@@ -635,6 +641,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void pageQuery(String pr) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		PageQuery.click();
 		Thread.sleep(3000);	
 		PageQuerySubject.sendKeys("Query subject");
@@ -657,10 +664,12 @@ public class FormSummary  extends AbstractComponent{
 		PageRecipientClose.click();
 		Thread.sleep(3000);
 		Submit1.click();
+		Thread.sleep(3000);
 	}
 	
 	public void OpenQueryViewform() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		OpenQuery.click();
 		Thread.sleep(3000);	
 		OpenQueryView.click();
@@ -671,6 +680,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void OpenQueryExportPdf() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		OpenQuery.click();
 		Thread.sleep(3000);	
 		OpenQueryView.click();
@@ -681,12 +691,14 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void archive() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Archive.click();
 		Thread.sleep(3000);			
 	}
 	
 	public void OpenQueryReply() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		OpenQuery.click();
 		Thread.sleep(3000);	
 		OpenQueryView.click();
@@ -697,12 +709,15 @@ public class FormSummary  extends AbstractComponent{
 		Thread.sleep(3000);	
 		//OpenQueryRecipientClose.click();
 		//Thread.sleep(3000);	
-		OpenQueryReply.sendKeys("NA");	
+		OpenQueryReply.sendKeys("NA");
+		Thread.sleep(3000);
 		Reply.click();
+		Thread.sleep(3000);
 	}
 	
 	public void OpenQueryClose() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		OpenQuery.click();
 		Thread.sleep(3000);	
 		OpenQueryView.click();
@@ -714,11 +729,14 @@ public class FormSummary  extends AbstractComponent{
 		//OpenQueryRecipientClose.click();
 		//Thread.sleep(3000);	
 		OpenQueryReply.sendKeys("NA");	
+		Thread.sleep(3000);
 		Close.click();
+		Thread.sleep(3000);
 	}
 	
 	public void OpenQueryReplyAndClose() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		OpenQuery.click();
 		Thread.sleep(3000);	
 		OpenQueryView.click();
@@ -730,24 +748,30 @@ public class FormSummary  extends AbstractComponent{
 		//OpenQueryRecipientClose.click();
 		//Thread.sleep(3000);	
 		OpenQueryReply.sendKeys("NA");	
+		Thread.sleep(3000);
 		ReplyAndClose.click();
+		Thread.sleep(3000);
 	}
 	
 	public void closedquery() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		ClosedQuery.click();
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//tbody/tr[1]/td[6]/a[1]/i[1]")).click();
 		Thread.sleep(3000);
 	}
 	
 	public void verify() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Verify.click();
 		Thread.sleep(3000);
 	}
 	
 	public void sign() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Sign.click();
 		Thread.sleep(3000);
 		signEmail.sendKeys("neethumolp@datamatica.uk");
@@ -760,12 +784,14 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void PageSave() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Save.click();
 		Thread.sleep(3000);
 	}
 	
 	public void formQuery_Negative() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		FormQuery.click();
 		Thread.sleep(3000);
 		Submit1.click();
@@ -774,6 +800,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void pageQuery_Negative() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		PageQuery.click();
 		Thread.sleep(3000);
 		Submit1.click();
@@ -782,6 +809,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void sign_Negative2() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Sign.click();
 		Thread.sleep(3000);
 		signEmail.sendKeys("neethup@datamatica.uk");
@@ -791,6 +819,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void sign_Negative1() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Sign.click();
 		Thread.sleep(3000);
 		SignConfirm.click();
@@ -799,6 +828,7 @@ public class FormSummary  extends AbstractComponent{
 	
 	public void OpenQueryReply_Negative() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		OpenQuery.click();
 		Thread.sleep(3000);
 		OpenQueryView.click();

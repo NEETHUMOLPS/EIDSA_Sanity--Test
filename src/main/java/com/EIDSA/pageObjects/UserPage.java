@@ -105,6 +105,10 @@ public class UserPage extends AbstractComponent{
 	@CacheLookup
 	WebElement searchRole;
 	
+	@FindBy(xpath="//button[contains(text(),'Set privilege')]")
+	@CacheLookup
+	WebElement SetPrivilege;
+	
 	@FindBy(xpath="//span[contains(text(),'Search')]")
 	@CacheLookup
 	WebElement search;
@@ -112,6 +116,10 @@ public class UserPage extends AbstractComponent{
 	@FindBy(xpath="//td[1]")
 	@CacheLookup
 	List<WebElement> TableName;
+	
+	@FindBy(xpath="//td[8]")
+	@CacheLookup
+	List<WebElement> TablePrivilege;
 	
 	@FindBy(xpath="//td[2]")
 	@CacheLookup
@@ -149,6 +157,7 @@ public class UserPage extends AbstractComponent{
 		Thread.sleep(3000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("window.scrollBy(0,-1000)");
+		Thread.sleep(2000);
 	}
 	
 	public void edit(String email) throws InterruptedException
@@ -160,6 +169,22 @@ public class UserPage extends AbstractComponent{
 			{
 				TableEdit.get(i).click();
 				Thread.sleep(3000);
+				break;	
+			}
+		}
+	}
+	
+	public void privilege(String email) throws InterruptedException
+	{
+		for(int i=0;i<TableEmail.size();i++)
+		{
+			String text=TableEmail.get(i).getText();
+			if(text.equals(email))
+			{
+				TablePrivilege.get(i).click();
+				Thread.sleep(2000);
+				SetPrivilege.click();
+				Thread.sleep(2000);
 				break;	
 			}
 		}
@@ -243,148 +268,232 @@ public class UserPage extends AbstractComponent{
 	}
 	
 	
-	public void ClickUser()
+	public void ClickUser() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		User.click();
+		Thread.sleep(2000);
 	}
 	
-	public void AddUser()
+	public void AddUser() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		AddUser.click();
+		Thread.sleep(2000);
 	}
 	
-	public void ClearFirstName()
+	public void ClearFirstName() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		FirstName.click();
+		Thread.sleep(2000);
 	}
 	
-	public void SetFirstName(String FName)
+	public void SetFirstName(String FName) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		FirstName.sendKeys(FName);
+		Thread.sleep(2000);
 	}
 	
-	public void searchClick()
+	public void searchClick() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		search.click();
+		Thread.sleep(2000);
 	}
 	
-	public void ClearLastName()
+	public void ClearLastName() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		LastName.click();
+		Thread.sleep(2000);
 	}
 	
-	public void SetLastName(String LName)
+	public void SetLastName(String LName) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		LastName.sendKeys(LName);
+		Thread.sleep(2000);
 	}
 	
-	public void searchEmail(String emailName)
+	public void searchEmail(String emailName) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		emailOrName.sendKeys(emailName);
+		Thread.sleep(2000);
 	}
 
-	public void ClearPrimaryEmail()
+	public void ClearPrimaryEmail() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		PrimaryEmail.click();
+		Thread.sleep(2000);
 	}
 	
-	public void SetPrimaryEmail(String PE)
+	public void SetPrimaryEmail(String PE) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		PrimaryEmail.sendKeys(PE);
+		Thread.sleep(2000);
 	}
 	
 
-	public void ClearSecondaryEmail()
+	public void ClearSecondaryEmail() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SecondaryEmail.click();
+		Thread.sleep(2000);
 	}
 	
-	public void SetSecondaryEmail(String SE)
+	public void SetSecondaryEmail(String SE) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SecondaryEmail.sendKeys(SE);
+		Thread.sleep(2000);
 	}
 
 
-	public void ClickUserType()
+	public void ClickUserType() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select os = new Select(UserType);
 		os.selectByVisibleText("option 1");
+		Thread.sleep(2000);
 	}
 	
-	public void ClickRole()
+	public void ClickRole() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select os = new Select(Role);
 		os.selectByVisibleText("Administrator");
+		Thread.sleep(2000);
 	}
 	
-	public void searchRole(String role)
+	public void searchRole(String role) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select os = new Select(searchRole);
 		os.selectByVisibleText(role);
+		Thread.sleep(2000);
 	}
 	
-	public void ClickCountry()
+	public void ClickCountry() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select os = new Select(Country);
 		os.selectByVisibleText("India");
+		Thread.sleep(2000);
 	}
 	
-	public void SetDOB(String dob)
+	public void SetDOB(String dob) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		DOB.sendKeys(dob);
+		Thread.sleep(2000);
 	}
 	
-	public void ClearPhoneNumber()
+	public void ClearPhoneNumber() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		PhoneNumber.click();
+		Thread.sleep(2000);
 	}
 	
-	public void SetPhoneNumber(String Num)
+	public void SetPhoneNumber(String Num) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		PhoneNumber.sendKeys(Num);
+		Thread.sleep(2000);
 	}
 	
-	public void ClearAddress1()
+	public void ClearAddress1() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Address1.click();
+		Thread.sleep(2000);
 	}
 	
-	public void SetAddress1(String Add1)
+	public void SetAddress1(String Add1) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Address1.sendKeys(Add1);
+		Thread.sleep(2000);
 	}
 	
-	public void ClearAddress2()
+	public void ClearAddress2() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Address2.click();
+		Thread.sleep(2000);
 	}
 	
-	public void SetAddress2(String Add2)
+	public void SetAddress2(String Add2) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Address2.sendKeys(Add2);
+		Thread.sleep(2000);
 	}
 	
-	public void ClickActive()
+	public void ClickActive() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Active.click();
+		Thread.sleep(2000);
 	}
 	
-	public void ClickLock()
+	public void ClickLock() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Clear.click();
+		Thread.sleep(2000);
 	}
 	
-	public void ClickClear()
+	public void ClickClear() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Clear.click();
+		Thread.sleep(2000);
 	}
 	
-	public void ClickSave()
+	public void ClickSave() throws InterruptedException
 	{
-		Save.click();
-	}
-	
 
+		Save.click();
+
+	}
+	
+	public static boolean duplicateAlert() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("User already exists with same email id!"));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
+	
+	public static boolean privilegeAlert() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("User study privilege updated successfully."));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
 	
 	
 }

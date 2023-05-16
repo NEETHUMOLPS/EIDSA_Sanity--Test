@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>EIDSA App Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon May 08 13:24:06 IST 2023</td>
+<td>Started on:</td><td>Mon May 15 17:46:44 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>92 seconds (92600 ms)</td>
+<tr><td>Total time:</td><td>134 seconds (134007 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,52 +75,29 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive.UserPrivilege()'><b>UserPrivilege</b><br>Test class: com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;multiselect-caret&quot;&gt;&lt;/span&gt; is not clickable at point (1105, 167). Other element would receive the click: &lt;div tabindex=&quot;0&quot; class=&quot;multiselect multiselect-theme&quot; data-v-261d7ab2=&quot;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=112.0.5615.139)
+<td title='com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive.withdraw()'><b>withdraw</b><br>Test class: com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 8 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e19e990adc3dc1a30b91988936db2062, clickElement {id=a8986106-472c-4ffa-83fd-65bce91bea5f}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.139, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49403/devtoo..., se:cdpVersion: 112.0.5615.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (e19e990adc3dc1a30b91988936db2062)] -&gt; xpath: //*[@id=&quot;page-wrapper&quot;]/div[3]/div/div/div[1]/div/span]
-Session ID: e19e990adc3dc1a30b91988936db2062
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive.UserPrivilege(TC_0001_IntegrationTesting_Positive.java:105)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51152}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51152/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ca22d134bf2edbc9412378a95052cd84
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.EIDSA.pageObjects.SubVisitScheduleList.withdrawAlert(SubVisitScheduleList.java:525)
+	at com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive.withdraw(TC_019_Sub_VisitScheduleList_Positive.java:105)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace173783788", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace173783788'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;multiselect-caret&quot;&gt;&lt;/span&gt; is not clickable at point (1105, 167). Other element would receive the click: &lt;div tabindex=&quot;0&quot; class=&quot;multiselect multiselect-theme&quot; data-v-261d7ab2=&quot;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=112.0.5615.139)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1369541409", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1369541409'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 8 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e19e990adc3dc1a30b91988936db2062, clickElement {id=a8986106-472c-4ffa-83fd-65bce91bea5f}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.139, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49403/devtoo..., se:cdpVersion: 112.0.5615.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (e19e990adc3dc1a30b91988936db2062)] -&gt; xpath: //*[@id=&quot;page-wrapper&quot;]/div[3]/div/div/div[1]/div/span]
-Session ID: e19e990adc3dc1a30b91988936db2062
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive.UserPrivilege(TC_0001_IntegrationTesting_Positive.java:105)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51152}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51152/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ca22d134bf2edbc9412378a95052cd84
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.EIDSA.pageObjects.SubVisitScheduleList.withdrawAlert(SubVisitScheduleList.java:525)
+	at com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive.withdraw(TC_019_Sub_VisitScheduleList_Positive.java:105)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -150,8 +127,8 @@ Session ID: e19e990adc3dc1a30b91988936db2062
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>20</td>
-<td>com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive@1151e434</td></tr>
+<td>35</td>
+<td>com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive@273e7444</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -161,10 +138,15 @@ Session ID: e19e990adc3dc1a30b91988936db2062
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive.RolePrivilege()'><b>RolePrivilege</b><br>Test class: com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive</td>
+<td title='com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive.visitStatusSearchValidation()'><b>visitStatusSearchValidation</b><br>Test class: com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive</td>
 <td></td>
-<td>52</td>
-<td>com.EIDSA.testCases.TC_0001_IntegrationTesting_Positive@1151e434</td></tr>
+<td>40</td>
+<td>com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive@273e7444</td></tr>
+<tr>
+<td title='com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive.visitNameSearchValidation()'><b>visitNameSearchValidation</b><br>Test class: com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive</td>
+<td></td>
+<td>38</td>
+<td>com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive@273e7444</td></tr>
 </table><p>
 </body>
 </html>

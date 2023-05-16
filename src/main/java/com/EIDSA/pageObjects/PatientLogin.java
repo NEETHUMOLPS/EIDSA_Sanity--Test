@@ -85,20 +85,24 @@ public class PatientLogin extends AbstractComponent{
 	
 	public void clickPatientLogin() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		patientLogin.click();
 		Thread.sleep(3000);
 	}
 	
 	public void Submit() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		submit.click();
 		Thread.sleep(3000);
 	}
 	
 	public void SearchSiteCode(String site) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(searchSiteCode);
-		sel.selectByVisibleText(site);			
+		sel.selectByVisibleText(site);		
+		Thread.sleep(3000);
 	}
 	
 	public String error1()
@@ -121,23 +125,31 @@ public class PatientLogin extends AbstractComponent{
 	
 	public void SearchSubId(String sub) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		searchSubjectId.sendKeys(sub);
+		Thread.sleep(3000);
 	}
 	
 	public void exsEmail(String sub) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		email.sendKeys(sub);
+		Thread.sleep(3000);
 	}
 	
 	public void SearchStatus(String stat) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(searchStatus);
 		sel.selectByVisibleText(stat);
+		Thread.sleep(3000);
 	}
 	
 	public void Search() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		search.click();
+		Thread.sleep(3000);
 	}
 	
 	public Boolean siteCodeSearchValidation(String site) throws InterruptedException
@@ -234,9 +246,13 @@ public class PatientLogin extends AbstractComponent{
 		
 		public void AddLogin(String emailid) throws InterruptedException
 		{
+			Thread.sleep(3000);
 			email.clear();
+			Thread.sleep(3000);
 			email.sendKeys(emailid);
+			Thread.sleep(3000);
 			submit.click();
+			Thread.sleep(3000);
 		}
 		
 		public static boolean CreationAlert() throws InterruptedException

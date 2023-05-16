@@ -88,57 +88,70 @@ public class SubjectSchedule extends AbstractComponent{
 	
 	public void clickSubjectSchedule() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SubjectSchedule.click();
 		Thread.sleep(3000);
 	}
 	
-	public void searchSiteCode(String sitecode)
+	public void searchSiteCode(String sitecode) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(SiteCode);
 		sel.selectByVisibleText(sitecode);
+		Thread.sleep(2000);
 	}
 	
 	public void SearchVisitDate(String date1,String date2) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Date1.sendKeys(date1);
 		Thread.sleep(3000);
 		Date2.sendKeys(date2);
 		Thread.sleep(3000);
 	}
 	
-	public void searchSubId(String subId)
+	public void searchSubId(String subId) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(SubjectId);
 		sel.selectByVisibleText(subId);
+		Thread.sleep(2000);
 	}
 	
 	public void searchVisitName(String vname) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		VisitName.sendKeys(vname);
 		Thread.sleep(3000);
 	}
 	
-	public void searchStatus(String stat)
+	public void searchStatus(String stat) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(Status);
 		sel.selectByVisibleText(stat);
+		Thread.sleep(2000);
 	}
 	
 	public void searchDate1(String d1) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Date1.sendKeys(d1);
 		Thread.sleep(3000);
 	}
 	
 	public void searchDate2(String d2) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Date2.sendKeys(d2);
 		Thread.sleep(3000);
 	}
 	
-	public void ClickSearch()
+	public void ClickSearch() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Search.click();
+		Thread.sleep(2000);
 	}
 	
 	public Boolean siteCodeSearchValidation(String sitecode) throws InterruptedException
@@ -261,7 +274,7 @@ public class SubjectSchedule extends AbstractComponent{
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Please select a site code"));
 			alert1.accept();
-			
+			Thread.sleep(2000);
 			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(8));
 			wait2.until(ExpectedConditions.alertIsPresent());
 			Alert alert2 = driver.switchTo().alert();

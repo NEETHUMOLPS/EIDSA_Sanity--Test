@@ -176,6 +176,7 @@ public class SubmitForm extends AbstractComponent{
 	
 	public void clickSubmitForm() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SubmitForm.click();
 		Thread.sleep(5000);
 	}
@@ -188,6 +189,7 @@ public class SubmitForm extends AbstractComponent{
 		Thread.sleep(3000);
 		elementWait(ReviewAndSubmit);
 		ReviewAndSubmit.click();
+		Thread.sleep(2000);
 	}
 	
 	public void save() throws InterruptedException
@@ -197,6 +199,7 @@ public class SubmitForm extends AbstractComponent{
 		Thread.sleep(3000);
 		elementWait(Save);
 		Save.click();
+		Thread.sleep(2000);
 	}
 	
 	public boolean selectSubmitForm(String name) throws InterruptedException 
@@ -271,24 +274,28 @@ public class SubmitForm extends AbstractComponent{
 	
 	public void clickSiteCode(String code) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SiteIdCode.sendKeys(code);
 		Thread.sleep(3000);
 	}
 	
 	public void clickPatientScreeningNum(String num) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		PatientScreeningNumber.sendKeys(num);
 		Thread.sleep(3000);
 	}
 
 	public void clickdate(String date) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		VisitDate.sendKeys(date);
 		Thread.sleep(3000);
 	}
 	
 	public void clickintials(String in) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Initials.sendKeys(in);
 		Thread.sleep(3000);
 	}

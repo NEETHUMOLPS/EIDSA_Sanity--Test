@@ -85,51 +85,67 @@ public class Visit extends AbstractComponent{
 	
 	public void clickVisit() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		visit.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickSearch() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Search.click();
 		Thread.sleep(3000);
 	}
 	
 	public void SearchVisitNo(String no) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		visitNo.sendKeys(no);
+		Thread.sleep(2000);
 	}
 	
 	public void assign() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		assign.click();
+		Thread.sleep(2000);
 	}
 	
 	public void language(String lan) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(language);
-		sel.selectByVisibleText(lan);			
+		sel.selectByVisibleText(lan);
+		Thread.sleep(2000);
 	}
 	
 	public void Translate() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		translate.click();
+		Thread.sleep(2000);
 	}
 	
 	public void assignclose() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		assignClose.click();
+		Thread.sleep(2000);
 	}
 	
 	public void SearchVisitName(String name) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		visitName.sendKeys(name);
+		Thread.sleep(2000);
 	}
 	
 	public void TemplateAssigning(String temp) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(assignTemplate);
-		sel.selectByVisibleText(temp);			
+		sel.selectByVisibleText(temp);	
+		Thread.sleep(2000);
 	}
 	
 	public Boolean visitNoSearchValidation(String num) throws InterruptedException

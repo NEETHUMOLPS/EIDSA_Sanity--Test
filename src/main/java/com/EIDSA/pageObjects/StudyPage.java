@@ -155,6 +155,8 @@ public class StudyPage extends AbstractComponent{
 	@CacheLookup
 	List<WebElement> studyStatus;
 
+	//Folder_Document
+	
 	@FindBy(xpath="//td[14]")
 	@CacheLookup
 	List<WebElement> document;
@@ -171,7 +173,7 @@ public class StudyPage extends AbstractComponent{
 	@CacheLookup
 	WebElement FolderName;
 	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div/span/button")
+	@FindBy(xpath="//button[contains(text(),'Add')]")
 	@CacheLookup
 	WebElement FolderAdd;
 	
@@ -279,15 +281,31 @@ public class StudyPage extends AbstractComponent{
 	@CacheLookup
 	List<WebElement> tableDownloads;
 	
+	@FindBy(xpath="//span[contains(text(),'Please enter a folder name')]")
+	@CacheLookup
+	WebElement err1;
+	
 	public void clickCreateSudy() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		createStudy.click();
+		Thread.sleep(2000);
 	}
 	
 	public void clickSave() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		save.click();
+		Thread.sleep(2000);
 	}
+	
+	public void clickAddFolder() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		AddFolder.click();
+		Thread.sleep(2000);
+	}
+	
 	
 	public void clickStudy() throws InterruptedException
 	{
@@ -329,6 +347,20 @@ public class StudyPage extends AbstractComponent{
 		save.click();
 		Thread.sleep(3000);
 	}
+	
+	public void createStudy_Negative(String studId,String studName) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		createStudy.click();
+		Thread.sleep(3000);
+		studyID.sendKeys(studId);
+		Thread.sleep(3000);
+		studyName.sendKeys(studName);
+		Thread.sleep(3000);
+		save.click();
+		Thread.sleep(3000);
+	}
+
 
 	
 	public boolean verifyStudy(String studId) throws InterruptedException 
@@ -441,8 +473,11 @@ public class StudyPage extends AbstractComponent{
 	{
 		Thread.sleep(2000);
 		studyID.clear();
+		Thread.sleep(2000);
 		studyID.sendKeys(newStudyId);
+		Thread.sleep(2000);
 		save.click();	
+		Thread.sleep(2000);
 	}
 	
 	public static boolean studyAlert() throws InterruptedException
@@ -790,7 +825,7 @@ public class StudyPage extends AbstractComponent{
 		return st;
 	}
 	
-	public void edit(String name)
+	public void edit(String name) throws InterruptedException
 	{
 		for(int i=0;i<tableDocument.size();i++)
 		{
@@ -798,6 +833,7 @@ public class StudyPage extends AbstractComponent{
 			if(text.equals(name))
 			{
 				tableEdit.get(i).click();
+				Thread.sleep(2000);
 				break;
 			}
 		}
@@ -810,7 +846,7 @@ public class StudyPage extends AbstractComponent{
 		Thread.sleep(3000);
 	}
 	
-	public void delete(String name)
+	public void delete(String name) throws InterruptedException
 	{
 		for(int i=0;i<tableDocument.size();i++)
 		{
@@ -818,12 +854,13 @@ public class StudyPage extends AbstractComponent{
 			if(text.equals(name))
 			{
 				tableDelete.get(i).click();
+				Thread.sleep(2000);
 				break;
 			}
 		}
 	}
 	
-	public void View(String name)
+	public void View(String name) throws InterruptedException
 	{
 		for(int i=0;i<tableDocument.size();i++)
 		{
@@ -831,6 +868,7 @@ public class StudyPage extends AbstractComponent{
 			if(text.equals(name))
 			{
 				tableView.get(i).click();
+				Thread.sleep(2000);
 				break;
 			}
 		}
@@ -843,6 +881,7 @@ public class StudyPage extends AbstractComponent{
 			String text=tableDocument.get(i).getText();
 			if(text.equals(name))
 			{
+				Thread.sleep(2000);
 				tableApprovals.get(i).click();
 				Thread.sleep(3000);
 				appr1.click();
@@ -850,12 +889,13 @@ public class StudyPage extends AbstractComponent{
 				appr2.click();
 				Thread.sleep(3000);
 				appr3.click();
+				Thread.sleep(2000);
 				break;
 			}
 		}
 	}
 	//Approver added successfully
-	public void Download(String name)
+	public void Download(String name) throws InterruptedException
 	{
 		for(int i=0;i<tableDocument.size();i++)
 		{
@@ -863,6 +903,7 @@ public class StudyPage extends AbstractComponent{
 			if(text.equals(name))
 			{
 				tableDownloads.get(i).click();
+				Thread.sleep(2000);
 				break;
 			}
 		}
@@ -933,8 +974,6 @@ public class StudyPage extends AbstractComponent{
 		Thread.sleep(4000);
 		clickOnFolder.click();
 		Thread.sleep(4000);
-		//upload.click();
-		Thread.sleep(4000);
 		WebElement uploadicon=driver.findElement(By.xpath("//img[@alt='upload document']"));
 	    uploadicon.click();
 		Thread.sleep(3000);
@@ -954,4 +993,125 @@ public class StudyPage extends AbstractComponent{
 		Thread.sleep(10000);*/
 		documentAlert();
 	}
+	
+	public void Negative1() throws InterruptedException, AWTException
+	{
+		Thread.sleep(2000);	
+		AddFolder.click();
+		Thread.sleep(3000);
+		FolderAdd.click();
+		Thread.sleep(3000);	
+		//driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/i[1]")).click();
+		//Thread.sleep(2000);	
+	}
+	
+	public String Err1()
+	{
+		elementWait(err1);
+		return err1.getText();
+	}
+	
+	public static boolean Alert1() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Folder name already exist"));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
+	
+	public static boolean DuplicateAlert() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Study ID already exists."));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
+	
+	
+	public static boolean Alert2() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Are you sure you want to delete this folder?"));
+			alert1.accept();
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			Assert.assertTrue(alert.getText().contains("This folder contains 1 or more documents, folder with document cannot be deleted"));
+			alert.accept();
+			Thread.sleep(2000);
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
+	
+	public static boolean Alert3() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Please add document description or document"));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
+	
+	
+	public void Negative2() throws InterruptedException
+	{
+		Thread.sleep(2000);	
+		AddFolder.click();
+		FolderName.sendKeys("01");
+		Thread.sleep(2000);	
+		FolderAdd.click();
+		Thread.sleep(2000);
+		Alert1();
+	}
+	
+	public void Negative3() throws InterruptedException, AWTException
+	{
+		Thread.sleep(2000);	
+		clickOnFolder.click();
+		Thread.sleep(4000);
+	    delete.click();
+	    Thread.sleep(4000);	    
+	}
+	
+	public void Negative4() throws InterruptedException, AWTException
+	{
+		Thread.sleep(2000);	
+		driver.findElement(By.xpath("//tbody/tr[1]/td[5]/i[1]")).click();
+		Thread.sleep(2000);	
+		FolderAdd.click();
+		Thread.sleep(2000);
+		
+	}
+	
 }

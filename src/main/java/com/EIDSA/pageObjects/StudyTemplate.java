@@ -82,6 +82,7 @@ public class StudyTemplate extends AbstractComponent{
 	
 	public void selectStudy(String study) throws InterruptedException
 	{	
+		Thread.sleep(2000);
 		Select sel=new Select(Study);
 		sel.selectByVisibleText(study);
 		Thread.sleep(3000);
@@ -108,11 +109,13 @@ public class StudyTemplate extends AbstractComponent{
 		
 		public void save() throws InterruptedException
 		{
+			Thread.sleep(2000);
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 			jse.executeScript("window.scrollBy(0,400)");
 			Thread.sleep(3000);
 			elementWait(save);
-			save.click();		
+			save.click();	
+			Thread.sleep(2000);
 		}
 
 

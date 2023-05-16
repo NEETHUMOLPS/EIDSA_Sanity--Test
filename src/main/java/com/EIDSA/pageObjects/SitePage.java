@@ -155,39 +155,58 @@ public class SitePage extends AbstractComponent{
 	
 	public void clickCreateSite() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		siteCreate.click();
+		Thread.sleep(3000);
 	}
 	
 	public void duplicateSite(String sitecode) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		siteCode.sendKeys(sitecode);
+		Thread.sleep(3000);
 	}
 	
 	public void invalidEmail(String email) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		siteContactEmail.sendKeys(email);
+		Thread.sleep(3000);
 	}
 	
 	public void clickSave() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		save.click();
+		Thread.sleep(3000);
 	}
 	
 	public void clickSite() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		site.click();
+		Thread.sleep(3000);
 	}
 	
 	public void createSite(String sitecode,String sitename,String sitecontactename,String sitecontactemail,String noofsubject,String studynotes) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		siteCreate.click();
+		Thread.sleep(2000);
 		siteCode.sendKeys(sitecode);
+		Thread.sleep(2000);
 		siteName.sendKeys(sitename);
+		Thread.sleep(2000);
 		siteContactName.sendKeys(sitecontactename);
+		Thread.sleep(2000);
 		siteContactEmail.sendKeys(sitecontactemail);
+		Thread.sleep(2000);
 		noOfSubject.sendKeys(noofsubject);
+		Thread.sleep(2000);
 		studyNotes.sendKeys(studynotes);
+		Thread.sleep(2000);
 		save.click();
+		Thread.sleep(2000);
 	}
 	
 	public boolean verifySite(String sitecode) throws InterruptedException 
@@ -244,7 +263,9 @@ public class SitePage extends AbstractComponent{
 		siteName.clear();
 		Thread.sleep(6000);
 		siteName.sendKeys(newSiteName);
+		Thread.sleep(2000);
 		save.click();	
+		Thread.sleep(2000);
 	}
 	
 	public void auditTrail(String sid) throws InterruptedException
@@ -258,6 +279,7 @@ public class SitePage extends AbstractComponent{
 			{
 				Thread.sleep(4000);
 				tableAuditTrail.get(i).click();
+				Thread.sleep(2000);
 				WebElement e = driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div/table/tbody/tr[1]/td[1]/span/strong"));
 				String actualText=e.getText();
 				String expText="Neethu P S";
@@ -322,6 +344,7 @@ public class SitePage extends AbstractComponent{
 			{
 				System.out.println(tableDelete.get(i));
 				tableDelete.get(i).click();
+				Thread.sleep(2000);
 				break;
 			}
 		}
@@ -351,11 +374,13 @@ public class SitePage extends AbstractComponent{
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Are you sure you want to delete this site?"));
 			alert1.accept();
+			Thread.sleep(2000);
 			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(4));
 			wait2.until(ExpectedConditions.alertIsPresent());
 			Alert alert2 = driver.switchTo().alert();
 			Assert.assertTrue(alert2.getText().contains("This site contains 1 or more patients, sites with patients cannot be deleted"));
 			alert2.accept();
+			Thread.sleep(2000);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 			wait.until(ExpectedConditions.alertIsPresent());
 			Alert alert = driver.switchTo().alert();
@@ -372,21 +397,27 @@ public class SitePage extends AbstractComponent{
 	{
 		Thread.sleep(2000);
 		siteCodeSearch.sendKeys(sitecodesearch);
+		Thread.sleep(2000);
 	}
 	
 	public void searchSiteName(String sitenamesearch) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		siteNameSearch.sendKeys(sitenamesearch);
+		Thread.sleep(2000);
 	}
-	public void searchSiteStatus(String sitestatus)
+	public void searchSiteStatus(String sitestatus) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(siteStatusSearch);
 		sel.selectByVisibleText(sitestatus);
+		Thread.sleep(2000);
 	}
-	public void siteSearch()
+	public void siteSearch() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		siteSearch.click();
+		Thread.sleep(2000);
 	}
 	public Boolean siteCodeSearchValidation(String sitecode) throws InterruptedException
 	{
@@ -469,6 +500,7 @@ public class SitePage extends AbstractComponent{
 				tableAction.get(i).click();
 				Thread.sleep(3000);
 				Open.click();
+				Thread.sleep(2000);
 				WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
 				wait1.until(ExpectedConditions.alertIsPresent());
 				Alert alert1 = driver.switchTo().alert();
@@ -493,7 +525,7 @@ public class SitePage extends AbstractComponent{
 				WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
 				wait1.until(ExpectedConditions.alertIsPresent());
 				Alert alert1 = driver.switchTo().alert();
-				Assert.assertTrue(alert1.getText().contains("Are you sure you want to close this site?"));
+				Assert.assertTrue(alert1.getText().contains("Are you sure you want to terminate this site?"));
 				alert1.accept();
 				break;
 			}
@@ -512,11 +544,13 @@ public class SitePage extends AbstractComponent{
 				tableAction.get(i).click();
 				Thread.sleep(3000);
 				Complete.click();
+				Thread.sleep(2000);
 				WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
 				wait1.until(ExpectedConditions.alertIsPresent());
 				Alert alert1 = driver.switchTo().alert();
 				Assert.assertTrue(alert1.getText().contains("Are you sure you want to complete this site?"));
 				alert1.accept();
+				Thread.sleep(2000);
 				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 				wait.until(ExpectedConditions.alertIsPresent());
 				Alert alert = driver.switchTo().alert();

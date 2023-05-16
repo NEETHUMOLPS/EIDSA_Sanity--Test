@@ -92,12 +92,14 @@ public class Templates extends AbstractComponent{
 	
 	public void searchTemplateName(String temp) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		TemplateName.sendKeys(temp);
 		Thread.sleep(3000);	
 	}
 	
 	public void clickSearch() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Search.click();
 		Thread.sleep(3000);	
 	}

@@ -308,6 +308,23 @@ public class StudyVisit extends AbstractComponent{
 		}
 		
 	}
+	
+	public static boolean Alert6() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(4));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Visit No already exists."));
+			alert1.accept();
+			Thread.sleep(3000);
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
 		
 	public void searchVisitName(String name) throws InterruptedException
 	{

@@ -80,6 +80,7 @@ public class SitePrivilege extends AbstractComponent{
 		study.click();
 		Thread.sleep(3000);
 		save.click();
+		Thread.sleep(2000);
 	}
 	
 

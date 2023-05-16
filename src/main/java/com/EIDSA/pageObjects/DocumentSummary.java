@@ -128,18 +128,21 @@ public class DocumentSummary extends AbstractComponent{
 	
 	public void searchDocumentStorageArea(String dsa) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		DocumentStorageArea.sendKeys(dsa);
 		Thread.sleep(3000);
 	}
 	
 	public void searchDocumentName(String name) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		DocumentName.sendKeys(name);
 		Thread.sleep(3000);
 	}
 	
 	public void SearchDate(String date1,String date2) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Date1.sendKeys(date1);
 		Thread.sleep(3000);
 		Date2.sendKeys(date2);
@@ -148,6 +151,7 @@ public class DocumentSummary extends AbstractComponent{
 	
 	public void search() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
 		Thread.sleep(5000);
 	}
@@ -318,6 +322,7 @@ public class DocumentSummary extends AbstractComponent{
 	
 	public void setApprover() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		clickApproverdropdown.click();
 		Thread.sleep(2000);
 		SelectApprover.click();
@@ -328,24 +333,28 @@ public class DocumentSummary extends AbstractComponent{
 	
 	public void deleteApprover() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		ApproverDelete.click();
 		Thread.sleep(2000);
 	}
 	
 	public void closeApprover() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		ApproverClose.click();
 		Thread.sleep(2000);
 	}
 	
 	public void viewHistory() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		HistoryView.click();
 		Thread.sleep(3000);
 	}
 	
 	public void downloadHistory() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		HistoryDownload.click();
 		Thread.sleep(3000);
 		HistoryClose.click();

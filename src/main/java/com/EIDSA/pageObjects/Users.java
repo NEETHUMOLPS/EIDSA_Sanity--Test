@@ -82,13 +82,17 @@ public class Users extends AbstractComponent{
 	
 	public void SearchEmailOrName(String nm) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		EmailOrName.sendKeys(nm);
+		Thread.sleep(2000);
 	}
 	
 	public void SearchRole(String role) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(Role);
-		sel.selectByVisibleText(role);			
+		sel.selectByVisibleText(role);	
+		Thread.sleep(2000);
 	}
 	
 	public Boolean EmailSearchValidation(String role) throws InterruptedException

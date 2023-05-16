@@ -182,6 +182,7 @@ public class GeneralQuery extends AbstractComponent{
 		Recipient3.click();
 		Thread.sleep(3000);
 		Submit.click();
+		Thread.sleep(3000);
 	}
 	
 	public static boolean Alert1() throws InterruptedException
@@ -201,6 +202,7 @@ public class GeneralQuery extends AbstractComponent{
 	
 	public void clickGeneral() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		AllQueries1.click();
 		Thread.sleep(2000);
 		GeneralQuery1.click();
@@ -210,6 +212,7 @@ public class GeneralQuery extends AbstractComponent{
 	
 	public void clickQueryId(String id) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		QueryId.sendKeys(id);
 		Thread.sleep(3000);
 	}
@@ -217,12 +220,14 @@ public class GeneralQuery extends AbstractComponent{
 	
 	public void clickQuerySubject(String sub) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		QuerySubject1.sendKeys(sub);
 		Thread.sleep(3000);
 	}
 	
 	public void clickQueryStatus(String st) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(QueryStatus);
 		sel.selectByVisibleText(st);
 		Thread.sleep(3000);
@@ -230,12 +235,14 @@ public class GeneralQuery extends AbstractComponent{
 	
 	public void clickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
 		Thread.sleep(3000);
 	}
 	
 	public void clickSubmit() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(3000);
 	}

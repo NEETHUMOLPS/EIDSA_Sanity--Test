@@ -66,37 +66,47 @@ public class ArchiveForms extends AbstractComponent{
 	
 	public void clickArchiveForms() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		ArchiveForms.click();
 		Thread.sleep(3000);
 	}
 	
-	public void searchSiteCode(String sitecode)
+	public void searchSiteCode(String sitecode) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SiteCode);
 		sel.selectByVisibleText(sitecode);
+		Thread.sleep(3000);
 	}
 	
-	public void searchSubId(String subId)
+	public void searchSubId(String subId) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(SubjectId);
 		sel.selectByVisibleText(subId);
+		Thread.sleep(3000);
 	}
 	
 	public void searchVisitName(String visitname) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		VisitName.sendKeys(visitname);
+		Thread.sleep(3000);
 	}
 	
-	public void searchStat(String stat)
+	public void searchStat(String stat) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Select sel=new Select(Status);
 		sel.selectByVisibleText(stat);
+		Thread.sleep(3000);
 	}
 	
-	public void ClickSearch()
+	public void ClickSearch() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		Search.click();
+		Thread.sleep(3000);
 	}
 	
 	public Boolean siteCodeSearchValidation(String sitecode) throws InterruptedException

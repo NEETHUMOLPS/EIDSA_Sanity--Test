@@ -182,16 +182,19 @@ public class SubjectPage extends AbstractComponent{
 	{
 		Thread.sleep(3000);
 		createSubject.click();
+		Thread.sleep(2000);
 	}
 	
 	public void saveSub() throws InterruptedException
 	{
 		Thread.sleep(3000);
 		save.click();
+		Thread.sleep(2000);
 	}
 	
 	public void createSubject(String code,String subid,String date,String previsit,String postvisit,String ct,String pc,String notes) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		subject.click();
 		Thread.sleep(5000);
 		createSubject.click();
@@ -227,19 +230,25 @@ public class SubjectPage extends AbstractComponent{
 	
 	public void duplicateSiteCode(String site) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sitecode=new Select(siteCode);
 		sitecode.selectByVisibleText(site);
+		Thread.sleep(2000);
 
 	}
 	
 	public void duplicateSubjectId(String subid) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		subjectId.sendKeys(subid);
+		Thread.sleep(2000);
 	}
 	
 	public void duplicatedate(String subid) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		enrolmentDate.sendKeys(subid);
+		Thread.sleep(2000);
 	}
 	
 	public static boolean subjectAlert() throws InterruptedException
@@ -275,45 +284,59 @@ public class SubjectPage extends AbstractComponent{
 		return sub;
 	}
 	
-	public void searchSiteCode(String sitecode)
+	public void searchSiteCode(String sitecode) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(searchSiteCode);
 		sel.selectByVisibleText(sitecode);
+		Thread.sleep(2000);
 	}
 	
 	public void searchSubjectId(String subid) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		searchSubId.sendKeys(subid);
+		Thread.sleep(2000);
 	}
 	
-	public void searchStatus(String status)
+	public void searchStatus(String status) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(searchStatus);
 		sel.selectByVisibleText(status);
+		Thread.sleep(2000);
 	}
 	
-	public void searchSiteCodeAll()
+	public void searchSiteCodeAll() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(searchSiteCode);
 		sel.selectByVisibleText("All");
+		Thread.sleep(2000);
 	}
 	
 	public void clearSubjectId() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		searchSubId.click();
+		Thread.sleep(2000);
 		searchSubId.clear();
+		Thread.sleep(2000);
 	}
 	
-	public void searchStatusAll()
+	public void searchStatusAll() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		Select sel=new Select(searchStatus);
 		sel.selectByVisibleText("All");
+		Thread.sleep(2000);
 	}
 	
-	public void Search()
+	public void Search() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		search.click();
+		Thread.sleep(2000);
 	}
 	
 	public Boolean siteCodeSearchValidation(String sitecode) throws InterruptedException
@@ -409,6 +432,7 @@ public class SubjectPage extends AbstractComponent{
 		subjectNotes.sendKeys("NA");
 		Thread.sleep(4000);
 		save.click();	
+		Thread.sleep(2000);
 	}
 	
 	public static boolean subjectEditAlert() throws InterruptedException
@@ -437,6 +461,7 @@ public class SubjectPage extends AbstractComponent{
 			{
 				Thread.sleep(4000);
 				tableAuditTrail.get(i).click();
+				Thread.sleep(2000);
 				WebElement e = driver.findElement(By.xpath("//strong[contains(text(),'Neethu P S')]"));
 				String actualText=e.getText();
 				String expText="Neethu P S";
@@ -507,6 +532,7 @@ public class SubjectPage extends AbstractComponent{
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Are you sure you want to withdraw this patient?"));
 			alert1.accept();
+			Thread.sleep(2000);
 			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(8));
 			wait2.until(ExpectedConditions.alertIsPresent());
 			Alert alert2 = driver.switchTo().alert();
@@ -526,6 +552,7 @@ public class SubjectPage extends AbstractComponent{
 			if(text.equals(subcode))
 			{
 				tableComplete.get(i).click();
+				Thread.sleep(2000);
 				break;	
 			}
 		}
