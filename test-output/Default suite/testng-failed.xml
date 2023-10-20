@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive">
+      <class name="com.EIDSA.testCases.TC_066_DesignForm_Negative">
         <methods>
           <include name="setup"/>
-          <include name="visitNameSearchValidation"/>
-          <include name="withdraw"/>
+          <include name="DesignComplete"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_066_DesignForm_Negative -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

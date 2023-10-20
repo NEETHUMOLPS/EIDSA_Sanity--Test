@@ -19,7 +19,7 @@ public class TC_022_PatientLogin_Negative extends BaseClassTest{
 		pl.SearchSiteCode("Demo01");
 		pl.Search();
 		Thread.sleep(3000);
-		pl.findSubId("demo03");
+		pl.findSubId("demo04");
 		Thread.sleep(2000);
 		pl.Submit();
 		SoftAssert softAssert = new SoftAssert();

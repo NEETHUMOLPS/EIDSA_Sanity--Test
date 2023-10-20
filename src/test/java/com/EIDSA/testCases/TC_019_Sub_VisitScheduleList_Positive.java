@@ -19,7 +19,7 @@ import Base.BaseClassTest;
 
 public class TC_019_Sub_VisitScheduleList_Positive extends BaseClassTest{
 	
-	/*@Test(priority=1, dataProvider = "unsheduledVisit")
+	@Test(priority=1, dataProvider = "unsheduledVisit")
 	public void unsheduledVisitCreation(String visitno,String visitname,String previsit,String postvisit,String date) throws IOException, InterruptedException
 	{
 		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
@@ -38,11 +38,11 @@ public class TC_019_Sub_VisitScheduleList_Positive extends BaseClassTest{
 		sp.clickSubject();
 		sp.searchSiteCode("Demo05");
 		sp.findSubId("demo05");
-		sp.SearchVisitName("visit100");
+		sp.SearchVisitName("Visit100");
 		sp.Search();
-		sp.verifyUnscheduledVisit("visit100");
+		sp.verifyUnscheduledVisit("Visit100");
 		logger.info("Unsheduled visit verified");		
-	}*/
+	}
 
 	@Test(priority=3)
 	public void visitNameSearchValidation() throws IOException, InterruptedException
@@ -51,7 +51,7 @@ public class TC_019_Sub_VisitScheduleList_Positive extends BaseClassTest{
 		sp.clickSubject();
 		sp.searchSiteCode("Demo05");
 		sp.findSubId("demo05");
-		sp.SearchVisitName("visit100");
+		sp.SearchVisitName("Visit100");
 		sp.Search();
 		Thread.sleep(3000);
 		Assert.assertTrue(sp.visitNameSearchValidation("Visit100"));
@@ -76,7 +76,7 @@ public class TC_019_Sub_VisitScheduleList_Positive extends BaseClassTest{
 		logger.info("Visit schedule search validation successfully completed");		
 	}
 	
-/*	@Test(priority=5)
+	@Test(priority=5)
 	public void dateSearchValidation() throws IOException, InterruptedException, ParseException
 	{
 		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
@@ -90,23 +90,23 @@ public class TC_019_Sub_VisitScheduleList_Positive extends BaseClassTest{
 		sp.dateSearchValidation("27/04/2023");
 		Thread.sleep(3000);
 		logger.info("Date search validated ");	
-	}*/
+	}
 	
-	@Test(priority=6)
+	/*@Test(priority=6)
 	public void withdraw() throws IOException, InterruptedException
 	{
 		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
 		sp.clickSubject();
 		sp.searchSiteCode("Demo05");
 		sp.findSubId("demo05");
-		sp.SearchVisitName("visit100");
+		sp.SearchVisitName("12");
 		sp.Search();
-		sp.withdraw("visit100");
+		sp.withdraw("12");
 		sp.withdrawAlert();
 		logger.info("Visit withdrew successfully");
-	}
+	}*/
 	
-/*	@Test(priority=6)
+	@Test(priority=7)
 	public void view() throws IOException, InterruptedException
 	{
 		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
@@ -118,7 +118,7 @@ public class TC_019_Sub_VisitScheduleList_Positive extends BaseClassTest{
 		sp.view("11");
 		logger.info("Opened successfully");
 	}
-	*/
+	
 	@DataProvider(name="unsheduledVisit")
 	 String [][] getData() throws IOException
 	{

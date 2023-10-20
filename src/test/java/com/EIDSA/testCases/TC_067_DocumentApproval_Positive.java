@@ -60,7 +60,7 @@ public class TC_067_DocumentApproval_Positive extends BaseClassTest{
 		ds.search();
 		Thread.sleep(3000);
 		ds.ClickView("EIDSA.docx");
-		logger.info("Approver window opened");
+		logger.info("Form opened");
 		driver.navigate().refresh();		
 	}
 	

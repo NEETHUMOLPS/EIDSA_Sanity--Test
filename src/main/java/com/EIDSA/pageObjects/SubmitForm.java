@@ -166,7 +166,7 @@ public class SubmitForm extends AbstractComponent{
 			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alert1 = driver.switchTo().alert();
-			Assert.assertTrue(alert1.getText().contains("Form submitted successfully."));
+			Assert.assertTrue(alert1.getText().contains("Form submitted successfully"));
 			alert1.accept();
 			return true;
 		} catch (NoAlertPresentException e) {
@@ -257,8 +257,8 @@ public class SubmitForm extends AbstractComponent{
 		Thread.sleep(2000);
 		PatientScreeningNumber.sendKeys("101");
 		Thread.sleep(3000);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,800)");
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("window.scrollBy(0,800)");
 		VisitDate.clear();
 		Thread.sleep(2000);
 		VisitDate.sendKeys("27-04-2023");

@@ -86,7 +86,7 @@ public class TC_037_SubjectSchedule_Positive extends BaseClassTest {
 		fs.searchSubId("02");
 		Thread.sleep(3000);
 		fs.ClickSearch();
-		fs.view("visit 06");
+		fs.view("visit 05");
 		logger.info("Form opened");
 	}
 

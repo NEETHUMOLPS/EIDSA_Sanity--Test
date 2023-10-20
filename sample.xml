@@ -9,7 +9,8 @@
 <test name="EIDSA App Test">
 <parameter name="browser" value="chrome" />
 <classes>
-<class name="com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive"/>
+<class name="com.EIDSA.testCases.TC_001_loginTest_Positive"/>
+
 
 <!--  <methods>
                <include name="negativeTest6" />

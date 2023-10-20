@@ -294,7 +294,7 @@ public class SubVisitScheduleList extends AbstractComponent{
 		Thread.sleep(2000);
 		Select temp=new Select(visitTemplate);
 		temp.selectByVisibleText("Case Report-en-1.0");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		save.click();	
 		Thread.sleep(3000);
 	}
@@ -491,6 +491,7 @@ public class SubVisitScheduleList extends AbstractComponent{
 			String text=tableVisitName.get(i).getText();
 			if(text.equals(subcode))
 			{
+				Thread.sleep(3000);
 				tableWithdraw.get(i).click();
 				Thread.sleep(3000);
 				break;	

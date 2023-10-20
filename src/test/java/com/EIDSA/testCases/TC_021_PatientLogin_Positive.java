@@ -59,8 +59,8 @@ public class TC_021_PatientLogin_Positive extends BaseClassTest {
 		pl.SearchSiteCode("Demo01");
 		pl.Search();
 		Thread.sleep(3000);
-		pl.findSubId("demo03");
-		pl.AddLogin("demo03new@yopmail.com");
+		pl.findSubId("demo04");
+		pl.AddLogin("demo04new@yopmail.com");
 		pl.CreationAlert();
 		logger.info("Login added successfully");
 	}

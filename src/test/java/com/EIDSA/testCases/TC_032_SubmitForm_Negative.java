@@ -18,7 +18,7 @@ public class TC_032_SubmitForm_Negative extends BaseClassTest {
 	{
 		SubmitForm fp = new SubmitForm(driver);
 		fp.clickSubmitForm();
-		fp.selectSubmitForm("visit006");
+		fp.selectSubmitForm("Visit100");
 		fp.save();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(fp.errorMsg1(), "Please enter a value");
@@ -34,13 +34,14 @@ public class TC_032_SubmitForm_Negative extends BaseClassTest {
 	{
 		SubmitForm fp = new SubmitForm(driver);
 		fp.clickSubmitForm();
-		fp.selectSubmitForm("visit006");
+		fp.selectSubmitForm("Visit100");
 		Thread.sleep(8000);
 		fp.clickSiteCode("j");
 		fp.clickPatientScreeningNum("j");
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,500)");
 		fp.clickintials("j");
+		fp.save();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(fp.errorMsg5(), "Please enter a value between 100 and 999");
 		softAssert.assertEquals(fp.errorMsg6(), "Number of characters should be between 3 and 7");

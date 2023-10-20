@@ -3,6 +3,7 @@ package com.EIDSA.pageObjects;
 import java.time.Duration;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,10 @@ public class DesignForm  extends AbstractComponent{
 	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]")
 	@CacheLookup
 	WebElement CreateForm;
+	
+	@FindBy(xpath = "//i[@class='fa fa-times']")
+	@CacheLookup
+	WebElement CreateFormClose;
 	
 	@FindBy(xpath = "//input[@id='form-name']")
 	@CacheLookup
@@ -86,9 +91,31 @@ public class DesignForm  extends AbstractComponent{
 	@CacheLookup
 	WebElement ColumnThree;
 	
+	//Heading
+	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div/div[2]/div/div[2]/div[2]/div/div[9]/a/div/img")
 	@CacheLookup
 	WebElement Heading;
+	
+	@FindBy(xpath = "//input[@id='headdingtext']")
+	@CacheLookup
+	WebElement AddHeading;
+	
+	@FindBy(xpath = "//input[@id='instructionstext']")
+	@CacheLookup
+	WebElement FieldName;
+	
+	@FindBy(xpath = "//*[@id=\"modalcontents\"]/div/div/div/div[2]/div[3]/div/div[1]/img")
+	@CacheLookup
+	WebElement Add;
+	
+	@FindBy(xpath = "//*[@id=\"modalcontents\"]/div/div/div/div[2]/div[3]/div/div[2]/img")
+	@CacheLookup
+	WebElement Delete;
+	
+	@FindBy(xpath = "//*[@id=\"modalcontents\"]/div/div/div/div[2]/div[3]/div/div[1]/img")
+	@CacheLookup
+	WebElement Save;
 	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div/div[2]/div/div[2]/div[2]/div/div[10]/a/div/img")
 	@CacheLookup
@@ -104,11 +131,23 @@ public class DesignForm  extends AbstractComponent{
 	
 	@FindBy(xpath = "//*[@id=\"app\"]/div[2]/div/div[2]/div/input")
 	@CacheLookup
-	WebElement PageName;
+	WebElement PageName1;
+	
+	@FindBy(xpath = "//body/div[@id='app']/div[2]/div[1]/div[2]/div[1]/input[1]")
+	@CacheLookup
+	WebElement PageName2;
 	
 	@FindBy(xpath = "//button[contains(text(),'Submit')]")
 	@CacheLookup
 	WebElement Submit2;
+	
+	@FindBy(xpath = "//i[@class='fa fa-times']")
+	@CacheLookup
+	WebElement AddPageClose;
+	
+	@FindBy(xpath = "//i[@class='fa fa-times']")
+	@CacheLookup
+	WebElement HeadingClose;
 	
 	public void clickDesignForm() throws InterruptedException
 	{
@@ -136,10 +175,49 @@ public class DesignForm  extends AbstractComponent{
 		Thread.sleep(3000);
 	}
 	
+	public void CreateForm_Negative() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		CreateForm.click();
+		Thread.sleep(3000);
+		Thread.sleep(3000);
+		Submit1.click();
+		Thread.sleep(3000);
+		
+	}
+	
+	public void CreateFormClose() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		CreateFormClose.click();
+		Thread.sleep(2000);
+	}
+	
+	public void AddPageClose() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		AddPageClose.click();
+		Thread.sleep(2000);
+	}
+	
+	public void HeadingClose() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		HeadingClose.click();
+		Thread.sleep(2000);
+	}
+	
 	public void completeDesign() throws InterruptedException
 	{
 		Thread.sleep(3000);
 		DesignComplete.click();
+		Thread.sleep(3000);
+	}
+	
+	public void SaveTemplate() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		SaveTemplate.click();
 		Thread.sleep(3000);
 	}
 	
@@ -159,11 +237,83 @@ public class DesignForm  extends AbstractComponent{
 		Thread.sleep(3000);
 		NewPage.click();
 		Thread.sleep(3000);
-		PageName.sendKeys("Pg01");
+		PageName1.sendKeys("pg 01");
 		Thread.sleep(3000);
 		Submit2.click();
 		Thread.sleep(3000);
+	}
+	
+	public void NewPage() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		NewPage.click();
+		Thread.sleep(3000);
+	}
+	
+	public void PageName(String pg) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		PageName2.sendKeys(pg);
+		Thread.sleep(3000);
+	}
+	public void Submit2() throws InterruptedException
+	{
+		Submit2.click();
 		
+	}
+	
+
+	
+	public void Heading(String h1, String h2) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		AddHeading.sendKeys(h1);
+		Thread.sleep(3000);
+		FieldName.sendKeys(h2);
+		Thread.sleep(3000);
+		
+	}
+	
+	public void HeadingEdit(String h3) throws InterruptedException
+	{
+		driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[3]/div/div[2]/div/div[1]/div[2]/div/div[1]/form/div/div/div/div/div/div/div/div")).click();
+		Thread.sleep(2000);
+		AddHeading.click();
+		Thread.sleep(2000);
+		AddHeading.clear();
+		Thread.sleep(2000);
+		AddHeading.sendKeys(h3);
+		Thread.sleep(3000);
+		Save.click();
+		Thread.sleep(2000);
+		
+	}
+	public void HeadingAdd() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Add.click();
+		Thread.sleep(2000);	
+	}
+	
+	public void HeadingDelete() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Delete.click();
+		Thread.sleep(2000);	
+	}
+	
+	public void DeleteColumn() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		DeleteColumn.click();
+		Thread.sleep(2000);	
+	}
+	
+	public void DeletePage() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		DeletePage.click();
+		Thread.sleep(2000);	
 	}
 	
 	public static boolean Alert1() throws InterruptedException
@@ -242,12 +392,6 @@ public class DesignForm  extends AbstractComponent{
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Are you sure you want to delete this page?"));
 			alert1.accept();
-			Thread.sleep(3000);
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
-			wait.until(ExpectedConditions.alertIsPresent());
-			Alert alert = driver.switchTo().alert();
-			Assert.assertTrue(alert.getText().contains("Form deleted successfully"));
-			alert.accept();
 			Thread.sleep(3000);
 			return true;
 		} catch (NoAlertPresentException e) {
@@ -347,6 +491,37 @@ public class DesignForm  extends AbstractComponent{
 		}	
 	}
 	
+	public static boolean Alert12() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("Fieldname cannot be empty"));
+			alert1.accept();
+			Thread.sleep(3000);
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}	
+	}
+	
+	public static boolean Alert13() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("This field name is already in use"));
+			alert1.accept();
+			Thread.sleep(3000);
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}	
+	}
 
 
 }

@@ -165,21 +165,7 @@ public class FieldPrivilege extends AbstractComponent{
 			return false;
 		}	
 	}
-	
-	public static boolean Alert3() throws InterruptedException
-	{
-		try
-		{
-			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
-			wait1.until(ExpectedConditions.alertIsPresent());
-			Alert alert1 = driver.switchTo().alert();
-			Assert.assertTrue(alert1.getText().contains("Please select a privilege"));
-			alert1.accept();
-			return true;
-		} catch (NoAlertPresentException e) {
-			return false;
-		}	
-	}
+
 	
 	public static boolean Alert4() throws InterruptedException
 	{
@@ -256,10 +242,6 @@ public class FieldPrivilege extends AbstractComponent{
 	{
 		Thread.sleep(6000);
 		siteIdCode.click();
-		Thread.sleep(3000);
-		masking.click();
-		Thread.sleep(3000);
-		save.click();
 		Thread.sleep(3000);
 	}
 	

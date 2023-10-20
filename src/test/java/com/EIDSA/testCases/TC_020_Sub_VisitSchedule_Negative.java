@@ -31,7 +31,20 @@ public class TC_020_Sub_VisitSchedule_Negative extends BaseClassTest {
 		softAssert.assertEquals(sp.errorVisitDate(), "Please enter visit date");
 		softAssert.assertEquals(sp.errorVisitTemplate(), "Please select a visit template");
 		softAssert.assertAll();
-        logger.info("Negative test passed");	
+        logger.info("Negative test1 passed");	
+        driver.navigate().refresh();
+	}
+	
+	@Test(priority=2)
+	public void unsheduledVisitCreation() throws IOException, InterruptedException
+	{
+		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
+		sp.clickSubject();
+		sp.searchSiteCode("Demo05");
+		sp.findSubId("demo05");
+		sp.createUnScheduleVisit("Visit100", "Visit100", "0", "0", "16-05-2023");
+		sp.duplicateAlert();
+		logger.info("Negative test2 passed");
 	}
 
 }
