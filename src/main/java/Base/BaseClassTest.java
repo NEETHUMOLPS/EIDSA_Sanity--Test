@@ -53,11 +53,7 @@ public class BaseClassTest {
 		driver.manage().window().maximize();
 		logger.info("URL is opened");
 		LoginPage lp=new LoginPage(driver);
-		lp.setUsername(username);
-		logger.info("Entered username");
-		lp.setPassword(password);
-		logger.info("Enterd password");
-		lp.clickLogin();
+		lp.login("Neethumol","neethumolp@datamatica.uk","Neethu@4");
 		Thread.sleep(4000);
 		
 	}

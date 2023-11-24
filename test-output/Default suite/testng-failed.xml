@@ -3,12 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.EIDSA.testCases.TC_066_DesignForm_Negative">
+      <class name="com.EIDSA.testCases.TC_009_Users_Positive">
         <methods>
+          <include name="RoleSearch"/>
           <include name="setup"/>
-          <include name="DesignComplete"/>
+          <include name="auditTrail"/>
+          <include name="userPrivilege"/>
+          <include name="EmailOrNameSearch"/>
+          <include name="userDelete"/>
+          <include name="userEdit"/>
+          <include name="userCreation"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_066_DesignForm_Negative -->
+      </class> <!-- com.EIDSA.testCases.TC_009_Users_Positive -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

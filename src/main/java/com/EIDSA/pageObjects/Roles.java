@@ -24,71 +24,55 @@ public class Roles extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
-	
+	//Role menu
 	@FindBy(xpath="//span[contains(text(),'Roles')]")
 	@CacheLookup
-	WebElement Roles;
+	WebElement Roles;	
 	
+	//Add role
 	@FindBy(xpath="//img[@alt='Create role']")
 	@CacheLookup
 	WebElement AddRole;
-	
 	@FindBy(xpath="//label[contains(text(),'Name')]/following-sibling::input[1]")
 	@CacheLookup
 	WebElement RoleName;
-	
 	@FindBy(xpath="//label[contains(text(),'Description')]/following-sibling::input[1]")
 	@CacheLookup
 	WebElement RoleDescription;
-	
 	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/input[1]")
 	@CacheLookup
-	WebElement Active;
-	
+	WebElement Active;	
 	@FindBy(xpath="//button[contains(text(),'Clear')]")
 	@CacheLookup
-	WebElement Clear;
-	
+	WebElement Clear;	
 	@FindBy(xpath="//button[contains(text(),'Submit')]")
 	@CacheLookup
-	WebElement Submit;
+	WebElement Submit;	
 	
+	//Search
 	@FindBy(xpath="//label[contains(text(),'Role Name')]/following-sibling::input[1]")
 	@CacheLookup
 	WebElement RoleNameSearch;
-	
 	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[2]/div/select")
 	@CacheLookup
 	WebElement Status;
-	
-	@FindBy(xpath="//option[contains(text(),'Active')]")
-	@CacheLookup
-	WebElement StatusActive;
-	
-	@FindBy(xpath="//option[contains(text(),'Inactive')]")
-	@CacheLookup
-	WebElement StatusInactive;
-	
 	@FindBy(xpath="//span[contains(text(),'Search')]")
 	@CacheLookup
 	WebElement Search;
 	
+	//Web table
 	@FindBy(xpath="//td[1]")
 	@CacheLookup
 	List<WebElement> tableRoleName;
-	
 	@FindBy(xpath="//td[2]")
 	@CacheLookup
 	List<WebElement> tableRoleDes;
-	
 	@FindBy(xpath="//td[3]")
 	@CacheLookup
 	List<WebElement> tableActive;
-	
 	@FindBy(xpath="//td[4]")
 	@CacheLookup
 	List<WebElement> tableEdit;
-	
 	@FindBy(xpath="//td[5]")
 	@CacheLookup
 	List<WebElement> tableDelete;
@@ -106,60 +90,36 @@ public class Roles extends AbstractComponent{
 	public void clickRoles() throws InterruptedException
 	{
 		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		elementWait(Roles);
 		Roles.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("window.scrollBy(0,-1000)");
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 	}
 	
 	public void createRoles(String rolename,String des) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		AddRole.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		RoleName.sendKeys(rolename);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		RoleDescription.sendKeys(des);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Submit.click();
-		Thread.sleep(3000);
-	}
-	
-	public void duplicateRole(String rolename,String des) throws InterruptedException
-	{
-		Thread.sleep(3000);
-		RoleName.sendKeys(rolename);
-		Thread.sleep(3000);
-		RoleDescription.sendKeys(des);
 		Thread.sleep(2000);
 	}
 	
 	public void clickCreateRole() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		AddRole.click();
-		Thread.sleep(3000);
-	}
-	
-	public void searchRoleName(String name) throws InterruptedException
-	{
-		Thread.sleep(4000);
-		RoleNameSearch.sendKeys(name);
-		Thread.sleep(4000);
-	}
-	
-	public void searchStatus(String stat) throws InterruptedException
-	{
-		Thread.sleep(4000);
-		Select sel=new Select(Status);
-		sel.selectByVisibleText(stat);
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 	}
 	
 	public static boolean Alert1() throws InterruptedException
@@ -179,18 +139,11 @@ public class Roles extends AbstractComponent{
 	
 	public void searchRoles(String rname) throws InterruptedException
 	{
-		Thread.sleep(3000);
-		RoleNameSearch.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		RoleNameSearch.sendKeys(rname);
-		Thread.sleep(3000);
-	}
-	
-	public void clickSearch() throws InterruptedException
-	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Search.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public void edit(String rolename) throws InterruptedException
@@ -204,7 +157,7 @@ public class Roles extends AbstractComponent{
 			if(text.contains(rolename))
 			{
 				tableEdit.get(i).click();
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				break;
 			}
 		}
@@ -212,12 +165,14 @@ public class Roles extends AbstractComponent{
 	
 	public void editData(String des) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		RoleDescription.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		RoleDescription.clear();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		RoleDescription.sendKeys(des);	
+		Thread.sleep(2000);
+		Submit.click();
 		Thread.sleep(2000);
 	}
 	
@@ -269,7 +224,7 @@ public class Roles extends AbstractComponent{
 			if(text.contains(del))
 			{
 				tableDelete.get(i).click();
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				break;
 			}
 		}
@@ -314,7 +269,6 @@ public class Roles extends AbstractComponent{
 	
 	public Boolean roleNameSearchValidation(String name) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableRoleName.size();
 		if (count<1) 
@@ -335,32 +289,9 @@ public class Roles extends AbstractComponent{
 		}
 		return st;
 	}
+}
 	
-public Boolean statusSearchValidation() throws InterruptedException
-{
-	Thread.sleep(3000);
-	boolean st = true;
-	int count =tableActive.size();
-	if (count<1) 
-	{
-		st=false;
-	}
-	else 
-	{
-		for (int i=0; i<tableActive.size();i++)
-		{
-			//String stat=tableActive.get(i).getText();
-			//if (!(stat.contains(name))) 
-			if(!((WebElement) tableActive).isSelected()) 
-			{
-				st=false;
-				break;
-			}
-		}
-	}
-	return st;
-}
-}
+
 	
 	
 

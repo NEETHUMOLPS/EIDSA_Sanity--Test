@@ -7,29 +7,13 @@ import Base.BaseClass;
 public class TC_001_loginTest_Positive extends BaseClass {
 	
 	@Test
-	public void LoginTest() throws IOException
+	public void LoginTest() throws IOException, InterruptedException
 	{
 		
 		logger.info("URL is opened");
 		LoginPage lp=new LoginPage(driver);
-		lp.setUsername(username);
-		logger.info("Entered username");
-		lp.setPassword(password);
-		logger.info("Enterd password");
-		lp.clickLogin();
-		String title = driver.getTitle();
-		System.out.println(title);
-	    if(driver.getTitle().equals("eidsa"))
-		{
-			Assert.assertTrue(true);
-			logger.info("Login test passed");
-		}
-		else
-		{
-			captureScreen(driver, "LoginTest");
-			Assert.assertTrue(false);
-			logger.info("Login test failed");
-		}
+		lp.login("Neethumol","neethumolp@datamatica.uk","Neethu@4");
+		lp.logout();
 	}
 	
 

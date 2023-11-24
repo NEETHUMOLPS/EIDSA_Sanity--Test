@@ -15,8 +15,8 @@ public class TC_028_FieldPrivilege_Positive extends BaseClassTest {
 	{
 		FieldPrivilege fp = new FieldPrivilege(driver);
 		fp.clickFieldPrivilege();
-		fp.selectStudy("Trial study");
-		fp.clickSetPrivilege("Case Report");
+		fp.selectStudy("STUDY 01");
+		fp.clickSetPrivilege("Informed Consent");
 		fp.setPrivilege("Administrator");
 		fp.Alert4();
 		logger.info("Privilege added successfully");

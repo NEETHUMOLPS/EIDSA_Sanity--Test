@@ -14,9 +14,7 @@ public class TC_006_roles_Negative extends BaseClassTest{
 			{
 				Roles rp=new Roles(driver);
 				rp.clickRoles();
-				Thread.sleep(3000);	
 				rp.clickCreateRole();
-				Thread.sleep(3000);
 				rp.clickSubmit();
 				SoftAssert softAssert = new SoftAssert();
 				softAssert.assertEquals(rp.errMsg(), "Please enter role name");

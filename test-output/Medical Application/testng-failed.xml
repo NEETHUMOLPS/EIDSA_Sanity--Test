@@ -7,12 +7,13 @@
   <test thread-count="5" name="EIDSA App Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.EIDSA.testCases.TC_001_loginTest_Positive">
+      <class name="com.EIDSA.testCases.TC_011_study_Positive">
         <methods>
-          <include name="LoginTest"/>
           <include name="setup"/>
+          <include name="Delete_Folder"/>
+          <include name="Delete_Doc"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_001_loginTest_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_011_study_Positive -->
     </classes>
   </test> <!-- EIDSA App Test(failed) -->
 </suite> <!-- Failed suite [Medical Application] -->

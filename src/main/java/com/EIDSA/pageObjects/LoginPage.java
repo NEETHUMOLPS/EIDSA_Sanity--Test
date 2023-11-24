@@ -17,73 +17,131 @@ public class LoginPage extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/input[1]")
+	//Login
+	@FindBy(xpath="//form[@role='form']//input[@placeholder='Username']")
 	@CacheLookup
 	WebElement txtUsername;
-	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[2]/input[1]")
+	@FindBy(xpath="//input[@placeholder='Email']")
 	@CacheLookup
-	WebElement txtPassword;
-	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/button[1]")
+	WebElement txtEmail;	
+	@FindBy(xpath="//div[@class='form-group position-relative']//input[@placeholder='Password']")
+	@CacheLookup
+	WebElement txtPassword;	
+	@FindBy(xpath="//span[normalize-space()='Login']")
 	@CacheLookup
 	WebElement btnLogin;
 	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ul[1]/li[4]/a[1]/img[1]")
-	@CacheLookup
-	WebElement userProfile;
 	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ul[1]/li[4]/div[1]/div[2]/div[3]")
+	//Logout
+	@FindBy(xpath="//img[@alt='User Profile Image']")
+	@CacheLookup
+	WebElement userProfile;	
+	@FindBy(xpath="//span[normalize-space()='Logout']")
 	@CacheLookup
 	WebElement btnLogout;
 	
-	@FindBy(xpath="//span[contains(text(),'Invalid username or password.')]")
+	//Error
+	@FindBy(xpath="//span[contains(text(),'Invalid email or password.')]")
 	@CacheLookup
-	WebElement err1;
-
-	//public Object setUsername;
+	WebElement err1;	
+	@FindBy(xpath="//span[contains(text(),'The username is not associated with this account.')]")
+	@CacheLookup
+	WebElement err2;
+	@FindBy(xpath="//span[contains(text(),'The username field is required')]")
+	@CacheLookup
+	WebElement err3;
+	@FindBy(xpath="//span[contains(text(),'The email field is required')]")
+	@CacheLookup
+	WebElement err4;
+	@FindBy(xpath="//span[contains(text(),'The password field is required')]")
+	@CacheLookup
+	WebElement err5;
 	
 	
-	
-	public void clearUser()
+	public void login(String username,String em,String pwd) throws InterruptedException
 	{
-		txtUsername.clear();
+		Thread.sleep(2000);
+		txtUsername.sendKeys(username);
+		Thread.sleep(2000);
+		txtEmail.sendKeys(em);
+		Thread.sleep(2000);
+		txtPassword.sendKeys(pwd);
+		Thread.sleep(2000);
+		btnLogin.click();		
+		Thread.sleep(2000);
 	}
 	
-	public String ErrorMsg()
+	public void clearLoginCredentials() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		txtUsername.clear();
+		Thread.sleep(2000);
+		txtEmail.clear();
+		Thread.sleep(2000);
+		txtPassword.clear();
+		Thread.sleep(2000);
+	}
+	
+	public void clearUsername() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		txtUsername.clear();
+		Thread.sleep(2000);
+	}
+	
+	public void clearEmail() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		txtEmail.clear();
+		Thread.sleep(2000);
+	}
+	
+	public void clearPassword() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		txtPassword.clear();
+		Thread.sleep(2000);
+	}
+	
+		
+	public String ErrorMsg1()
 	{
 		elementWait(err1);
 		return err1.getText();
 	}
 	
-	public void clearPwd()
+	public String ErrorMsg2()
 	{
-		txtPassword.clear();
+		elementWait(err2);
+		return err2.getText();
 	}
 	
-	public void setUsername(String uname)
+	public String ErrorMsg3()
 	{
-		txtUsername.sendKeys(uname);
+		elementWait(err3);
+		return err3.getText();
+	}
+	
+	public String ErrorMsg4()
+	{
+		elementWait(err4);
+		return err4.getText();
+	}
+	
+	public String ErrorMsg5()
+	{
+		elementWait(err5);
+		return err5.getText();
+	}
+		
+	public void logout() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		userProfile.click();
+		Thread.sleep(2000);
+		btnLogout.click();
+		Thread.sleep(2000);
 	}
 	
 
-	public void setPassword(String pwd)
-	{
-		txtPassword.sendKeys(pwd);
-	}
-	
-	public void clickLogin()
-	{
-		btnLogin.click();
-	}
-	
-	public void clickUserProfile()
-	{
-		userProfile.click();
-	}
-	public void clickLogout()
-	{
-		btnLogout.click();
-	}
-	
 }

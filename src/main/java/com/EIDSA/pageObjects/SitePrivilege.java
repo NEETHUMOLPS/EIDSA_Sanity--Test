@@ -27,19 +27,12 @@ public class SitePrivilege extends AbstractComponent{
 	
 	
 	@FindBy(xpath = "//span[contains(text(),'Site privilege')]")
-	@CacheLookup
 	WebElement sitePrivilege;
-	
-	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/select[1]")
-	@CacheLookup
+	@FindBy(xpath = "//select[@placeholder='select a user']")
 	WebElement user;
-	
-	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
-	@CacheLookup
+	@FindBy(xpath = "//a[normalize-space()='Study - 001']")
 	WebElement study;
-	
 	@FindBy(xpath = "//thead/tr[1]/th[1]/button[1]/i[1]")
-	@CacheLookup
 	WebElement save;
 	
 	public static boolean Alert1() throws InterruptedException
@@ -60,13 +53,13 @@ public class SitePrivilege extends AbstractComponent{
 	public void clickSitePrivilege() throws InterruptedException
 	{
 		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		elementWait(sitePrivilege);
 		sitePrivilege.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("window.scrollBy(0,-1000)");
 	}
@@ -74,11 +67,11 @@ public class SitePrivilege extends AbstractComponent{
 	public void sitePrivilegeSetting(String username) throws InterruptedException
 	{
 		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		user.sendKeys(username);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		study.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		save.click();
 		Thread.sleep(2000);
 	}

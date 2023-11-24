@@ -17,9 +17,8 @@ public class TC_007_rolePrivilege_Positive extends BaseClassTest {
 	public void RolePrivilege() throws IOException, InterruptedException
 	{
 		RolePrivilege rp=new RolePrivilege(driver);
-		Thread.sleep(3000);
 		rp.clickRolePrivilege();
-		rp.setRolePrivilege("Internal");
+		rp.setRolePrivilege("Auto tester");
 		rp.Alert1();
 		logger.info("Role screen privilege updated successfully");   
 	}

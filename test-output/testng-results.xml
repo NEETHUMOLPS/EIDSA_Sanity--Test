@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-10T20:53:58 IST" name="Medical Application" finished-at="2023-10-10T20:54:59 IST" duration-ms="61394">
+  <suite started-at="2023-11-24T17:32:07 IST" name="Medical Application" finished-at="2023-11-24T17:36:24 IST" duration-ms="257010">
     <groups>
     </groups>
-    <test started-at="2023-10-10T20:53:58 IST" name="EIDSA App Test" finished-at="2023-10-10T20:54:59 IST" duration-ms="61394">
-      <class name="com.EIDSA.testCases.TC_001_loginTest_Positive">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.TC_001_loginTest_Positive@433defed]" started-at="2023-10-10T20:53:59 IST" name="setup" finished-at="2023-10-10T20:54:57 IST" duration-ms="57770" status="PASS">
+    <test started-at="2023-11-24T17:32:07 IST" name="EIDSA App Test" finished-at="2023-11-24T17:36:24 IST" duration-ms="257010">
+      <class name="com.EIDSA.testCases.TC_011_study_Positive">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:32:08 IST" name="setup" finished-at="2023-11-24T17:33:34 IST" duration-ms="85454" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,59 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="LoginTest()[pri:0, instance:com.EIDSA.testCases.TC_001_loginTest_Positive@433defed]" started-at="2023-10-10T20:54:57 IST" name="LoginTest" finished-at="2023-10-10T20:54:59 IST" duration-ms="2118" status="PASS">
+        <test-method signature="folderCreation()[pri:7, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:33:35 IST" name="folderCreation" finished-at="2023-11-24T17:34:02 IST" duration-ms="26903" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginTest -->
-      </class> <!-- com.EIDSA.testCases.TC_001_loginTest_Positive -->
+        </test-method> <!-- folderCreation -->
+        <test-method signature="folderEdit()[pri:8, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:34:02 IST" name="folderEdit" finished-at="2023-11-24T17:34:15 IST" duration-ms="13155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- folderEdit -->
+        <test-method signature="uploadDocument()[pri:9, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:34:15 IST" name="uploadDocument" finished-at="2023-11-24T17:34:22 IST" duration-ms="6580" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadDocument -->
+        <test-method signature="DocumentNameSearchVerification()[pri:10, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:34:22 IST" name="DocumentNameSearchVerification" finished-at="2023-11-24T17:34:48 IST" duration-ms="26479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DocumentNameSearchVerification -->
+        <test-method signature="DocumentDateSearchVerification()[pri:11, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:34:48 IST" name="DocumentDateSearchVerification" finished-at="2023-11-24T17:35:04 IST" duration-ms="15888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DocumentDateSearchVerification -->
+        <test-method signature="DocumentUploadedBySearchVerification()[pri:12, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:35:04 IST" name="DocumentUploadedBySearchVerification" finished-at="2023-11-24T17:35:27 IST" duration-ms="22889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DocumentUploadedBySearchVerification -->
+        <test-method signature="edit_Doc()[pri:13, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:35:27 IST" name="edit_Doc" finished-at="2023-11-24T17:35:38 IST" duration-ms="10969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_Doc -->
+        <test-method signature="view_Doc()[pri:14, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:35:38 IST" name="view_Doc" finished-at="2023-11-24T17:35:39 IST" duration-ms="1134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- view_Doc -->
+        <test-method signature="setApprover_Doc()[pri:15, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:35:39 IST" name="setApprover_Doc" finished-at="2023-11-24T17:35:54 IST" duration-ms="15235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setApprover_Doc -->
+        <test-method signature="Approver_Removal()[pri:16, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:35:54 IST" name="Approver_Removal" finished-at="2023-11-24T17:36:06 IST" duration-ms="11672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Approver_Removal -->
+        <test-method signature="Download_Doc()[pri:17, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:36:06 IST" name="Download_Doc" finished-at="2023-11-24T17:36:07 IST" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Download_Doc -->
+        <test-method signature="Delete_Doc()[pri:18, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:36:07 IST" name="Delete_Doc" finished-at="2023-11-24T17:36:14 IST" duration-ms="7501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_Doc -->
+        <test-method signature="Delete_Folder()[pri:18, instance:com.EIDSA.testCases.TC_011_study_Positive@4d0d9fe7]" started-at="2023-11-24T17:36:14 IST" name="Delete_Folder" finished-at="2023-11-24T17:36:24 IST" duration-ms="9631" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_Folder -->
+      </class> <!-- com.EIDSA.testCases.TC_011_study_Positive -->
     </test> <!-- EIDSA App Test -->
   </suite> <!-- Medical Application -->
 </testng-results>

@@ -22,62 +22,48 @@ public class Users extends AbstractComponent{
 	}
 	
 	
-	@FindBy(xpath = "//*[@id=\"studysetup\"]/li[15]/a/span")
-	@CacheLookup
+	@FindBy(xpath = "//a[@href='/userlisting']//span[contains(text(),'Users')]")
 	WebElement Users;
-	
 	@FindBy(xpath = "//input[@type='email']")
-	@CacheLookup
 	WebElement EmailOrName;
-	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[2]/div/select")
-	@CacheLookup
 	WebElement Role;
-	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[3]/span")
-	@CacheLookup
 	WebElement Search;
 	
+	
+	//Web table
 	@FindBy(xpath = "//td[1]")
-	@CacheLookup
 	List<WebElement> tableName;
-	
 	@FindBy(xpath = "//td[2]")
-	@CacheLookup
 	List<WebElement> tableEmail;
-	
 	@FindBy(xpath = "//td[3]")
-	@CacheLookup
 	List<WebElement> tableRole;
-	
 	@FindBy(xpath = "//td[8]")
-	@CacheLookup
 	List<WebElement> tableUserPrivilege;
-	
 	@FindBy(xpath="(//li[@class='PaginationControl'])[3]")
-	@CacheLookup
 	WebElement next;
 	
 	public void clickUsers() throws InterruptedException
 	{
 		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,200)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		elementWait(Users);
 		Users.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("window.scrollBy(0,-200)");
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 	}
 	
 	public void clickSearch() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		Search.click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 	
 	public void SearchEmailOrName(String nm) throws InterruptedException
@@ -97,7 +83,6 @@ public class Users extends AbstractComponent{
 	
 	public Boolean EmailSearchValidation(String role) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableEmail.size();
 		if (count<1) 
@@ -122,7 +107,6 @@ public class Users extends AbstractComponent{
 	
 	public Boolean RolesearchValidation(String role) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableRole.size();
 		if (count<1) 

@@ -27,114 +27,30 @@ public class FieldPrivilege extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
-	
+	//menu
 	@FindBy(xpath = "//span[contains(text(),'Field Privileges')]")
-	@CacheLookup
 	WebElement FieldPrivilege;
 	
-	@FindBy(xpath = "//select[@id='study']")
-	@CacheLookup
-	WebElement Study;
-	
+	//Web table
 	@FindBy(xpath = "//td[1]")
-	@CacheLookup
 	List<WebElement> tableTemplateName;
-	
 	@FindBy(xpath = "//td[7]")
-	@CacheLookup
 	List<WebElement> tableSetPrivilege;
 	
+	@FindBy(xpath = "//select[@id='study']")
+	WebElement Study;
 	@FindBy(xpath = "//select[@id='rolelist']")
-	@CacheLookup
-	WebElement roles;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[2]/div/div[1]/div/div/input")
-	@CacheLookup
+	WebElement roles;	
+	@FindBy(xpath = "//div[@class='flexContainer']//div[1]//div[1]//div[1]//input[1]")
 	WebElement siteIdCode;
-	
 	@FindBy(xpath = "//input[@id='exampleRadios1']")
-	@CacheLookup
 	WebElement masking;
-	
 	@FindBy(xpath = "//input[@id='exampleRadios2']")
-	@CacheLookup
 	WebElement view;
-	
 	@FindBy(xpath = "//input[@id='Edit']")
-	@CacheLookup
 	WebElement edit;
-	
-	@FindBy(xpath = "//button[contains(text(),'Save')]")
-	@CacheLookup
+	@FindBy(xpath = "//button[normalize-space()='Save']")
 	WebElement save;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[2]/div/div[2]/div/div/input")
-	@CacheLookup
-	WebElement patientScreeningNum;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[4]/div/div[1]/div/div/div/div[1]/input")
-	@CacheLookup
-	WebElement present1;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[4]/div/div[1]/div/div/div/div[2]/input")
-	@CacheLookup
-	WebElement negative1;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[4]/div/div[2]/div/div/div/div[1]/input")
-	@CacheLookup
-	WebElement present2;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[4]/div/div[2]/div/div/div/div[2]/input")
-	@CacheLookup
-	WebElement negative2;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[6]/div/div/div/div/div/div[1]/input")
-	@CacheLookup
-	WebElement yes1;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[6]/div/div/div/div/div/div[2]/input")
-	@CacheLookup
-	WebElement no1;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[7]/div/div/div/div/div/div[1]/input")
-	@CacheLookup
-	WebElement yes2;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[7]/div/div/div/div/div/div[2]/input")
-	@CacheLookup
-	WebElement no2;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[8]/div/div/div/div/div/div[1]/input")
-	@CacheLookup
-	WebElement yes3;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[8]/div/div/div/div/div/div[2]/input")
-	@CacheLookup
-	WebElement no3;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[9]/div/div/div/div/div/div[1]/input")
-	@CacheLookup
-	WebElement yes4;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[9]/div/div/div/div/div/div[2]/input")
-	@CacheLookup
-	WebElement no4;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[10]/div/div/div/div/div/div[1]/input")
-	@CacheLookup
-	WebElement yes5;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[10]/div/div/div/div/div/div[2]/input")
-	@CacheLookup
-	WebElement no5;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[11]/div/div[1]/div/div/input")
-	@CacheLookup
-	WebElement date;
-	
-	@FindBy(xpath = "//*[@id=\"formElements\"]/form/div/div/div/div/div[11]/div/div[2]/div/div/input")
-	@CacheLookup
-	WebElement Initials;
 	
 	public static boolean Alert1() throws InterruptedException
 	{
@@ -184,25 +100,25 @@ public class FieldPrivilege extends AbstractComponent{
 	
 	public void clickFieldPrivilege() throws InterruptedException
 	{	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		elementWait(FieldPrivilege);
 		FieldPrivilege.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("window.scrollBy(0,-1000)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 	}
 	
 	public void selectStudy(String study) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select sel=new Select(Study);
 		sel.selectByVisibleText(study);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public boolean clickSetPrivilege(String subjectid) throws InterruptedException 
@@ -217,7 +133,7 @@ public class FieldPrivilege extends AbstractComponent{
 			if(text.contains(subjectid))
 			{
 				tableSetPrivilege.get(i).click();
-				Thread.sleep(8000);
+				Thread.sleep(2000);
 				break;	
 			}
 		}
@@ -226,23 +142,35 @@ public class FieldPrivilege extends AbstractComponent{
 	
 	public void setPrivilege(String role) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select sel=new Select(roles);
 		sel.selectByVisibleText(role);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		siteIdCode.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		masking.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		save.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+	}
+	
+	public void negative(String role) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel=new Select(roles);
+		sel.selectByVisibleText(role);
+		Thread.sleep(2000);
+		siteIdCode.click();
+		Thread.sleep(2000);
+		save.click();
+		Thread.sleep(2000);
 	}
 	
 	public void negative1() throws InterruptedException
 	{
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		siteIdCode.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	

@@ -25,12 +25,7 @@ public class TC_010_Users_Negative extends BaseClassTest{
 		{
 			UserPage up=new UserPage(driver);
 			up.clickUser();
-			Thread.sleep(3000);	
-			up.AddUser();
-			Thread.sleep(3000);	
-			WebElement save = driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
-			save.click();
-			Thread.sleep(3000);	
+			up.createUser_Negative();
 			SoftAssert softAssert = new SoftAssert();
 			String ActualErrorMEssage1 = driver.findElement(By.xpath("//span[contains(text(),'Please enter first name.')]")).getText();	
 		    String ActualErrorMEssage2 = driver.findElement(By.xpath("//span[contains(text(),'Please enter last name.')]")).getText();
@@ -44,25 +39,27 @@ public class TC_010_Users_Negative extends BaseClassTest{
 			softAssert.assertEquals(ActualErrorMEssage5, "Please select role.");
 			softAssert.assertAll();
 			logger.info("Negative test1 passed"); 
-			driver.navigate().refresh();
+			driver.navigate().back();
 		}
 			
-			@Test(priority=2)
-			public void negativeTest2() throws InterruptedException
-			{
+		@Test(priority=2)
+		public void negativeTest2() throws InterruptedException
+		{
 			UserPage up=new UserPage(driver);
-			up.SetFirstName("Automation");
-			up.SetLastName("Tester");
-			up.SetPrimaryEmail("automationtester@yopmail.com");
-			up.SetSecondaryEmail("automationtester01@yopmail.com");
-			up.ClickUserType();
-			up.ClickRole();	
-			WebElement save1 = driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
-			save1.click();
-			Thread.sleep(2000);	
-			up.duplicateAlert();
+			up.createUser("Neethu", "P S", "Neethumol", "neethu@yopmail.com", "option 1", "Administrator");
+			up.duplicateAlert1();
 			logger.info("Negative test2 passed");
-			}
+			driver.navigate().back();
+		}
+			
+		@Test(priority=3)
+		public void negativeTest3() throws InterruptedException
+		{
+			UserPage up=new UserPage(driver);
+			up.createUser("Neethu", "P S", "NeethumolPS", "neethumolp@datamatica.uk", "option 1", "Administrator");
+			up.duplicateAlert2();
+			logger.info("Negative test2 passed");
+		}
 		
 		
 }

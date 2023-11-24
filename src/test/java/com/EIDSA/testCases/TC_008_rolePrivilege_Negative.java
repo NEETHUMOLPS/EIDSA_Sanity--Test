@@ -14,7 +14,6 @@ public class TC_008_rolePrivilege_Negative extends BaseClassTest {
 	public void RolePrivilege() throws IOException, InterruptedException
 	{
 		RolePrivilege rp=new RolePrivilege(driver);
-		Thread.sleep(3000);
 		rp.clickRolePrivilege();
 		rp.clickSave_negative();
 		SoftAssert softAssert = new SoftAssert();

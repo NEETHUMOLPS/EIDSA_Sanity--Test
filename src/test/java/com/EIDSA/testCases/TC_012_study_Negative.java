@@ -15,30 +15,61 @@ public class TC_012_study_Negative extends BaseClassTest {
 	{
 		StudyPage sp = new StudyPage(driver);
 		sp.clickStudy();
-		sp.clickCreateSudy();
-		sp.clickSave();
-		SoftAssert softAssert = new SoftAssert();
-		String ActualErrorMEssage1 = driver.findElement(By.xpath("//span[contains(text(),'Please enter a study ID')]")).getText();
-        Thread.sleep(3000);	
-        String ActualErrorMEssage2 = driver.findElement(By.xpath("//span[contains(text(),'Please enter a study name')]")).getText();
-        Thread.sleep(3000);	
-        softAssert.assertEquals(ActualErrorMEssage1, "Please enter a study ID");
-        softAssert.assertEquals(ActualErrorMEssage2, "Please enter a study name");
-        softAssert.assertAll();
+		sp.clickCreateSudy_Negative1();
         logger.info("Negative test1 passed");	
-        driver.navigate().refresh();
-
+        driver.navigate().back();
 	}
 	
 	@Test(priority=2)
 	public void Study_negative2() throws IOException, InterruptedException
 	{
-	
 		StudyPage sp = new StudyPage(driver);
-		sp.clickStudy();
-		sp.createStudy_Negative("Clinical 1","Clinical 1");
-		sp.DuplicateAlert();
+		sp.createStudy_Negative("Study - 001","Study - 001");
+		sp.duplicateAlert();
 		logger.info("Negative test2 passed");
-		driver.navigate().refresh();
+		driver.navigate().back();
+	}
+	
+	@Test(priority=3)
+	public void Folder_negative3() throws IOException, InterruptedException, Exception
+	{
+		StudyPage sp = new StudyPage(driver);
+		sp.searchStudyId("Study - 001");
+		sp.selDoc("Study - 001");
+		sp.folderCreation_Negative();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(sp.Err1(), "Please enter a folder name");
+		softAssert.assertAll();
+        logger.info("Negative test3 passed");		
+	}
+	
+	@Test(priority=4)
+	public void Folder_negative4() throws IOException, InterruptedException, Exception
+	{
+		StudyPage sp = new StudyPage(driver);
+		sp.FolderCreation("03");
+		sp.duplicateFolderName();
+		sp.close_Folder();
+		logger.info("Negative test4 passed");
+ 
+	}
+	
+	@Test(priority=5)
+	public void Folder_negative5() throws IOException, InterruptedException, Exception
+	{
+		StudyPage sp = new StudyPage(driver);
+		sp.folderDeletion_Negative1();
+		sp.folderDeletionAlert2();
+		logger.info("Negative test5 passed");	
+	}
+	
+	@Test(priority=6)
+	public void editDocument_Negative6() throws IOException, InterruptedException, Exception
+	{
+		StudyPage sp = new StudyPage(driver);
+		sp.edit_Doc("New");
+		sp.editDocument_Negative();
+		sp.documentEdit_Negative_Alert();
+		logger.info("Negative test6 passed");		
 	}
 }

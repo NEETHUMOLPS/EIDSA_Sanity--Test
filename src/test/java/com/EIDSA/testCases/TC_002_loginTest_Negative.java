@@ -9,40 +9,81 @@ import Base.BaseClass;
 
 public class TC_002_loginTest_Negative extends BaseClass{
 
-	@Test(dataProvider="LoginData")
-	public void LoginTestNegative(String user, String pwd) throws InterruptedException
+	@Test(priority=1)
+	public void loginWithInvalidEmailAndPassword() throws InterruptedException
 	{
 		logger.info("URL is opened");
 		LoginPage lp=new LoginPage(driver);
-		lp.clearUser();
-		lp.setUsername(user);	
-		logger.info("Username provided");
-		lp.clearPwd();
-		lp.setPassword(pwd);
-		logger.info("Pssword provided");
-		lp.clickLogin();
-		Thread.sleep(3000);
+		lp.login("Neethumol", "neethumolp@datamatica.u", "Neethu4");
+		Thread.sleep(1000);
 		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertEquals(lp.ErrorMsg(), "Invalid username or password.");
+		softAssert.assertEquals(lp.ErrorMsg1(), "Invalid username or password.");
 		softAssert.assertAll();
         logger.info("Negative test passed");
 	}	
-		
-	@DataProvider(name="LoginData")
-	 String [][] getData() throws IOException
+
+	@Test(priority=2)
+	public void loginWithInvalidUsername() throws InterruptedException
 	{
-		
-		String path = "C:\\Users\\lenovo\\Desktop\\Selenium\\Login_Negative.xlsx";
-		int rownum=XLUtility.getRowCount(path, "Sheet1");
-		int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
-		String logindata[][]=new String[rownum][colcount];
-		for(int i=1;i<=rownum;i++)
-		{
-		for(int j=0;j<colcount;j++)
-		{
-			logindata[i-1][j]=XLUtility.getCellData(path, "Sheet1", i, j);
-		}
-	}	
-	return logindata;		
-	}	
+		LoginPage lp=new LoginPage(driver);
+		lp.clearUsername();
+		lp.clearEmail();
+		lp.clearPassword();
+		lp.login("Neethumolp", "neethumolp@datamatica.uk", "Neethu4");
+		Thread.sleep(1000);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(lp.ErrorMsg2(), "The username is not associated with this account.");
+		softAssert.assertAll();
+        logger.info("Negative test passed");
+        lp.clearLoginCredentials();
+	}
+	
+	@Test(priority=3)
+	public void loginWithBlankEmail() throws InterruptedException
+	{
+		LoginPage lp=new LoginPage(driver);
+		lp.clearUsername();
+		lp.clearEmail();
+		lp.clearPassword();
+		lp.login("Neethumol", "", "Neethu4");
+		Thread.sleep(1000);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(lp.ErrorMsg4(), "The email field is required");
+		softAssert.assertAll();
+        logger.info("Negative test passed");
+        lp.clearLoginCredentials();
+	}
+	
+	@Test(priority=4)
+	public void loginWithBlankPassword() throws InterruptedException
+	{
+		LoginPage lp=new LoginPage(driver);
+		lp.clearUsername();
+		lp.clearEmail();
+		lp.clearPassword();
+		lp.login("Neethumol", "neethumolp@datamatica.uk", "");
+		Thread.sleep(1000);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(lp.ErrorMsg5(), "The password field is required");
+		softAssert.assertAll();
+        logger.info("Negative test passed");
+        lp.clearLoginCredentials();
+	}
+	
+	@Test(priority=5)
+	public void loginWithBlankUsername() throws InterruptedException
+	{
+		LoginPage lp=new LoginPage(driver);
+		lp.clearUsername();
+		lp.clearEmail();
+		lp.clearPassword();
+		lp.login("", "neethumolp@datamatica.uk", "Neethu4");
+		Thread.sleep(1000);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(lp.ErrorMsg3(), "The username field is required");
+		softAssert.assertAll();
+		 lp.clearLoginCredentials();
+	}
+	
+	
 }

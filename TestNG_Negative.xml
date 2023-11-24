@@ -9,11 +9,12 @@
 <test name="EIDSA App Test">
 <parameter name="browser" value="chrome" />
 <classes>
-<!--<class name="com.EIDSA.testCases.TC_002_loginTest_Negative"/>--> 
+<!--<class name="com.EIDSA.testCases.TC_002_loginTest_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_004_forgotPassword_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_006_roles_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_008_rolePrivilege_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_010_Users_Negative"/>-->
+<!--<class name="com.EIDSA.testCases.TC_Screens_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_012_study_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_014_StudyVisit_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_016_site_Negative"/>-->
@@ -22,7 +23,7 @@
 <!--<class name="com.EIDSA.testCases.TC_022_PatientLogin_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_024_Visit_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_026_VisitTemplate_Negative"/>-->
-<!--<class name="com.EIDSA.testCases.TC_029_FieldPrivilege_Negative"/>-->
+<class name="com.EIDSA.testCases.TC_029_FieldPrivilege_Negative"/>
 <!--<class name="com.EIDSA.testCases.TC_032_SubmitForm_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_038_SubjectSchedule_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_050_DataEntry_Negative"/>-->
