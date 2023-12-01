@@ -15,10 +15,9 @@ public class TC_022_PatientLogin_Negative extends BaseClassTest{
 	public void PatientLogin_Negative() throws IOException, InterruptedException
 	{
 		PatientLogin pl = new PatientLogin(driver);
+		pl.selectStudy("Study - 001");
 		pl.clickPatientLogin();
 		pl.SearchSiteCode("Demo01");
-		pl.Search();
-		Thread.sleep(3000);
 		pl.findSubId("demo04");
 		Thread.sleep(2000);
 		pl.Submit();
@@ -28,7 +27,7 @@ public class TC_022_PatientLogin_Negative extends BaseClassTest{
         logger.info("Negative test1 passed");	
 		Thread.sleep(2000);
 		
-		pl.exsEmail("abc@yopmail.com");
+		pl.exsEmail("neethu@yopmail.com");
 		pl.Submit();
 		Thread.sleep(2000);
 		SoftAssert softAssert1 = new SoftAssert();

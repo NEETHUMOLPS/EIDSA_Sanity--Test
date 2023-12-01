@@ -15,7 +15,7 @@ import Base.BaseClassTest;
 
 public class TC_011_study_Positive extends BaseClassTest {
 
-	/*@Test(priority=1)
+	@Test(priority=1)
 	public void Study_positive() throws IOException, InterruptedException
 	{
 	
@@ -75,13 +75,12 @@ public class TC_011_study_Positive extends BaseClassTest {
 		sp.deleteAlert();
 		logger.info("Study deleted successfully");		
 		driver.navigate().refresh();
-	}*/
+	}
 	
 	@Test(priority=7)
 	public void folderCreation() throws IOException, InterruptedException
 	{
 		StudyPage sp = new StudyPage(driver);
-		sp.clickStudy();
 		sp.searchStudyId("Study - 001");
 		sp.selDoc("Study - 001");
 		sp.FolderCreation("01");

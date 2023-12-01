@@ -15,12 +15,12 @@
 <!--<class name="com.EIDSA.testCases.TC_007_rolePrivilege_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_009_Users_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_Screens_Positive"/>-->
-<class name="com.EIDSA.testCases.TC_011_study_Positive"/>
+<!--<class name="com.EIDSA.testCases.TC_011_study_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_013_StudyVisit_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_015_site_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_017_Subject_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_021_PatientLogin_Positive"/>-->
+<class name="com.EIDSA.testCases.TC_021_PatientLogin_Positive"/>
 <!--<class name="com.EIDSA.testCases.TC_023_Visit_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_025_VisitTemplate_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_027_SitePrivilege_Positive"/>-->

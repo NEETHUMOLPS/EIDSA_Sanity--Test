@@ -32,6 +32,8 @@ public class SitePrivilege extends AbstractComponent{
 	WebElement user;
 	@FindBy(xpath = "//a[normalize-space()='Study - 001']")
 	WebElement study;
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[1]/input[1]")
+	WebElement site;
 	@FindBy(xpath = "//thead/tr[1]/th[1]/button[1]/i[1]")
 	WebElement save;
 	
@@ -69,8 +71,22 @@ public class SitePrivilege extends AbstractComponent{
 		
 		Thread.sleep(2000);
 		user.sendKeys(username);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		study.click();
+		Thread.sleep(2000);
+		save.click();
+		Thread.sleep(2000);
+	}
+	
+	public void sitePrivilegeSetting1(String username) throws InterruptedException
+	{
+		
+		Thread.sleep(2000);
+		user.sendKeys(username);
+		Thread.sleep(5000);
+		study.click();
+		Thread.sleep(2000);
+		site.click();
 		Thread.sleep(2000);
 		save.click();
 		Thread.sleep(2000);

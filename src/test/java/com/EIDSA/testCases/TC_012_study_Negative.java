@@ -40,7 +40,8 @@ public class TC_012_study_Negative extends BaseClassTest {
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(sp.Err1(), "Please enter a folder name");
 		softAssert.assertAll();
-        logger.info("Negative test3 passed");		
+		sp.close_Folder();
+		logger.info("Negative test3 passed");		
 	}
 	
 	@Test(priority=4)
@@ -61,13 +62,15 @@ public class TC_012_study_Negative extends BaseClassTest {
 		sp.folderDeletion_Negative1();
 		sp.folderDeletionAlert2();
 		logger.info("Negative test5 passed");	
+		Thread.sleep(2000);
 	}
 	
 	@Test(priority=6)
 	public void editDocument_Negative6() throws IOException, InterruptedException, Exception
 	{
 		StudyPage sp = new StudyPage(driver);
-		sp.edit_Doc("New");
+		sp.selFolder3();
+		sp.edit_Doc("New.docx");
 		sp.editDocument_Negative();
 		sp.documentEdit_Negative_Alert();
 		logger.info("Negative test6 passed");		

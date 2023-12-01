@@ -14,12 +14,11 @@ public class TC_024_Visit_Negative extends BaseClassTest {
 	public void assigningTemplate() throws IOException, InterruptedException
 	{
 		Visit vp = new Visit(driver);
+		vp.selectStudy("Study - 001");
 		vp.clickVisit();
-		vp.SearchVisitNo("Trial 2");
-		vp.SearchVisitName("Visit 3");
-		vp.clickSearch();
-		Thread.sleep(3000);
-		vp.assignTemp("Visit 3");
+		vp.SearchVisitNo("002");
+		vp.SearchVisitName("Visit - 002");
+		vp.assignTemp("Visit - 002");
 		vp.assign();
 		vp.AssignAlert1();
 		logger.info("Negative test passed");	
@@ -27,15 +26,12 @@ public class TC_024_Visit_Negative extends BaseClassTest {
 	}
 	
 	@Test(priority=2)
-	public void transalte() throws IOException, InterruptedException
+	public void translate() throws IOException, InterruptedException
 	{
 		Visit vp = new Visit(driver);
-		vp.clickVisit();
-		vp.SearchVisitNo("Test visit");
-		vp.SearchVisitName("home Visit");
-		vp.clickSearch();
-		Thread.sleep(3000);
-		vp.view("home Visit");
+		vp.SearchVisitNo("002");
+		vp.SearchVisitName("Visit - 002");
+		vp.view("Visit - 002");
 		vp.Translate();
 		vp.TransalteAlertNegative();
 		logger.info("Negative test passed");	

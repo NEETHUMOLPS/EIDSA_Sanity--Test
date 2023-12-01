@@ -26,83 +26,77 @@ public class PatientLogin extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
+	//Select study
+	@FindBy(xpath = "//select[@name='account']")
+	WebElement selectStudy;
 	
-	@FindBy(xpath = "//*[@id=\"studysetup\"]/li[3]/a/span")
-	@CacheLookup
+	
+	//Menu
+	@FindBy(xpath = "//span[normalize-space()='Patient Login']")
 	WebElement patientLogin;
 	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[1]/select")
-	@CacheLookup
+	//Search
+	@FindBy(xpath = "//select[@placeholder='Site code']")
 	WebElement searchSiteCode;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[2]/input")
-	@CacheLookup
+	@FindBy(xpath = "//input[@type='text']")
 	WebElement searchSubjectId;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[3]/select")
-	@CacheLookup
+	@FindBy(xpath = "//select[@placeholder='Search']")
 	WebElement searchStatus;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/span")
-	@CacheLookup
+	@FindBy(xpath = "//span[contains(text(),'Search')]")
 	WebElement search;
 	
+	//Web table
 	@FindBy(xpath = "//td[1]")
-	@CacheLookup
 	List<WebElement> tableSiteCode;
-	
 	@FindBy(xpath = "//td[2]")
-	@CacheLookup
 	List<WebElement> tableSubjectId;
-	
 	@FindBy(xpath = "//td[6]")
-	@CacheLookup
 	List<WebElement> tableStatus;
-	
-	@FindBy(xpath = "//td[7]")
-	@CacheLookup
+	@FindBy(xpath = "//td[7]//i")
 	List<WebElement> tableAddLogin;
 	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div/div[3]/input")
-	@CacheLookup
+	//Set login
+	@FindBy(xpath = "//div[@class='col-lg-12 text-center mt-2']//input[@type='text']")
 	WebElement email;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div/div[3]/button")
-	@CacheLookup
+	@FindBy(xpath = "//button[normalize-space()='Submit']")
 	WebElement submit;
-	
 	@FindBy(xpath = "//span[contains(text(),'Please enter email')]")
-	@CacheLookup
 	WebElement errorMsg1;
-	
 	@FindBy(xpath = "//span[contains(text(),'Email already exist')]")
-	@CacheLookup
 	WebElement errorMsg2;
-	
 	@FindBy(xpath = "//span[contains(text(),'Invalid email')]")
-	@CacheLookup
 	WebElement errorMsg3;
+	
+	public void selectStudy(String study) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel = new Select(selectStudy);
+		sel.selectByVisibleText(study);
+		Thread.sleep(2000);
+	}
 	
 	public void clickPatientLogin() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		patientLogin.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public void Submit() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		submit.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public void SearchSiteCode(String site) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select sel=new Select(searchSiteCode);
 		sel.selectByVisibleText(site);		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		search.click();
+		Thread.sleep(2000);
 	}
 	
 	public String error1()
@@ -125,36 +119,33 @@ public class PatientLogin extends AbstractComponent{
 	
 	public void SearchSubId(String sub) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		searchSubjectId.sendKeys(sub);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		search.click();
+		Thread.sleep(2000);
 	}
 	
 	public void exsEmail(String sub) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		email.sendKeys(sub);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public void SearchStatus(String stat) throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select sel=new Select(searchStatus);
 		sel.selectByVisibleText(stat);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		search.click();
+		Thread.sleep(2000);
 	}
 	
-	public void Search() throws InterruptedException
-	{
-		Thread.sleep(3000);
-		search.click();
-		Thread.sleep(3000);
-	}
 	
 	public Boolean siteCodeSearchValidation(String site) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableSiteCode.size();
 		if (count<1) 
@@ -178,7 +169,6 @@ public class PatientLogin extends AbstractComponent{
 	
 	public Boolean SubjectIdSearchValidation(String sub) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableSubjectId.size();
 		if (count<1) 
@@ -202,7 +192,6 @@ public class PatientLogin extends AbstractComponent{
 	
 	public Boolean StatusSearchValidation(String stat) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableStatus.size();
 		if (count<1) 
@@ -226,7 +215,6 @@ public class PatientLogin extends AbstractComponent{
 	
 	public boolean findSubId(String subject) throws InterruptedException
 	{
-		Thread.sleep(2000);
 		boolean sub=false;
 		int count = tableSubjectId.size();
 		for(int i=0;i<count;i++)
@@ -236,7 +224,7 @@ public class PatientLogin extends AbstractComponent{
 			if(text.contains(subject))
 			{
 				tableAddLogin.get(i).click();
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				sub=true;
 				break;
 			}
@@ -246,13 +234,13 @@ public class PatientLogin extends AbstractComponent{
 		
 		public void AddLogin(String emailid) throws InterruptedException
 		{
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			email.clear();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			email.sendKeys(emailid);
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			submit.click();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 		}
 		
 		public static boolean CreationAlert() throws InterruptedException

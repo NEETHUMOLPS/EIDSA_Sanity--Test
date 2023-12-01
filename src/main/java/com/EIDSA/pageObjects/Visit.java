@@ -26,81 +26,65 @@ public class Visit extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
+	//Select study
+	@FindBy(xpath = "//select[@name='account']")
+	WebElement selectStudy;
 	
-	@FindBy(xpath = "//*[@id=\"studysetup\"]/li[4]/a")
-	@CacheLookup
+	//Search
+	@FindBy(xpath = "//span[normalize-space()='Visits']")
 	WebElement visit;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[1]/div/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='text'])[1]")
 	WebElement visitNo;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[2]/div/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='text'])[2]")
 	WebElement visitName;
-	
 	@FindBy(xpath = "//span[contains(text(),'Search')]")
-	@CacheLookup
 	WebElement Search;
 	
+	//Web table
 	@FindBy(xpath = "//td[1]")
-	@CacheLookup
 	List<WebElement> tableVisitNo;
-	
 	@FindBy(xpath = "//td[2]")
-	@CacheLookup
 	List<WebElement> tableVisitName;
-	
-	@FindBy(xpath = "//td[14]")
-	@CacheLookup
+	@FindBy(xpath = "//td[14//i]")
 	List<WebElement> tableView;
-	
-	@FindBy(xpath = "//td[13]")
-	@CacheLookup
+	@FindBy(xpath = "//td[13]//i")
 	List<WebElement> tableAssignTemplate;
 	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div/div/div[1]/div/select")
-	@CacheLookup
+	//Assign template
+	@FindBy(xpath = "//select[@placeholder='Search by Status']")
 	WebElement assignTemplate;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div/div/div[2]/div/button")
-	@CacheLookup
+	@FindBy(xpath = "//button[normalize-space()='Assign']")
 	WebElement assign;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[1]/div/a/i")
-	@CacheLookup
+	@FindBy(xpath = "//i[@class='fa fa-times']")
 	WebElement assignClose;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[1]/select")
-	@CacheLookup
+	@FindBy(xpath = "(//select[@name='changelanguage'])[1]")
 	WebElement availableLanguage;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[2]/div/div/select")
-	@CacheLookup
+	@FindBy(xpath = "(//select[@class='form-control'])[1]")
 	WebElement language;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[2]/div/span")
-	@CacheLookup
+	@FindBy(xpath = "//span[@type='button']")
 	WebElement translate;
+	
+	public void selectStudy(String study) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel = new Select(selectStudy);
+		sel.selectByVisibleText(study);
+		Thread.sleep(2000);
+	}
 	
 	public void clickVisit() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		visit.click();
-		Thread.sleep(3000);
-	}
-	
-	public void clickSearch() throws InterruptedException
-	{
 		Thread.sleep(2000);
-		Search.click();
-		Thread.sleep(3000);
 	}
 	
 	public void SearchVisitNo(String no) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		visitNo.sendKeys(no);
+		Thread.sleep(2000);
+		Search.click();
 		Thread.sleep(2000);
 	}
 	
@@ -138,6 +122,8 @@ public class Visit extends AbstractComponent{
 		Thread.sleep(2000);
 		visitName.sendKeys(name);
 		Thread.sleep(2000);
+		Search.click();
+		Thread.sleep(2000);
 	}
 	
 	public void TemplateAssigning(String temp) throws InterruptedException
@@ -150,7 +136,6 @@ public class Visit extends AbstractComponent{
 	
 	public Boolean visitNoSearchValidation(String num) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableVisitNo.size();
 		if (count<1) 
@@ -174,7 +159,6 @@ public class Visit extends AbstractComponent{
 	
 	public Boolean visitNameSearchValidation(String name) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableVisitName.size();
 		if (count<1) 
@@ -259,7 +243,6 @@ public class Visit extends AbstractComponent{
 	
 	public boolean assignTemp(String subject) throws InterruptedException
 	{
-		Thread.sleep(2000);
 		boolean sub=false;
 		int count = tableVisitName.size();
 		for(int i=0;i<count;i++)
@@ -269,7 +252,7 @@ public class Visit extends AbstractComponent{
 			if(text.contains(subject))
 			{
 				tableAssignTemplate.get(i).click();
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				sub=true;
 				break;
 			}
@@ -279,7 +262,6 @@ public class Visit extends AbstractComponent{
 	
 	public boolean view(String subject) throws InterruptedException
 	{
-		Thread.sleep(2000);
 		boolean sub=false;
 		int count = tableVisitName.size();
 		for(int i=0;i<count;i++)
@@ -289,7 +271,7 @@ public class Visit extends AbstractComponent{
 			if(text.contains(subject))
 			{
 				tableView.get(i).click();
-				Thread.sleep(10000);
+				Thread.sleep(2000);
 				sub=true;
 				break;
 			}

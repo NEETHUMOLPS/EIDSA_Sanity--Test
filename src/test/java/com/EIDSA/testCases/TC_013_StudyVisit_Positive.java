@@ -16,10 +16,9 @@ public class TC_013_StudyVisit_Positive extends BaseClassTest {
 	{
 		StudyVisit sp = new StudyVisit(driver);
 		sp.clickStudy();
-		sp.StudyNameOrIdSearch("Clinical 1");
-		sp.searchStudy();
-		sp.visitIcon("Clinical 1");
-		sp.createVisit("visit02", "visit02", "Home Visit");
+		sp.StudyNameOrIdSearch("Study - 001");
+		sp.visitIcon("Study - 001");
+		sp.createVisit("001", "Visit - 001", "Home Visit");
 		sp.Alert1();
 		logger.info("Visit added");
 	}
@@ -28,58 +27,40 @@ public class TC_013_StudyVisit_Positive extends BaseClassTest {
 	public void visitNameSearch() throws IOException, InterruptedException
 	{
 		StudyVisit sp = new StudyVisit(driver);
-		sp.clickStudy();
-		sp.StudyNameOrIdSearch("Clinical 1");
-		sp.searchStudy();
-		sp.visitIcon("Clinical 1");
-		sp.searchVisitName("visit02");
-		sp.search();
-		Assert.assertTrue(sp.visitNameSearchValidation("visit02"));
+		sp.searchVisitName("Visit - 001");
+		Assert.assertTrue(sp.visitNameSearchValidation("Visit - 001"));
 		logger.info("Visit name search functionality verified");
+		driver.navigate().refresh();
 	}
 	
 	@Test(priority=2)
 	public void visitNoSearch() throws IOException, InterruptedException
 	{
 		StudyVisit sp = new StudyVisit(driver);
-		sp.clickStudy();
-		sp.StudyNameOrIdSearch("Clinical 1");
-		sp.searchStudy();
-		sp.visitIcon("Clinical 1");
-		sp.searchVisitNo("visit02");
-		sp.search();
-		Assert.assertTrue(sp.visitNoSearchValidation("visit02"));
+		sp.visitIcon("001");
+		sp.searchVisitNo("001");
+		Assert.assertTrue(sp.visitNoSearchValidation("001"));
 		logger.info("Visit number search functionality verified");
+		driver.navigate().refresh();
 	}
 	
 	@Test(priority=3)
 	public void edit() throws IOException, InterruptedException
 	{
 		StudyVisit sp = new StudyVisit(driver);
-		sp.clickStudy();
-		sp.StudyNameOrIdSearch("Clinical 1");
-		sp.searchStudy();
-		sp.visitIcon("Clinical 1");
-		sp.searchVisitNo("visit02");
-		sp.search();
-		sp.editStudyIcon("visit02");
+		sp.searchVisitNo("001");
+		sp.editStudyIcon("001");
 		sp.ClickSave();
 		sp.Alert2();
-		logger.info("Visit updated");	
+		logger.info("Visit updated");
 	}
 	
 	@Test(priority=4)
 	public void AssignTemplate() throws IOException, InterruptedException
 	{
 		StudyVisit sp = new StudyVisit(driver);
-		sp.clickStudy();
-		sp.StudyNameOrIdSearch("Clinical 1");
-		sp.searchStudy();
-		sp.visitIcon("Clinical 1");
-		sp.searchVisitNo("visit02");
-		sp.search();
-		sp.assignTemplate("visit02");
-		sp.templateAssigning("Case Report-en-1.0");
+		sp.assignTemplate("001");
+		sp.templateAssigning("Repeated Measures-en-1");
 		sp.Alert4();
 		logger.info("Template assigned");	
 	}
@@ -88,13 +69,7 @@ public class TC_013_StudyVisit_Positive extends BaseClassTest {
 	public void delete() throws IOException, InterruptedException
 	{
 		StudyVisit sp = new StudyVisit(driver);
-		sp.clickStudy();
-		sp.StudyNameOrIdSearch("Clinical 1");
-		sp.searchStudy();
-		sp.visitIcon("Clinical 1");
-		sp.searchVisitNo("visit02");
-		sp.search();
-		sp.delete("visit02");
+		sp.delete("001");
 		sp.Alert3();
 		logger.info("Visit deleted");	
 	}

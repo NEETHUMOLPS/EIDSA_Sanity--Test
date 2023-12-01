@@ -3,6 +3,7 @@ package com.EIDSA.pageObjects;
 import java.time.Duration;
 import java.util.List;
 import java.util.Locale;
+import java.awt.AWTException;
 import java.io.*;
 import java.util.Calendar;
 import java.util.Date;
@@ -33,201 +34,152 @@ public class SubVisitScheduleList extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
-	
+	//Menu
+	@FindBy(xpath = "//span[contains(text(),'Subjects')]")
+	WebElement subject;
 	@FindBy(xpath = "//a[contains(text(),'Unscheduled Visit')]")
-	@CacheLookup
 	WebElement unscheduledVisit;
 	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[1]/input")
-	@CacheLookup
+	//Select study
+	@FindBy(xpath = "//select[@name='account']")
+	WebElement selectStudy;
+	
+	//Unscheduled visit
+	@FindBy(xpath = "(//input[@type='text'])[2]")
 	WebElement visitNumber;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[2]/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='text'])[3]")
 	WebElement visitName;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[3]/select")
-	@CacheLookup
+	@FindBy(xpath = "//select[@placeholder='Visit Type']")
 	WebElement visitType;
-		
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[4]/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='text'])[4]")
 	WebElement preVisit;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[5]/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='text'])[5]")
 	WebElement postVisit;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[6]/select")
-	@CacheLookup
+	@FindBy(xpath = "//select[@name='popupaccount']")
 	WebElement investigator;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[7]/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='date'])[3]")
 	WebElement visitDate;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[8]/select")
-	@CacheLookup
+	@FindBy(xpath = "//select[@placeholder='Select a template']")
 	WebElement visitTemplate;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[9]/div/input")
-	@CacheLookup
+	@FindBy(xpath = "//input[@type='checkbox']")
 	WebElement patientVisit;
-	
-	@FindBy(xpath = "//span[contains(text(),'Save')]")
-	@CacheLookup
+	@FindBy(xpath = "//span[normalize-space()='Save']")
 	WebElement save;
 	
+	//Error
 	@FindBy(xpath = "//span[contains(text(),'Please enter visit no')]")
-	@CacheLookup
 	WebElement errorVisitNo;
-	
 	@FindBy(xpath = "//span[contains(text(),'Please enter visit/form name')]")
-	@CacheLookup
 	WebElement errorVisitName;
-	
 	@FindBy(xpath = "//span[contains(text(),'Please select a visit type')]")
-	@CacheLookup
 	WebElement errorVisitType;
-	
 	@FindBy(xpath = "//span[contains(text(),'Please enter a investigatorr')]")
-	@CacheLookup
 	WebElement errorInvestigator;
-	
 	@FindBy(xpath = "//span[contains(text(),'Please enter visit date')]")
-	@CacheLookup
 	WebElement errorVisitDate;
-	
 	@FindBy(xpath = "//span[contains(text(),'Please select a visit template')]")
-	@CacheLookup
 	WebElement errorVisitTemplate;
-	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[4]/span")
-	@CacheLookup
 	WebElement errorPreVisit;
-	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[4]/div/div[2]/div[5]/span")
-	@CacheLookup
 	WebElement errorPostVisit;
 	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[2]/div[1]/span/span/a")
-	@CacheLookup
-	WebElement unScheduledVisit;
-	
-	@FindBy(xpath = "//span[contains(text(),'Subjects')]")
-	@CacheLookup
-	WebElement subject;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[1]/select")
-	@CacheLookup
+	//Search -  Subject
+	@FindBy(xpath = "//select[@placeholder='Site code']")
 	WebElement searchSiteCode;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[2]/input")
-	@CacheLookup
+	@FindBy(xpath = "//label[contains(text(),'Subject ID')]/following-sibling::input[1]")
 	WebElement searchSubId;
-	
-	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/select[1]")
-	@CacheLookup
+	@FindBy(xpath = "//select[@placeholder='Search']")
 	WebElement searchStatus;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/span")
-	@CacheLookup
+	@FindBy(xpath = "//span[contains(text(),'Search')]")
 	WebElement search;
 	
-	@FindBy(xpath="//td[1]")
-	@CacheLookup
-	List<WebElement> tableSiteCode;
-	
-	@FindBy(xpath="//td[2]")
-	@CacheLookup
-	List<WebElement> tableSubId;
-	
-	@FindBy(xpath="//td[3]")
-	@CacheLookup
-	List<WebElement> tableStatus;
-	
-	@FindBy(xpath="//td[9]")
-	@CacheLookup
-	List<WebElement> tableSchedule;
-	
-	@FindBy(xpath="//td[3]")
-	@CacheLookup
-	List<WebElement> tableVisitNo;
-	
-	@FindBy(xpath="//td[12]")
-	@CacheLookup
-	List<WebElement> tableEdit;
-	
-	@FindBy(xpath="//td[13]")
-	@CacheLookup
-	List<WebElement> tableView;
-	
-	@FindBy(xpath="//td[4]")
-	@CacheLookup
-	List<WebElement> tableVisitName;
-	
-	@FindBy(xpath="//td[14]")
-	@CacheLookup
-	List<WebElement> tableWithdraw;
-	
-	@FindBy(xpath="//td[9]")
-	@CacheLookup
-	List<WebElement> tableVisitStatus;
-	
-	@FindBy(xpath="//td[7]")
-	@CacheLookup
-	List<WebElement> tableVisitDate;
-	
-	@FindBy(xpath="//td[10]")
-	@CacheLookup
-	List<WebElement> TableInvestigator;
-	
-	@FindBy(xpath="//td[11]")
-	@CacheLookup
-	List<WebElement> TableVisitCompletedDate;
-	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[1]/div/input")
-	@CacheLookup
+	//Search -  Unscheduled visit
+	@FindBy(xpath="//label[contains(text(),'Visit Name')]/following-sibling::input[1]")
 	WebElement searchVisitName;
-	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[2]/div/select")
-	@CacheLookup
-	List<WebElement> searchVisitSchedule;
-	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[3]/div/div/input[1]")
-	@CacheLookup
+	@FindBy(xpath="//select[@class='form-select my-2 my-lg-0']")
+	WebElement searchVisitSchedule;
+	@FindBy(xpath="(//input[@type='date'])[1]")
 	WebElement searchVisitDate1;
-	
-	@FindBy(xpath="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[3]/div/div/input[2]")
-	@CacheLookup
+	@FindBy(xpath="(//input[@type='date'])[2]")
 	WebElement searchVisitDate2;
-	
 	@FindBy(xpath="//span[contains(text(),'Search')]")
-	@CacheLookup
 	WebElement visitSearch;
+	
+	//Web table - Subject
+	@FindBy(xpath="//td[1]")
+	List<WebElement> tableSiteCode1;
+	@FindBy(xpath="//td[2]")
+	List<WebElement> tableSubId1;
+	@FindBy(xpath="//td[3]")
+	List<WebElement> tableStatus1;
+	@FindBy(xpath="//td[9]")
+	List<WebElement> tableSchedule1;
+	
+	//Web table - Unscheduled visit
+	@FindBy(xpath="//td[1]")
+	List<WebElement> tableSiteCode;
+	@FindBy(xpath="//td[2]")
+	List<WebElement> tableSubId;
+	@FindBy(xpath="//td[3]")
+	List<WebElement> tableVisitNo;
+	@FindBy(xpath="//td[12]//i")
+	List<WebElement> tableEdit;
+	@FindBy(xpath="//td[13]//i")
+	List<WebElement> tableView1;
+	@FindBy(xpath="//td[4]")
+	List<WebElement> tableVisitName;
+	@FindBy(xpath="//td[14]//i")
+	List<WebElement> tableWithdraw;
+	@FindBy(xpath="//td[9]")
+	List<WebElement> tableVisitStatus;
+	@FindBy(xpath="//td[7]")
+	List<WebElement> tableVisitDate;
+	@FindBy(xpath="//td[10]")
+	List<WebElement> TableInvestigator;
+	@FindBy(xpath="//td[11]")
+	List<WebElement> TableVisitCompletedDate;
 	
 	
 	public void clickSubject() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		subject.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+	}
+	
+	public void selectStudy(String study) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel = new Select(selectStudy);
+		sel.selectByVisibleText(study);
+		Thread.sleep(2000);
 	}
 	
 	public void clickUnscheduleVisit() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		unscheduledVisit.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
-	public void searchSiteCode(String SiteCode) throws InterruptedException
+	public void searchSubID(String sub) throws InterruptedException
 	{
 		Thread.sleep(2000);
-		searchSiteCode.sendKeys(SiteCode);
+		searchSubId.sendKeys(sub);
 		Thread.sleep(2000);
 		search.click();	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+	}
+	
+	public void searchSiteCode(String site) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sitecode=new Select(searchSiteCode);
+		sitecode.selectByVisibleText(site);
+		Thread.sleep(2000);
+		search.click();	
+		Thread.sleep(2000);
 	}
 	
 	public void unScheduleVisit_negative() throws InterruptedException
@@ -247,17 +199,16 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	public boolean findSubId(String subid) throws InterruptedException
 	{
-		Thread.sleep(2000);
 		boolean sub=false;
-		int count = tableSubId.size();
+		int count = tableSubId1.size();
 		for(int i=0;i<count;i++)
 		{
 			
-			String text =  tableSubId.get(i).getText();
+			String text =  tableSubId1.get(i).getText();
 			if(text.contains(subid))
 			{
-				tableSchedule.get(i).click();
-				Thread.sleep(3000);
+				tableSchedule1.get(i).click();
+				Thread.sleep(2000);
 				sub=true;
 				break;
 			}
@@ -265,10 +216,10 @@ public class SubVisitScheduleList extends AbstractComponent{
 		return sub;	
 	}
 	
-	public void createUnScheduleVisit(String visitno,String visitname,String previsit,String postvisit,String date) throws InterruptedException
+	public void createUnScheduleVisit(String visitno,String visitname,String type,String previsit,String postvisit,String name,String date,String temp) throws InterruptedException
 	{
 		Thread.sleep(2000);
-		unScheduledVisit.click();
+		unscheduledVisit.click();
 		Thread.sleep(2000);
 		visitNumber.sendKeys(visitno);
 		Thread.sleep(2000);
@@ -276,27 +227,31 @@ public class SubVisitScheduleList extends AbstractComponent{
 		Thread.sleep(2000);
 		visitType.click();
 		Thread.sleep(2000);
-		Select type=new Select(visitType);
-		type.selectByVisibleText("Home Visit");
+		Select type1=new Select(visitType);
+		type1.selectByVisibleText(type);
+		Thread.sleep(2000);
+		preVisit.clear();
 		Thread.sleep(2000);
 		preVisit.sendKeys(previsit);
+		Thread.sleep(2000);
+		postVisit.clear();
 		Thread.sleep(2000);
 		postVisit.sendKeys(postvisit);
 		Thread.sleep(2000);
 		investigator.click();
 		Thread.sleep(2000);
 		Select invs=new Select(investigator);
-		invs.selectByVisibleText("Neethu P S");
+		invs.selectByVisibleText(name);
 		Thread.sleep(2000);
 		visitDate.sendKeys(date);
 		Thread.sleep(2000);
 		visitTemplate.click();
 		Thread.sleep(2000);
-		Select temp=new Select(visitTemplate);
-		temp.selectByVisibleText("Case Report-en-1.0");
-		Thread.sleep(3000);
+		Select temp1=new Select(visitTemplate);
+		temp1.selectByVisibleText(temp);
+		Thread.sleep(2000);
 		save.click();	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 		
 	public static boolean duplicateAlert() throws InterruptedException
@@ -331,7 +286,6 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	public boolean verifyUnscheduledVisit(String visitno) throws InterruptedException 
 	{
-		Thread.sleep(2000);
 		boolean sub=false;
 		int count = tableVisitNo.size();
 		for(int i=0;i<count;i++)
@@ -352,14 +306,17 @@ public class SubVisitScheduleList extends AbstractComponent{
 		Thread.sleep(2000);
 		searchVisitName.sendKeys(visitname);
 		Thread.sleep(2000);
+		visitSearch.click();
+		Thread.sleep(2000);
 	}
 	
 	public void SearchVisitSchedule(String sch) throws InterruptedException
 	{
 		Thread.sleep(2000);
-		searchStatus.click();
-		Select sel=new Select(searchStatus);
-		sel.selectByVisibleText(sch);
+		Select type1=new Select(searchVisitSchedule);
+		type1.selectByVisibleText(sch);
+		Thread.sleep(2000);
+		visitSearch.click();
 		Thread.sleep(2000);
 	}
 	
@@ -367,13 +324,8 @@ public class SubVisitScheduleList extends AbstractComponent{
 	{
 		Thread.sleep(2000);
 		searchVisitDate1.sendKeys(date1);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		searchVisitDate2.sendKeys(date2);
-		Thread.sleep(3000);
-	}
-	
-	public void Search() throws InterruptedException
-	{
 		Thread.sleep(2000);
 		visitSearch.click();
 		Thread.sleep(2000);
@@ -381,7 +333,6 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	public Boolean visitNameSearchValidation(String visitname) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableVisitName.size();
 		if (count<1) 
@@ -405,7 +356,6 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	public Boolean visitScheduleSearchValidation(String visitschedule) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableVisitStatus.size();
 		if (count<1) 
@@ -429,7 +379,6 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	public Boolean dateSearchValidation(String date) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableVisitDate.size();
 		if (count<1) 
@@ -451,38 +400,6 @@ public class SubVisitScheduleList extends AbstractComponent{
 		return st;
 	}
 	
-		/*public Boolean dateSearchValidation() throws InterruptedException, ParseException
-		{
-		Thread.sleep(3000);
-		boolean st = true;
-		WebElement d1 = driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[3]/div/div/input[1]"));
-		String s1 = d1.getText();
-		WebElement d2 = driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div[3]/div/div/input[2]"));
-		String s2 = d2.getText();
-		int count =tableVisitDate.size();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
-		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy",Locale.ENGLISH);
-		Date t1 = sdf.parse(s1);
-		Date t2 = sdf.parse(s2);
-		if (count<1) 
-		{
-			st=false;
-		}
-		else 
-		{
-			for (int i=0; i<tableVisitDate.size();i++)
-			{
-				String stat=tableVisitDate.get(i).getText();
-				Date t3 = sdf1.parse(stat);
-				 if((t3.after(t1) && (t3.before(t2))) || (t3.equals(t1) ||(t3.equals(t2))))
-				{
-					st=false;
-					break;
-				}
-			}
-		}
-		return st;
-	}*/
 	
 	public void withdraw(String subcode) throws InterruptedException
 	{
@@ -491,9 +408,9 @@ public class SubVisitScheduleList extends AbstractComponent{
 			String text=tableVisitName.get(i).getText();
 			if(text.equals(subcode))
 			{
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				tableWithdraw.get(i).click();
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				break;	
 			}
 		}
@@ -506,12 +423,13 @@ public class SubVisitScheduleList extends AbstractComponent{
 			String text=tableVisitName.get(i).getText();
 			if(text.equals(subcode))
 			{
-				tableView.get(i).click();
-				Thread.sleep(3000);
+				tableView1.get(i).click();
+				Thread.sleep(2000);
 				break;	
 			}
 		}
 	}
+	
 	
 	public void editVisit() throws InterruptedException
 	{
@@ -581,4 +499,5 @@ public class SubVisitScheduleList extends AbstractComponent{
 		return errorPostVisit.getText();
 	}
 	
+		
 }

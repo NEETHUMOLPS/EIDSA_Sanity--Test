@@ -16,9 +16,10 @@ public class TC_020_Sub_VisitSchedule_Negative extends BaseClassTest {
 	public void VisitSchedule() throws IOException, InterruptedException
 	{
 		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
+		sp.selectStudy("Study - 001");
 		sp.clickSubject();
-		sp.searchSiteCode("Demo05");
-		sp.findSubId("demo05");
+		sp.searchSubID("007");
+		sp.findSubId("007");
 		sp.clickUnscheduleVisit();
 		sp.unScheduleVisit_negative();
 		SoftAssert softAssert = new SoftAssert();
@@ -39,10 +40,7 @@ public class TC_020_Sub_VisitSchedule_Negative extends BaseClassTest {
 	public void unsheduledVisitCreation() throws IOException, InterruptedException
 	{
 		SubVisitScheduleList sp = new SubVisitScheduleList(driver);
-		sp.clickSubject();
-		sp.searchSiteCode("Demo05");
-		sp.findSubId("demo05");
-		sp.createUnScheduleVisit("Visit100", "Visit100", "0", "0", "16-05-2023");
+		sp.createUnScheduleVisit("003", "Visit - 003","Home Visit", "0", "0", "Neethu P S","16-05-2023","Medical Fitness-en-4.0");
 		sp.duplicateAlert();
 		logger.info("Negative test2 passed");
 	}

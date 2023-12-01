@@ -15,11 +15,10 @@ public class TC_021_PatientLogin_Positive extends BaseClassTest {
 	public void SiteCodeSearchFunctionality() throws IOException, InterruptedException
 	{
 		PatientLogin pl = new PatientLogin(driver);
+		pl.selectStudy("Study - 001");
 		pl.clickPatientLogin();
-		pl.SearchSiteCode("Demo01");
-		pl.Search();
-		Thread.sleep(3000);
-		Assert.assertTrue(pl.siteCodeSearchValidation("Demo01"));
+		pl.SearchSiteCode("002");
+		Assert.assertTrue(pl.siteCodeSearchValidation("002"));
 		logger.info("Site code search validation successfully completed");	
 		driver.navigate().refresh();
 	}
@@ -28,12 +27,8 @@ public class TC_021_PatientLogin_Positive extends BaseClassTest {
 	public void SubjectIdSearchValidation() throws IOException, InterruptedException
 	{
 		PatientLogin pl = new PatientLogin(driver);
-		pl.clickPatientLogin();
-		pl.SearchSiteCode("Demo01");
-		pl.SearchSubId("demo02");
-		pl.Search();
-		Thread.sleep(3000);
-		Assert.assertTrue(pl.SubjectIdSearchValidation("demo02"));
+		pl.SearchSubId("002");
+		Assert.assertTrue(pl.SubjectIdSearchValidation("002"));
 		logger.info("Subject Id search validation successfully completed");		
 		driver.navigate().refresh();
 	}
@@ -42,10 +37,7 @@ public class TC_021_PatientLogin_Positive extends BaseClassTest {
 	public void StatusSearchValidation() throws IOException, InterruptedException
 	{
 		PatientLogin pl = new PatientLogin(driver);
-		pl.clickPatientLogin();
 		pl.SearchStatus("Pending");
-		pl.Search();
-		Thread.sleep(3000);
 		Assert.assertTrue(pl.StatusSearchValidation("Pending"));
 		logger.info("Status search validation successfully completed");		
 		driver.navigate().refresh();
@@ -56,10 +48,8 @@ public class TC_021_PatientLogin_Positive extends BaseClassTest {
 	{
 		PatientLogin pl = new PatientLogin(driver);
 		pl.clickPatientLogin();
-		pl.SearchSiteCode("Demo01");
-		pl.Search();
-		Thread.sleep(3000);
-		pl.findSubId("demo04");
+		pl.SearchSiteCode("002");
+		pl.findSubId("003");
 		pl.AddLogin("demo04new@yopmail.com");
 		pl.CreationAlert();
 		logger.info("Login added successfully");

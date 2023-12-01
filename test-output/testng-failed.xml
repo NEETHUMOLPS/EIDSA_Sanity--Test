@@ -7,13 +7,12 @@
   <test thread-count="5" name="EIDSA App Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.EIDSA.testCases.TC_011_study_Positive">
+      <class name="com.EIDSA.testCases.TC_024_Visit_Negative">
         <methods>
           <include name="setup"/>
-          <include name="Delete_Folder"/>
-          <include name="Delete_Doc"/>
+          <include name="translate"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_011_study_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_024_Visit_Negative -->
     </classes>
   </test> <!-- EIDSA App Test(failed) -->
 </suite> <!-- Failed suite [Medical Application] -->

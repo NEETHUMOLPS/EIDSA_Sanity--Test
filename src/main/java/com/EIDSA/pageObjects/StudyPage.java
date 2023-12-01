@@ -660,6 +660,13 @@ public class StudyPage extends AbstractComponent{
 		Thread.sleep(2000);
 	}
 	
+	public void selFolder3() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		clickOnFolder3.click();
+		Thread.sleep(2000);
+	}
+	
 	public Boolean DocumentNameSearchValidation(String nm) throws InterruptedException
 	{
 		boolean st = true;
@@ -916,8 +923,6 @@ public class StudyPage extends AbstractComponent{
 		Thread.sleep(2000);
 		FolderAdd.click();
 		Thread.sleep(2000);	
-		close.click();
-		Thread.sleep(2000);	
 	}
 	
 	public String Err1()
@@ -1069,7 +1074,7 @@ public class StudyPage extends AbstractComponent{
 	public void editDocument_Negative() throws InterruptedException, AWTException
 	{
 		Thread.sleep(2000);	
-		FolderAdd.click();
+		AddFile.click();
 		Thread.sleep(2000);
 		
 	}
