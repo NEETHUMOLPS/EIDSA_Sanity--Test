@@ -90,7 +90,7 @@ public class Roles extends AbstractComponent{
 	public void clickRoles() throws InterruptedException
 	{
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(2000);

@@ -61,7 +61,7 @@ public class StudyVisit extends AbstractComponent{
 	WebElement Save ;
 	
 	//Study menu
-	@FindBy(xpath="//ul[@id='administrationmenu']/li/a/span")
+	@FindBy(xpath="//span[normalize-space()='Study List']")
 	WebElement Study;
 	
 	//Search
@@ -115,14 +115,7 @@ public class StudyVisit extends AbstractComponent{
 	public void clickStudy() throws InterruptedException
 	{	
 		Thread.sleep(2000);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(2000);
-		elementWait(Study);
 		Study.click();
-		Thread.sleep(2000);
-		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("window.scrollBy(0,-1000)");
 		Thread.sleep(2000);
 	}
 	

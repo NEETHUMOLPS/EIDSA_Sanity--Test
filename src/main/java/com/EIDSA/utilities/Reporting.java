@@ -39,11 +39,11 @@ public class Reporting extends TestListenerAdapter
 		
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("Host name","localhost");
-		extent.setSystemInfo("Environment","QA");
+		extent.setSystemInfo("Environment","EIDSA Test");
 		extent.setSystemInfo("user","Neethu");
 		
-	htmlReporter.config().setDocumentTitle("EIDSAProject1");
-	htmlReporter.config().setReportName("Functional Test Report");
+	htmlReporter.config().setDocumentTitle("EIDSA");
+	htmlReporter.config().setReportName("Sanity Test Report");
 	htmlReporter.config().setTheme(Theme.DARK);
 	}
 	
@@ -51,12 +51,13 @@ public class Reporting extends TestListenerAdapter
 	{
 		logger=extent.createTest(tr.getName());
 		logger.log(Status.PASS,MarkupHelper.createLabel(tr.getName(), ExtentColor.GREEN));
+		logger.info(tr.getMethod().getDescription());
 	}
 	public void onTestFailure(ITestResult tr)
 	{
 		logger=extent.createTest(tr.getName());
 		logger.log(Status.FAIL,MarkupHelper.createLabel(tr.getName(), ExtentColor.RED));
-		
+		logger.info(tr.getMethod().getDescription());
 		String screenshotPath=System.getProperty("user.dir")+"\\Screenshots\\"+tr.getName()+".png";
 		File f = new File(screenshotPath);
 		if(f.exists())
@@ -69,6 +70,7 @@ public class Reporting extends TestListenerAdapter
 		{
 			logger=extent.createTest(tr.getName());
 			logger.log(Status.SKIP,MarkupHelper.createLabel(tr.getName(), ExtentColor.ORANGE));
+			logger.info(tr.getMethod().getDescription());
 		}
 		
 		public void onFinish(ITestContext testContext)

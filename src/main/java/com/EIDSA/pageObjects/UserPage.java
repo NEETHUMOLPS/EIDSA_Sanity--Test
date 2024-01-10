@@ -30,7 +30,7 @@ public class UserPage extends AbstractComponent{
 	}
 	
 	//Users menu
-	@FindBy(xpath="(//span[contains(text(),'Users')])[2]")
+	@FindBy(xpath="//a[@href='/userlisting']//span[contains(text(),'Users')]")
 	@CacheLookup
 	WebElement User;
 	
@@ -120,15 +120,15 @@ public class UserPage extends AbstractComponent{
 	
 	public void clickUser() throws InterruptedException
 	{		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1000)");
+		jse.executeScript("window.scrollBy(0,3000)");
 		Thread.sleep(2000);
 		elementWait(User);
 		User.click();
 		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("window.scrollBy(0,-1000)");
+		jse1.executeScript("window.scrollBy(0,-3000)");
 		Thread.sleep(2000);
 	}
 	

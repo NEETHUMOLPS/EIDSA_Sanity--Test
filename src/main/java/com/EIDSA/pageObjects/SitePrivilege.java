@@ -55,7 +55,7 @@ public class SitePrivilege extends AbstractComponent{
 	public void clickSitePrivilege() throws InterruptedException
 	{
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(2000);
@@ -71,7 +71,7 @@ public class SitePrivilege extends AbstractComponent{
 		
 		Thread.sleep(2000);
 		user.sendKeys(username);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		study.click();
 		Thread.sleep(2000);
 		save.click();
@@ -83,7 +83,7 @@ public class SitePrivilege extends AbstractComponent{
 		
 		Thread.sleep(2000);
 		user.sendKeys(username);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		study.click();
 		Thread.sleep(2000);
 		site.click();

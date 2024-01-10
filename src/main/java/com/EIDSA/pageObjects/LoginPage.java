@@ -33,18 +33,18 @@ public class LoginPage extends AbstractComponent{
 	
 	
 	//Logout
-	@FindBy(xpath="//img[@alt='User Profile Image']")
+	@FindBy(xpath="(//img[@alt='User Profile Image'])[1]")
 	@CacheLookup
 	WebElement userProfile;	
-	@FindBy(xpath="//span[normalize-space()='Logout']")
+	@FindBy(xpath="(//span[normalize-space()='Logout'])[1]")
 	@CacheLookup
 	WebElement btnLogout;
 	
 	//Error
-	@FindBy(xpath="//span[contains(text(),'Invalid email or password.')]")
+	@FindBy(xpath="//div[contains(text(),'Invalid email or password.')]")
 	@CacheLookup
 	WebElement err1;	
-	@FindBy(xpath="//span[contains(text(),'The username is not associated with this account.')]")
+	@FindBy(xpath="//div[contains(text(),'The username is not associated with this account.')]")
 	@CacheLookup
 	WebElement err2;
 	@FindBy(xpath="//span[contains(text(),'The username field is required')]")

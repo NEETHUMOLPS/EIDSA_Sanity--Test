@@ -118,8 +118,13 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>4.0.0</version>
 		</dependency>
-		
-		
+
+
+  	<dependency>
+  		<groupId>DMSProject1</groupId>
+  		<artifactId>DMSProject1</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies> 
   
 </project>

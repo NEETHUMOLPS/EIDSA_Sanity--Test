@@ -40,7 +40,7 @@ public class RolePrivilege extends AbstractComponent{
 	WebElement Screens1;
 	@FindBy(xpath="//input[@id='f6a161dd-0d2f-432e-911b-5df7830b5043']")
 	WebElement subject1;
-	@FindBy(xpath="//button[contains(text(),'Save')]")
+	@FindBy(xpath="//button[normalize-space()='Save']")
 	WebElement Save;
 	
 	//Error
@@ -79,7 +79,7 @@ public class RolePrivilege extends AbstractComponent{
 	public void clickRolePrivilege() throws InterruptedException
 	{
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(2000);
@@ -100,24 +100,24 @@ public class RolePrivilege extends AbstractComponent{
 		Screens1.click();
 		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,2000)");
+		jse.executeScript("window.scrollBy(0,400)");
 		elementWait(Save);
-		Thread.sleep(3000);
-		Save.click();
 		Thread.sleep(2000);
+		Save.click();
+		Thread.sleep(3000);
 	}
 	
 	public void clickSave_negative() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,2000)");
+		jse.executeScript("window.scrollBy(0,400)");
 		elementWait(Save);
 		Thread.sleep(2000);
 		Save.click();
 		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("window.scrollBy(0,-2000)");
+		jse1.executeScript("window.scrollBy(0,-400)");
 		
 	}
 	
