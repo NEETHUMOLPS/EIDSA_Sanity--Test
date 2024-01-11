@@ -35,6 +35,8 @@ public class SubVisitScheduleList extends AbstractComponent{
 	}
 	
 	//Menu
+	@FindBy(xpath = "//span[contains(text(),'Items')]")
+	WebElement items;
 	@FindBy(xpath = "//span[contains(text(),'Subjects')]")
 	WebElement subject;
 	@FindBy(xpath = "//a[contains(text(),'Unscheduled Visit')]")
@@ -142,6 +144,15 @@ public class SubVisitScheduleList extends AbstractComponent{
 	
 	
 	public void clickSubject() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		items.click();
+		Thread.sleep(2000);
+		subject.click();
+		Thread.sleep(2000);
+	}
+	
+	public void clickSubject1() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		subject.click();

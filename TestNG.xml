@@ -12,15 +12,17 @@
 <!--<class name="com.EIDSA.testCases.Sanity.TC_001_loginTest_Positive"/>
 <class name="com.EIDSA.testCases.Sanity.TC_002_loginTest_Negative"/>
 <class name="com.EIDSA.testCases.Sanity.TC_003_forgotPasswordOrUsername_Positive"/>
-<class name="com.EIDSA.testCases.Sanity.TC_004_Users_Positive"/>
-<class name="com.EIDSA.testCases.Sanity.TC_005_Roles_Positive"/>
-<class name="com.EIDSA.testCases.Sanity.TC_006_rolePrivilege_Positive"/>
-<class name="com.EIDSA.testCases.Sanity.TC_007_SitePrivilege_Positive"/>
-<class name="com.EIDSA.testCases.Sanity.TC_008_studyList_Positive"/>
-<class name="com.EIDSA.testCases.Sanity.TC_009_StudyVisit_Positive"/>
-<class name="com.EIDSA.testCases.Sanity.TC_010_studyProfile_Positive"/>-->
+<class name="com.EIDSA.testCases.Sanity.TC_004_studyProfile_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_005_Users_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_006_Roles_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_007_site_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_008_Subject_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_009_Sub_VisitScheduleList_Positive"/>
+-->
 
-<class name="com.EIDSA.testCases.Sanity.TC_010_studyProfile_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_007_site_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_008_Subject_Positive"/>
+<class name="com.EIDSA.testCases.Sanity.TC_009_Sub_VisitScheduleList_Positive"/>
 
 <!--  <methods>
                <include name="negativeTest6" />

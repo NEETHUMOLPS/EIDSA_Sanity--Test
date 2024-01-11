@@ -30,6 +30,8 @@ public class SubjectPage extends AbstractComponent{
 	}
 	
 	//Subject menu
+	@FindBy(xpath = "//span[contains(text(),'Items')]")
+	WebElement items;
 	@FindBy(xpath = "//span[normalize-space()='Subjects']")
 	WebElement subject;	
 	
@@ -107,12 +109,10 @@ public class SubjectPage extends AbstractComponent{
 	@FindBy(xpath="//td[11]//i")
 	List<WebElement> tableEdit;	
 	@FindBy(xpath="//td[12]//i")
-	List<WebElement> tableWithdraw;;	
+	List<WebElement> tableWithdraw;;		
 	@FindBy(xpath="//td[13]//i")
-	List<WebElement> tableAuditTrail;	
-	@FindBy(xpath="//td[14]//i")
 	List<WebElement> tableDelete;	
-	@FindBy(xpath="//td[15]//i")
+	@FindBy(xpath="//td[14]//i")
 	List<WebElement> tableDocument;
 	
 	//Create schedule
@@ -222,6 +222,15 @@ public class SubjectPage extends AbstractComponent{
 	public void clickSubject() throws InterruptedException
 	{
 		Thread.sleep(2000);
+		items.click();
+		Thread.sleep(2000);
+		subject.click();
+		Thread.sleep(2000);
+	}
+	
+	public void clickSubject1() throws InterruptedException
+	{
+		Thread.sleep(2000);
 		subject.click();
 		Thread.sleep(2000);
 	}
@@ -261,8 +270,6 @@ public class SubjectPage extends AbstractComponent{
 	
 	public void createSubject(String code,String subid,String date) throws InterruptedException
 	{
-		Thread.sleep(2000);
-		subject.click();
 		Thread.sleep(2000);
 		createSubject.click();
 		Thread.sleep(2000);
@@ -501,7 +508,7 @@ public class SubjectPage extends AbstractComponent{
 		}			
 	}
 	
-	public void auditTrail(String sub) throws InterruptedException
+	/*public void auditTrail(String sub) throws InterruptedException
 	{
 		int count=tableSubId.size();
 		for(int i=0;i<count;i++)
@@ -514,7 +521,7 @@ public class SubjectPage extends AbstractComponent{
 				break;
 			}
 		}
-	}
+	}*/
 	
 	public void delSubject(String subcode) throws InterruptedException
 	{
@@ -538,6 +545,12 @@ public class SubjectPage extends AbstractComponent{
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Are you sure you want to delete this patient?"));
 			alert1.accept();
+			Thread.sleep(2000);
+			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait2.until(ExpectedConditions.alertIsPresent());
+			Alert alert2 = driver.switchTo().alert();
+			Assert.assertTrue(alert2.getText().contains("Deleted Successfully."));
+			alert2.accept();
 			return true;
 		} catch (NoAlertPresentException e) {
 			return false;
