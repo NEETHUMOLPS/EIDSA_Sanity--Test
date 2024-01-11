@@ -11,7 +11,7 @@ import Base.BaseClassTest;
 
 public class TC_006_Roles_Positive extends BaseClassTest {
 	
-	@Test(priority=1)
+	@Test(priority=1, description = "Create role")
 	public void roleCreation() throws IOException, InterruptedException
 	{
 		Roles rp=new Roles(driver);
@@ -21,7 +21,7 @@ public class TC_006_Roles_Positive extends BaseClassTest {
 		logger.info("Role added successfully");	
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, description = "Delete role")
 	public void roleDelete() throws IOException, InterruptedException
 	{
 		Roles rp=new Roles(driver);

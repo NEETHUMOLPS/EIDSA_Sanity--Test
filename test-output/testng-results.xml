@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="29" passed="29" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-11T20:27:24 IST" name="Medical Application" finished-at="2024-01-11T20:30:46 IST" duration-ms="201890">
+  <suite started-at="2024-01-12T00:42:30 IST" name="Medical Application" finished-at="2024-01-12T00:55:54 IST" duration-ms="804108">
     <groups>
     </groups>
-    <test started-at="2024-01-11T20:27:24 IST" name="EIDSA App Test" finished-at="2024-01-11T20:30:46 IST" duration-ms="201890">
-      <class name="com.EIDSA.testCases.Sanity.TC_007_site_Positive">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.Sanity.TC_007_site_Positive@25be7b63]" started-at="2024-01-11T20:27:26 IST" name="setup" finished-at="2024-01-11T20:28:10 IST" duration-ms="44413" status="PASS">
+    <test started-at="2024-01-12T00:42:30 IST" name="EIDSA App Test" finished-at="2024-01-12T00:55:54 IST" duration-ms="804108">
+      <class name="com.EIDSA.testCases.Sanity.TC_009_UnscheduledVisit_Positive">
+        <test-method signature="unsheduledVisitCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_009_UnscheduledVisit_Positive@5f8e8a9d]" started-at="2024-01-12T00:53:44 IST" name="unsheduledVisitCreation" description="Create unscheduled visit" finished-at="2024-01-12T00:54:46 IST" duration-ms="62292" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unsheduledVisitCreation -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_009_UnscheduledVisit_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_002_LoginTest_Negative">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.Sanity.TC_002_LoginTest_Negative@740fb309]" started-at="2024-01-12T00:44:16 IST" name="setup" finished-at="2024-01-12T00:44:33 IST" duration-ms="16997" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,35 +24,186 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="siteCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_007_site_Positive@25be7b63]" started-at="2024-01-11T20:28:10 IST" name="siteCreation" finished-at="2024-01-11T20:28:44 IST" duration-ms="33972" status="PASS">
+        <test-method signature="loginWithInvalidEmailAndPassword()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_002_LoginTest_Negative@740fb309]" started-at="2024-01-12T00:44:33 IST" name="loginWithInvalidEmailAndPassword" description="Login with invalid email/password" finished-at="2024-01-12T00:45:04 IST" duration-ms="30854" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- siteCreation -->
-        <test-method signature="siteDelete()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_007_site_Positive@25be7b63]" started-at="2024-01-11T20:28:44 IST" name="siteDelete" finished-at="2024-01-11T20:28:50 IST" duration-ms="5133" status="PASS">
+        </test-method> <!-- loginWithInvalidEmailAndPassword -->
+        <test-method signature="loginWithInvalidUsername()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_002_LoginTest_Negative@740fb309]" started-at="2024-01-12T00:45:04 IST" name="loginWithInvalidUsername" description="Login with invalid username" finished-at="2024-01-12T00:45:30 IST" duration-ms="25255" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- siteDelete -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.EIDSA.testCases.Sanity.TC_007_site_Positive@25be7b63]" started-at="2024-01-11T20:30:45 IST" name="tearDown" finished-at="2024-01-11T20:30:46 IST" duration-ms="1407" status="PASS">
+        </test-method> <!-- loginWithInvalidUsername -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.EIDSA.testCases.Sanity.TC_002_LoginTest_Negative@740fb309]" started-at="2024-01-12T00:45:30 IST" name="tearDown" finished-at="2024-01-12T00:45:30 IST" duration-ms="626" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.EIDSA.testCases.Sanity.TC_007_site_Positive -->
-      <class name="com.EIDSA.testCases.Sanity.TC_009_Sub_VisitScheduleList_Positive">
-        <test-method signature="unsheduledVisitCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_009_Sub_VisitScheduleList_Positive@72bc6553]" started-at="2024-01-11T20:29:41 IST" name="unsheduledVisitCreation" finished-at="2024-01-11T20:30:45 IST" duration-ms="63955" status="PASS">
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_002_LoginTest_Negative -->
+      <class name="com.EIDSA.testCases.Sanity.TC_011_SubmittedForm_Positive">
+        <test-method signature="clickView()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_011_SubmittedForm_Positive@3ad83a66]" started-at="2024-01-12T00:55:32 IST" name="clickView" description="Open the submitted form" finished-at="2024-01-12T00:55:50 IST" duration-ms="18693" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- unsheduledVisitCreation -->
-      </class> <!-- com.EIDSA.testCases.Sanity.TC_009_Sub_VisitScheduleList_Positive -->
+        </test-method> <!-- clickView -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_011_SubmittedForm_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_007_Site_Positive">
+        <test-method signature="siteCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_007_Site_Positive@6f204a1a]" started-at="2024-01-12T00:52:10 IST" name="siteCreation" description="Create site" finished-at="2024-01-12T00:52:32 IST" duration-ms="22160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- siteCreation -->
+        <test-method signature="siteDelete()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_007_Site_Positive@6f204a1a]" started-at="2024-01-12T00:52:32 IST" name="siteDelete" description="Delete site" finished-at="2024-01-12T00:52:38 IST" duration-ms="5056" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- siteDelete -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_007_Site_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_001_LoginTest_Positive">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.Sanity.TC_001_LoginTest_Positive@7a5ceedd]" started-at="2024-01-12T00:43:16 IST" name="setup" finished-at="2024-01-12T00:43:41 IST" duration-ms="25716" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="LoginTest()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_001_LoginTest_Positive@7a5ceedd]" started-at="2024-01-12T00:43:41 IST" name="LoginTest" description="Login with valid credentials" finished-at="2024-01-12T00:44:10 IST" duration-ms="28933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.EIDSA.testCases.Sanity.TC_001_LoginTest_Positive@7a5ceedd]" started-at="2024-01-12T00:44:10 IST" name="tearDown" finished-at="2024-01-12T00:44:16 IST" duration-ms="6004" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_001_LoginTest_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:42:31 IST" name="setup" finished-at="2024-01-12T00:43:13 IST" duration-ms="42278" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="createStudy()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:46:28 IST" name="createStudy" description="Create study" finished-at="2024-01-12T00:46:40 IST" duration-ms="11101" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createStudy -->
+        <test-method signature="editStudy()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:46:40 IST" name="editStudy" description="Edit study" finished-at="2024-01-12T00:46:48 IST" duration-ms="8683" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editStudy -->
+        <test-method signature="createTemplate()[pri:3, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:46:48 IST" name="createTemplate" description="Create template" finished-at="2024-01-12T00:48:32 IST" duration-ms="104219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTemplate -->
+        <test-method signature="createNewVersion()[pri:4, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:48:32 IST" name="createNewVersion" description="Add new version" finished-at="2024-01-12T00:49:15 IST" duration-ms="42612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewVersion -->
+        <test-method signature="createVisit()[pri:5, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:49:15 IST" name="createVisit" description="Create visit" finished-at="2024-01-12T00:49:33 IST" duration-ms="17700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createVisit -->
+        <test-method signature="assignTemplate()[pri:6, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:49:33 IST" name="assignTemplate" description="Assign template" finished-at="2024-01-12T00:49:44 IST" duration-ms="11037" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assignTemplate -->
+        <test-method signature="editVisit()[pri:7, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:49:44 IST" name="editVisit" description="Edit visit" finished-at="2024-01-12T00:49:55 IST" duration-ms="11199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editVisit -->
+        <test-method signature="createSite()[pri:8, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:49:55 IST" name="createSite" description="Create site" finished-at="2024-01-12T00:50:04 IST" duration-ms="8624" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createSite -->
+        <test-method signature="createSubject()[pri:9, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:50:04 IST" name="createSubject" description="Create subject" finished-at="2024-01-12T00:50:19 IST" duration-ms="15612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createSubject -->
+        <test-method signature="retireForm()[pri:10, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:50:19 IST" name="retireForm" description="Retire form" finished-at="2024-01-12T00:50:35 IST" duration-ms="15898" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retireForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive@43f02ef2]" started-at="2024-01-12T00:55:50 IST" name="tearDown" finished-at="2024-01-12T00:55:54 IST" duration-ms="3439" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_004_StudyProfile_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_005_Users_Positive">
+        <test-method signature="userCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_005_Users_Positive@239a307b]" started-at="2024-01-12T00:50:35 IST" name="userCreation" description="Create user" finished-at="2024-01-12T00:51:08 IST" duration-ms="32454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userCreation -->
+        <test-method signature="userPrivilege()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_005_Users_Positive@239a307b]" started-at="2024-01-12T00:51:08 IST" name="userPrivilege" description="Set user privilege" finished-at="2024-01-12T00:51:26 IST" duration-ms="18117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userPrivilege -->
+        <test-method signature="userDelete()[pri:3, instance:com.EIDSA.testCases.Sanity.TC_005_Users_Positive@239a307b]" started-at="2024-01-12T00:51:26 IST" name="userDelete" description="Delete user" finished-at="2024-01-12T00:51:35 IST" duration-ms="9247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userDelete -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_005_Users_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_003_ForgotPasswordOrUsername_Positive">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.Sanity.TC_003_ForgotPasswordOrUsername_Positive@7bd7d6d6]" started-at="2024-01-12T00:45:30 IST" name="setup" finished-at="2024-01-12T00:45:42 IST" duration-ms="12134" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="forgotPassword()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_003_ForgotPasswordOrUsername_Positive@7bd7d6d6]" started-at="2024-01-12T00:45:42 IST" name="forgotPassword" description="Forgot password" finished-at="2024-01-12T00:46:01 IST" duration-ms="18864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgotPassword -->
+        <test-method signature="forgotUsername()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_003_ForgotPasswordOrUsername_Positive@7bd7d6d6]" started-at="2024-01-12T00:46:01 IST" name="forgotUsername" description="Forgot username" finished-at="2024-01-12T00:46:27 IST" duration-ms="25758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgotUsername -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.EIDSA.testCases.Sanity.TC_003_ForgotPasswordOrUsername_Positive@7bd7d6d6]" started-at="2024-01-12T00:46:27 IST" name="tearDown" finished-at="2024-01-12T00:46:28 IST" duration-ms="1339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_003_ForgotPasswordOrUsername_Positive -->
       <class name="com.EIDSA.testCases.Sanity.TC_008_Subject_Positive">
-        <test-method signature="subjectCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_008_Subject_Positive@536f2a7e]" started-at="2024-01-11T20:28:50 IST" name="subjectCreation" finished-at="2024-01-11T20:29:13 IST" duration-ms="23494" status="PASS">
+        <test-method signature="subjectCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_008_Subject_Positive@2de56eb2]" started-at="2024-01-12T00:52:38 IST" name="subjectCreation" description="Create subject" finished-at="2024-01-12T00:53:00 IST" duration-ms="22559" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- subjectCreation -->
-        <test-method signature="schedule()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_008_Subject_Positive@536f2a7e]" started-at="2024-01-11T20:29:13 IST" name="schedule" finished-at="2024-01-11T20:29:41 IST" duration-ms="27450" status="PASS">
+        <test-method signature="schedule()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_008_Subject_Positive@2de56eb2]" started-at="2024-01-12T00:53:00 IST" name="schedule" description="Schedule the patient visit" finished-at="2024-01-12T00:53:18 IST" duration-ms="18000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- schedule -->
+        <test-method signature="delete()[pri:3, instance:com.EIDSA.testCases.Sanity.TC_008_Subject_Positive@2de56eb2]" started-at="2024-01-12T00:53:18 IST" name="delete" description="Delete subject" finished-at="2024-01-12T00:53:44 IST" duration-ms="25595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete -->
       </class> <!-- com.EIDSA.testCases.Sanity.TC_008_Subject_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_006_Roles_Positive">
+        <test-method signature="roleCreation()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_006_Roles_Positive@2a8448fa]" started-at="2024-01-12T00:51:35 IST" name="roleCreation" description="Create role" finished-at="2024-01-12T00:51:58 IST" duration-ms="23028" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- roleCreation -->
+        <test-method signature="roleDelete()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_006_Roles_Positive@2a8448fa]" started-at="2024-01-12T00:51:58 IST" name="roleDelete" description="Delete role" finished-at="2024-01-12T00:52:10 IST" duration-ms="12027" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- roleDelete -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_006_Roles_Positive -->
+      <class name="com.EIDSA.testCases.Sanity.TC_010_FillForm_Positive">
+        <test-method signature="SaveForm()[pri:1, instance:com.EIDSA.testCases.Sanity.TC_010_FillForm_Positive@5745ca0e]" started-at="2024-01-12T00:54:46 IST" name="SaveForm" description="Save the form" finished-at="2024-01-12T00:55:10 IST" duration-ms="23777" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveForm -->
+        <test-method signature="ReviewandSubmitForm()[pri:2, instance:com.EIDSA.testCases.Sanity.TC_010_FillForm_Positive@5745ca0e]" started-at="2024-01-12T00:55:10 IST" name="ReviewandSubmitForm" description="Submit the form" finished-at="2024-01-12T00:55:32 IST" duration-ms="21651" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReviewandSubmitForm -->
+      </class> <!-- com.EIDSA.testCases.Sanity.TC_010_FillForm_Positive -->
     </test> <!-- EIDSA App Test -->
   </suite> <!-- Medical Application -->
 </testng-results>

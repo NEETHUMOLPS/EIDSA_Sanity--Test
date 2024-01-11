@@ -33,10 +33,10 @@ public class LoginPage extends AbstractComponent{
 	
 	
 	//Logout
-	@FindBy(xpath="(//img[@alt='User Profile Image'])[1]")
+	@FindBy(xpath="//img[@alt='User Profile Image']")
 	@CacheLookup
 	WebElement userProfile;	
-	@FindBy(xpath="(//span[normalize-space()='Logout'])[1]")
+	@FindBy(xpath="//span[normalize-space()='Logout']")
 	@CacheLookup
 	WebElement btnLogout;
 	
@@ -68,7 +68,7 @@ public class LoginPage extends AbstractComponent{
 		txtPassword.sendKeys(pwd);
 		Thread.sleep(2000);
 		btnLogin.click();		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 	}
 	
 	public void clearLoginCredentials() throws InterruptedException

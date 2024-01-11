@@ -42,7 +42,7 @@ public class TC_005_Users_Positive extends BaseClassTest{
 	    logger.info("User privilege updated successfully");
 	}
 	
-	@Test(priority=3, description = "Delete the user")
+	@Test(priority=3, description = "Delete user")
 	public void userDelete() throws IOException, InterruptedException
 	{
 		UserPage up=new UserPage(driver);

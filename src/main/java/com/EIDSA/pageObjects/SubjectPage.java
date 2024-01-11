@@ -628,7 +628,7 @@ public class SubjectPage extends AbstractComponent{
 			if(text.equals(subcode))
 			{
 				tableShedule.get(i).click();
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 				createschedule.click();
 				break;	
 			}
